@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: 'pretendard';
+    src: url(../public/fonts/Pretendard.ttf);
+}
