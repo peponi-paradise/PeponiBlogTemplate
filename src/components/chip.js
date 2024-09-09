@@ -1,7 +1,6 @@
 function Chip(content) {
   return (
-    <span
-      key="content"
+    <span key={content}
       className="bg-indigo-950 px-1 py-1 border border-indigo-500 rounded-lg"
     >
       {content}

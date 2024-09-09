@@ -1,5 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
+import favicon from "../public/icons/favicon.png";
+
 function handleKeyPress(event) {
   if (event.key === "Enter") {
     search();
@@ -14,9 +18,10 @@ function search() {
 export default function Header() {
   return (
     <header className="flex flex-row border-b border-slate-700 justify-between">
-      <p className="text-2xl font-bold text-center py-4 px-8 ">
-        This is header
-      </p>
+      <Link href="/" className="flex flex-row py-4 px-8 gap-4">
+        <Image src={favicon} alt="Favicon" className="size-6 inline-block mx-auto my-auto"></Image>
+        <span className="hidden text-xl font-bold text-center sm:inline-block">Peponi</span>
+      </Link>
       <div className="flex flex-row my-2 mx-6 p-2 border border-slate-700 rounded-md">
         <input
           type="text"
