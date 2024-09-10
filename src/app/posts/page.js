@@ -35,7 +35,12 @@ export default function Posts(props) {
             ))}
           </ul>
         </div>
-        <PostList posts={posts} className="grow pl-4 gap-4"></PostList>
+        <div className="grow pl-4 flex flex-col justify-between">
+          <PostList posts={posts}></PostList>
+          <nav aria-labelledby="pagenation" className="mt-8 text-center">
+            <p>1,2,3,4,5</p>
+          </nav>
+        </div>
       </section>
     </Main>
   );
