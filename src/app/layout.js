@@ -2,6 +2,7 @@ import Favicon from "@/public/icons/favicon.ico";
 import "./globals.css";
 import Header from "@/layouts/globalHeader";
 import Footer from "@/layouts/globalFooter";
+import { InitializeDatas } from "@/lib/postsParser";
 
 export const metadata = {
   charset: "UTF-8",
@@ -16,6 +17,8 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  InitializeDatas();
+
   return (
     <html lang="ko">
       <body className="bg-slate-900 text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">

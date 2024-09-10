@@ -1,9 +1,19 @@
 import Main from "@/layouts/globalMain";
 import PostList from "@/components/postList";
 import { totalCategories } from "@/lib/postsParser";
+import { applyPostFilter, pagenation } from "@/lib/postsParser";
 import Link from "next/link";
 
 export default function Posts(props) {
+  let currentPosts = applyPostFilter(
+    props.searchParams.folderPath,
+    props.searchParams.title
+  );
+  let posts = pagenation(
+    currentPosts,
+    props.searchParams.count,
+    props.searchParams.page
+  );
   return (
     <Main>
       <h1>This is post page</h1>
@@ -16,10 +26,7 @@ export default function Posts(props) {
           </li>
         ))}
       </ul>
-      <PostList
-        folderPath={props.searchParams.folderPath}
-        title={props.searchParams.title}
-      ></PostList>
+      {PostList(posts)}
     </Main>
   );
 }

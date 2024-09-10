@@ -5,38 +5,12 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 
 const postPath = path.join(process.cwd(), "src\\posts");
-export const totalPosts = getAllPosts();
-export const totalCategories = getAllCategories();
+export let totalPosts = [];
+export let totalCategories = [];
 
-function parsePost(path) {
-  let { data, content } = matter(fs.readFileSync(path, "utf8"));
-  let grayMatter = data;
-  let sl = path.slice(path.indexOf("\\posts")).replace("\\posts\\", "");
-  let folderPath = sl.substring(0, sl.indexOf("\\"));
-  let slug = sl.slice(sl.indexOf("\\") + 1).replace(".mdx", "");
-  let minutesToRead = Math.ceil(readingTime(content).minutes);
-  return { ...grayMatter, folderPath, slug, minutesToRead, content };
-}
-
-function getAllPosts() {
-  let paths = sync(`/**/*.mdx`, {
-    root: postPath,
-  });
-  let posts = paths.map((path) => parsePost(path));
-  posts.sort(function (a, b) {
-    return a.date - b.date;
-  });
-  return posts;
-}
-
-function getAllCategories() {
-  let categories = [];
-  totalPosts.forEach((post) => {
-    if (categories.some((item) => item[1] === post.folderPath) == false) {
-      categories.push([post.category, post.folderPath]);
-    }
-  });
-  return categories;
+export function InitializeDatas() {
+  totalPosts = getAllPosts();
+  totalCategories = getAllCategories();
 }
 
 export function applyPostFilter(folderPath, title) {
@@ -56,6 +30,19 @@ export function applyPostFilter(folderPath, title) {
   return currentPosts;
 }
 
+export function pagenation(posts, count, page) {
+  let sliced = [];
+  if (count != undefined || count != null) {
+    let startIndex = 0;
+    if (page != undefined || page != null) {
+      startIndex += page * count;
+    }
+    sliced = posts.slice(startIndex, startIndex + count);
+  }
+
+  return sliced.length != 0 ? sliced : posts;
+}
+
 export function getPost(folderPath, slug) {
   let filePath = path.join(
     process.cwd(),
@@ -64,4 +51,35 @@ export function getPost(folderPath, slug) {
     `${slug}.mdx`
   );
   return parsePost(filePath);
+}
+
+function parsePost(path) {
+  let { data, content } = matter(fs.readFileSync(path, "utf8"));
+  let grayMatter = data;
+  let sl = path.slice(path.indexOf("\\posts")).replace("\\posts\\", "");
+  let folderPath = sl.substring(0, sl.indexOf("\\"));
+  let slug = sl.slice(sl.indexOf("\\") + 1).replace(".mdx", "");
+  let minutesToRead = Math.ceil(readingTime(content).minutes);
+  return { ...grayMatter, folderPath, slug, minutesToRead, content };
+}
+
+function getAllPosts() {
+  let paths = sync(`/**/*.mdx`, {
+    root: postPath,
+  });
+  let posts = paths.map((path) => parsePost(path));
+  posts.sort(function (a, b) {
+    return b.date - a.date;
+  });
+  return posts;
+}
+
+function getAllCategories() {
+  let categories = [];
+  totalPosts.forEach((post) => {
+    if (categories.some((item) => item[1] === post.folderPath) == false) {
+      categories.push([post.category, post.folderPath]);
+    }
+  });
+  return categories;
 }

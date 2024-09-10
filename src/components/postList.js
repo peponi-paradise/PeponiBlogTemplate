@@ -1,13 +1,10 @@
 import Link from "next/link";
-import { applyPostFilter } from "@/lib/postsParser";
 import { Chips } from "./chip";
 
-export default function PostList(props) {
-  let currentPosts = applyPostFilter(props.folderPath, props.title);
-
+export default function PostList(posts) {
   return (
     <ul>
-      {currentPosts.map((post) => (
+      {posts.map((post) => (
         <li key={post.title}>
           <article className="border border-slate-700">
             <Link href={`/posts/${post.folderPath}/${post.slug}`}>
