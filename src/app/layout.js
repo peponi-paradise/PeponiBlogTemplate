@@ -1,14 +1,15 @@
-import Favicon from "@/public/icons/favicon.ico";
+import localFont from "next/font/local";
 import "./globals.css";
+import { MetaInformation } from "./constants";
 import Header from "@/layouts/globalHeader";
 import Footer from "@/layouts/globalFooter";
 import { InitializeDatas } from "@/lib/postsParser";
 
 export const metadata = {
-  charset: "UTF-8",
-  title: "Peponi",
-  description: "Peponi's blog",
-  icons: [{ rel: "icon", url: Favicon.src }],
+  charset: MetaInformation.charset,
+  title: MetaInformation.title,
+  description: MetaInformation.description,
+  icons: MetaInformation.icons,
 };
 
 export const viewport = {
@@ -16,11 +17,15 @@ export const viewport = {
   width: "device-width",
 };
 
+export const pretendard = localFont({
+  src: "../public/fonts/Pretendard.ttf",
+});
+
 export default function RootLayout({ children }) {
   InitializeDatas();
 
   return (
-    <html lang="ko">
+    <html lang="ko" className={pretendard.className}>
       <body className="bg-slate-900 text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">
         <Header />
         {children}

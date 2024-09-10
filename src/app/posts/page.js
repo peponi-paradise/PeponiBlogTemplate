@@ -3,6 +3,12 @@ import PostList from "@/components/postList";
 import { totalCategories } from "@/lib/postsParser";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
 import Link from "next/link";
+import { MetaInformation, PostInformation } from "../constants";
+
+export const metadata = {
+  title: `${MetaInformation.title} - Posts`,
+  description: "Blog posts",
+};
 
 export default function Posts(props) {
   let currentPosts = applyPostFilter(
@@ -11,22 +17,26 @@ export default function Posts(props) {
   );
   let posts = pagenation(
     currentPosts,
-    props.searchParams.count,
+    PostInformation.viewCount,
     props.searchParams.page
   );
   return (
     <Main>
-      <h1>This is post page</h1>
-      <ul>
-        {totalCategories.map((category) => (
-          <li key={category[0]}>
-            <Link href={`/posts?folderPath=${category[1]}`}>
-              {category[0]},{category[1]}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      {PostList(posts)}
+      <section className="flex flex-row">
+        <div className="hidden max-w-64 pr-4 border-r border-slate-700 sm:inline-block">
+          <h3 className="mb-2">Categories</h3>
+          <ul>
+            {totalCategories.map((category) => (
+              <li key={category[0]} className="pl-4 border-l border-slate-700">
+                <Link href={`/posts?folderPath=${category[1]}`}>
+                  {category[0]}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <PostList posts={posts} className="grow pl-4 gap-4"></PostList>
+      </section>
     </Main>
   );
 }

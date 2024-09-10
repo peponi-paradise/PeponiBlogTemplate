@@ -12,13 +12,13 @@ function handleKeyPress(event) {
 }
 
 function search() {
-  let title = document.getElementById("title").value;
+  let title = document.getElementById("searchBar").value;
   location.href = `/posts?title=${title}`;
 }
 
 export default function Header() {
   return (
-    <header className="flex flex-row border-b border-slate-700 justify-between sticky top-0 backdrop-blur-md">
+    <header className="flex flex-row text-slate-200 border-b border-slate-700 justify-between sticky top-0 backdrop-blur-md">
       <Link href="/" className="flex flex-row py-4 px-8 gap-4">
         <Image
           src={favicon}
@@ -33,7 +33,7 @@ export default function Header() {
         <div className="hidden sm:inline-block">
           <input
             type="text"
-            id="title"
+            id="searchBar"
             placeholder="Search posts..."
             onKeyDown={handleKeyPress}
             className="bg-transparent text-sm max-w-40 px-2 py-0.5 border border-slate-700 rounded-l-md focus:outline-none"
