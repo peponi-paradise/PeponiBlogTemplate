@@ -4,7 +4,6 @@ import { MetaInformation } from "./constants";
 import Header from "@/layouts/globalHeader";
 import Footer from "@/layouts/globalFooter";
 import { InitializeDatas } from "@/lib/postsParser";
-import { NextUIProvider } from "@nextui-org/react";
 
 export const metadata = {
   charset: MetaInformation.charset,
@@ -26,15 +25,11 @@ export default function RootLayout({ children }) {
   InitializeDatas();
 
   return (
-    <html lang="ko" className="dark bg-background">
-      <body className={pretendard.className}>
-        <NextUIProvider>
-          <section className="text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">
-            <Header />
-            {children}
-            <Footer />
-          </section>
-        </NextUIProvider>
+    <html lang="ko" className={pretendard.className}>
+      <body className="bg-slate-900 text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
