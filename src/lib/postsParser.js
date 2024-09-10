@@ -5,13 +5,8 @@ import matter from "gray-matter";
 import readingTime from "reading-time";
 
 const postPath = path.join(process.cwd(), "src\\posts");
-export let totalPosts = [];
-export let totalCategories = [];
-
-export function InitializeDatas() {
-  totalPosts = getAllPosts();
-  totalCategories = getAllCategories();
-}
+export let totalPosts = getAllPosts();
+export let totalCategories = getAllCategories();
 
 export function applyPostFilter(folderPath, title) {
   let currentPosts = [];

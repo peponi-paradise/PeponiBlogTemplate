@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Chip, Chips } from "./chip";
+import { Chips } from "./chip";
 import timer from "@/public/images/timer.svg";
 
 export default function PostList(props) {
@@ -23,12 +23,8 @@ export default function PostList(props) {
               </div>
               <h2>{post.title}</h2>
               <div className="flex flex-row mb-2">
-                <Chip
-                  className="bg-orange-600 px-1 border border-orange-400 rounded-lg mr-2"
-                  content={post.category}
-                ></Chip>
                 <Chips
-                  className="bg-indigo-950 px-1 border border-indigo-500 rounded-lg mr-1"
+                  className="bg-purple-400/0.5 px-1 border border-indigo-500 rounded-lg mr-1"
                   contents={post.tags}
                 ></Chips>
               </div>
