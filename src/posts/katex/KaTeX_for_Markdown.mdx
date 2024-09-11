@@ -99,9 +99,9 @@ tags: ["Math", "TeX"]
 | --- | --- | --- | --- |
 | $$\not a$$ `\not a` | $$\bcancel{a}$$ `\bcancel{a}` | $$\xcancel{a}$$ `\xcancel{a}` | $$\sout{a}$$ `\sout{a}` |
 | $$\overbrace{abc}^{\text{note}}$$ `\overbrace{abc}^{\text{note}}` | $$\underbrace{abc} \_ {\text{note}}$$ `\underbrace{abc}_{\text{note}}` | $$\boxed{a=\frac b c}$$ `\boxed{a=\frac b c}` | $$\phase{60^\circ}$$ `\phase{60^\circ}` |
-| $$\tag{a.b} x=y$$ | `\tag{a.b} x=y` | $$\tag\*{a.b} x=y$$ | `\tag*{a.b} x=y` |
+| $$\tag{a.b} x=y$$ | `\tag{a.b} x=y` | $$\tag*{a.b} x=y$$ | `\tag*{a.b} x=y` |
 
-  
+
 
 ### Matrix
 
@@ -256,7 +256,9 @@ c&\cdots&d
 
 - - -
 
-$$\begin{equation} F(x)=a+b \end{equation}$$
+$$
+\begin{equation} F(x)=a+b \end{equation}
+$$
 
 ```
 \begin{equation}

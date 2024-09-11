@@ -7,15 +7,15 @@ import "@/app/posts/[...slug]/_github-markdown-dark.css";
 import "remark-github-blockquote-alert/alert.css";
 import remarkBreaks from "remark-breaks";
 import rehypePrettyCode from "rehype-pretty-code";
-import rehypeCodeTitles from "rehype-code-titles";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
 import "katex/dist/katex.css";
 
 const options = {
   mdxOptions: {
-    remarkPlugins: [remarkMath, remarkBreaks, remarkAlert, remarkGfm],
-    rehypePlugins: [rehypeKatex, rehypeCodeTitles, rehypePrettyCode],
+    remarkPlugins: [remarkMath, remarkSimplePlantumlPlugin, remarkBreaks, remarkAlert, remarkGfm],
+    rehypePlugins: [rehypeKatex, rehypePrettyCode],
   },
 };
 

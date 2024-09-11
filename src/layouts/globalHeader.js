@@ -18,7 +18,7 @@ function search() {
 
 export default function Header() {
   return (
-    <header className="flex flex-row text-slate-200/90 border-b border-slate-700 justify-between sticky top-0 backdrop-blur-md">
+    <header className="flex flex-row text-slate-200/90 border-b border-slate-700 justify-between sticky top-0 backdrop-blur-md z-50">
       <Link href="/" className="flex flex-row py-4 px-8 gap-4">
         <Image
           src={favicon}

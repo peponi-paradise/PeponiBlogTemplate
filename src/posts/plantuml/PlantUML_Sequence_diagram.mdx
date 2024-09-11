@@ -8,7 +8,7 @@ tags: ["UML"]
 
 ## 1. Introduction
 
-<br>
+
 
 ```plantuml
 @startuml
@@ -41,7 +41,7 @@ A<-B: Deactivate done
 @enduml
 ```
 
-<br>
+
 
 1. 위 그림과 같이, 정해진 흐름을 따라 그려진 다이어그램을 시퀀스 다이어그램이라 한다.
 2. 시퀀스 다이어그램의 구성요소는 아래와 같다.
@@ -53,15 +53,14 @@ A<-B: Deactivate done
     - 각 객체의 작업 순서 및 라이프타임
     $\vdots$
 
-<br><br>
 
 ## 2. 기본 사용법
 
-<br>
+
 
 1. `객체`를 선언한 후, `->`, `-->` 등의 시퀀스를 이용해 다이어그램을 그린다.
 
-<br>
+
 
 <table>
 <tr>
@@ -100,19 +99,19 @@ A<--B: Hello!
 </tr>
 </table>
 
-<br>
+
 
 ## 3. 세부 사용법
 
-<br>
+
 
 ### 3.1. 객체 사용법
 
-<br>
+
 
 #### 3.1.1. 객체 선언
 
-<br>
+
 
 <table>
 
@@ -159,19 +158,19 @@ queue Q
 
 </table>
 
-<br>
+
 
 #### 3.1.2. 객체 활용
 
-<br>
+
 
 ##### 3.1.2.1. 객체 이름에 특수문자 삽입
 
-<br>
+
 
 1. `쌍따옴표 ""` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -204,15 +203,15 @@ participant "P()" as p
 
 </table>
 
-<br>
+
 
 ##### 3.1.2.2. 객체 별칭 지정
 
-<br>
+
 
 1. `as` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -251,15 +250,15 @@ p -> a : hello
 
 </table>
 
-<br>
+
 
 ##### 3.1.2.3. 객체 순서 지정
 
-<br>
+
 
 1. `order n` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -298,11 +297,11 @@ boundary B order 2
 
 ##### 3.1.2.4. 객체 색상
 
-<br>
+
 
 1. `#colorname` or `#colorcode` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -339,15 +338,15 @@ boundary B #13ab32
 
 </table>
 
-<br>
+
 
 ##### 3.1.2.5. 객체 세부 선언
 
-<br>
+
 
 1. `대괄호 []` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -388,15 +387,15 @@ actor A [
 
 </table>
 
-<br>
+
 
 ### 3.2. 시퀀스 사용법
 
-<br>
+
 
 #### 3.2.1. 시퀀스 선언
 
-<br>
+
 
 <table>
 
@@ -462,19 +461,19 @@ a-[hidden]>b:Make it very long long long long
 
 </table>
 
-<br>
+
 
 #### 3.2.2. 시퀀스 활용 
 
-<br>
+
 
 ##### 3.2.2.1. 시퀀스 색상
 
-<br>
+
 
 1. `#colorname` or `#colorcode` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -509,15 +508,15 @@ a -[#1204fb]> b : Change by code
 
 </table>
 
-<br>
+
 
 ##### 3.2.2.2. 여러 줄 메시징
 
-<br>
+
 
 1. `\n` 사용하여 여러 줄 메시지 삽입
 
-<br>
+
 
 <table>
 
@@ -550,16 +549,16 @@ a -> b : This is\nvery long and\nmultiline\nmessage
 
 </table>
 
-<br>
+
 
 ##### 3.2.2.3. 메시지 번호
 
-<br>
+
 
 1. `autonumber` 키워드로 번호 삽입
 2. 필드 구분을 위해 `.`, `,`, `;`, `:` 네 가지 Delimiter가 지원된다.
 
-<br>
+
 
 <table>
 
@@ -642,15 +641,15 @@ a -> b : Number of this time is %autonumber%
 
 </table>
 
-<br>
+
 
 ### 3.3. 생명선 사용법
 
-<br>
+
 
 #### 3.3.1. 생명선 선언
 
-<br>
+
 
 1. `activate` 또는 `++`로 활성화
 2. `deactivate` 또는 `--`, `return`으로 종료
@@ -658,7 +657,7 @@ a -> b : Number of this time is %autonumber%
 3. `destroy` 또는 `!!`는 `X` 표시와 함께 완전히 끝났음을 표현
 4. 각 키워드는 바로 이전의 시퀀스에 적용
 
-<br>
+
 
 <table>
 
@@ -723,17 +722,17 @@ a -> b !! : Destroy
 
 </table>
 
-<br>
+
 
 #### 3.3.2. 생명선 활용
 
 ##### 3.3.2.1. 생명선 색상
 
-<br>
+
 
 1. `#colorname` or `#colorcode` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -772,15 +771,15 @@ return end
 
 </table>
 
-<br>
+
 
 ### 3.4. Note 사용법
 
-<br>
+
 
 #### 3.4.1. Note 선언
 
-<br>
+
 
 1. `note` 키워드를 사용하여 선언
 2. 여러 줄의 노트를 추가하는 경우에는 반드시 `end note` 사용
@@ -858,20 +857,20 @@ note across : Note over all objects
 
 </table>
 
-<br>
+
 
 #### 3.4.2. Note 활용
 
-<br>
+
 
 ##### 3.4.2.1. Note 모양
 
-<br>
+
 
 1. `hnote` : 육각형
 2. `rnote` : 사각형
 
-<br>
+
 
 <table>
 
@@ -906,15 +905,15 @@ rnote over a : rnote
 
 </table>
 
-<br>
+
 
 ##### 3.4.2.2. Note 색상
 
-<br>
+
 
 1. `#colorname` or `#colorcode` 사용하여 지정
 
-<br>
+
 
 <table>
 
@@ -949,17 +948,17 @@ note over a #faacfb : Color code
 
 </table>
 
-<br>
+
 
 ### 3.5. Layout
 
-<br>
+
 
 #### 3.5.1. Mainframe
 
 1. `mainframe`을 사용하여 다이어그램 frame 추가
 
-<br>
+
 
 <table>
 
@@ -996,7 +995,7 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.2. Page
 
@@ -1005,7 +1004,7 @@ a -> b : Hello world!
 3. <span style="color:crimson">VSCode에서 Markdown으로 PlantUML 작성 후 HTML 뽑아낼 시 다음 페이지들 정상 출력이 불가
     따로 이미지로 붙여주지 않는 한 uml 분리 권장</span>
 
-<br>
+
 
 <table>
 
@@ -1054,17 +1053,17 @@ a -> b : Last page!
 
 </table>
 
-<br>
+
 
 #### 3.5.3. Title
 
-<br>
+
 
 1. `title` 키워드를 이용하여 다이어그램 타이틀 생성
 2. `\n` 이용하여 멀티라인 타이틀 생성 가능
 3. `title`, `end title` 이용하여 멀티라인 타이틀 생성 가능
 
-<br>
+
 
 <table>
 
@@ -1163,18 +1162,18 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.4. Header, footer
 
-<br>
+
 
 1. `header`, `footer`를 이용하여 머리말, 꼬리말 표시
 2. `%page%`, `%lastpage%`를 이용하여 현재 페이지 및 전체 페이지 수 표시 가능
 3. <span style="color:crimson">VSCode에서 Markdown으로 PlantUML 작성 후 HTML 뽑아낼 시 다음 페이지들 정상 출력이 불가
     따로 이미지로 붙여주지 않는 한 uml 분리 권장</span>
 
-<br>
+
 
 <table>
 
@@ -1262,17 +1261,17 @@ a -> b : Last page!
 
 </table>
 
-<br>
+
 
 #### 3.5.5. 객체 생성
 
-<br>
+
 
 1. 시퀀스로 인해 객체가 생성되는 것을 표시하기 위해 사용
 2. 시퀀스 바로 전에 `create` 를 사용하여 생성
 3. 시퀀스에 `**` 를 이용하여 생성
 
-<br>
+
 
 <table>
 
@@ -1313,16 +1312,16 @@ a -> c ** : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.6. 객체 그룹
 
-<br>
+
 
 1. `box` 및 `end box` 를 이용하여 객체 그룹 형성
 2. 그룹 타이틀 및 색상 지정 가능
 
-<br>
+
 
 <table>
 
@@ -1375,16 +1374,16 @@ a -> c : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.7. 객체 Stereotype 추가
 
-<br>
+
 
 1. `<<` 및 `>>` 를 이용하여 객체에 Stereotype 추가
 2. `(Symbol, #color)` 를 이용하여 Spot 추가
 
-<br>
+
 
 <table>
 
@@ -1425,15 +1424,15 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.8. 객체 Footer 제거
 
-<br>
+
 
 1. `hide footbox` 를 이용하여 객체 footer 제거
 
-<br>
+
 
 <table>
 
@@ -1470,15 +1469,15 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.9. 미사용 객체 제거
 
-<br>
+
 
 1. `hide unlinked` 를 이용하여 미사용 객체 제거
 
-<br>
+
 
 <table>
 
@@ -1554,17 +1553,17 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.10. 공백, Delay, 구분선
 
-<br>
+
 
 1. `|||` 및 `||size||` 를 이용하여 공백 추가
 2. `...` 및 `... 메시지 ...` 를 이용하여 Delay 추가
 3. `====` 및 `== 메시지 ==` 를 이용하여 구분선 추가
 
-<br>
+
 
 <table>
 
@@ -1615,11 +1614,11 @@ a -> b : Hello world!
 
 </table>
 
-<br>
+
 
 #### 3.5.11. 시퀀스 그룹
 
-<br>
+
 
 1. 다음 키워드를 사용하여 시퀀스 그룹 생성
     - `alt`, `else` : `if` / `else` 와 같음
@@ -1632,7 +1631,7 @@ a -> b : Hello world!
 2. `end` 를 사용하여 그룹을 닫음
 3. `#colorname` or `#colorcode` 사용하여 색상 지정
 
-<br>
+
 
 <table>
 
@@ -1715,21 +1714,21 @@ end
 
 </table>
 
-<br>
+
 
 ## 4. 기타
 
-<br>
+
 
 ### 4.1. 테마 적용
 
-<br>
+
 
 1. `!theme` 키워드를 통해 다이어그램에 테마 적용 가능
 2. `help themes` 로 적용 가능 테마 리스트 확인 가능
 3. 테마 별 상세 정보는 [PlantUML themes Gallery](https://the-lum.github.io/puml-themes-gallery/) 에서 확인
 
-<br>
+
 
 <table>
 
@@ -1785,18 +1784,18 @@ help themes
 
 </table>
 
-<br>
+
 
 ### 4.2. Skinparam
 
-<br>
+
 
 1. 다이어그램 내 요소에 대한 스타일 지정
 2. `skinparameters`로 사용 가능한 파라미터 목록 확인 가능
 3. `skinparam paramname value`로 파라미터 set
 4. 자세한 정보는 [Skinparam command](https://plantuml.com/ko/skinparam)을 참조
 
-<br>
+
 
 <table>
 
@@ -1903,20 +1902,20 @@ a -> c : Hello world!
 
 </table>
 
-<br>
+
 
 ### 4.3. teoz rendering engine
 
-<br>
+
 
 1. `PlantUML`의 몇몇 기능은 `teoz rendering engine`을 통해 확장이 가능하다.
 2. `teoz rendering engine`을 사용하기 위해서는 `!pragma teoz true` 를 입력해주면 된다.
 
-<br>
+
 
 #### 4.3.1. Nested object group
 
-<br>
+
 
 <table>
 
@@ -1975,15 +1974,15 @@ a -> c : Hello world!
 
 </table>
 
-<br>
+
 
 #### 4.3.2. 동시성 확장
 
-<br>
+
 
 1. `&` 기호를 사용하여 동시에 일어나는 요소를 표현할 수 있다.
 
-<br>
+
 
 <table>
 
@@ -2028,15 +2027,15 @@ note left of a : I'm a
 
 </table>
 
-<br>
+
 
 #### 4.3.3. Anchor
 
-<br>
+
 
 1. `{start}`, `{end}` 지정을 통해 Time gap 표시를 할 수 있다.
 
-<br>
+
 
 <table>
 
