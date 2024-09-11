@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import { MetaInformation } from "./constants";
 import Header from "@/layouts/globalHeader";
@@ -16,13 +15,9 @@ export const viewport = {
   width: "device-width",
 };
 
-export const pretendard = localFont({
-  src: "../public/fonts/Pretendard.ttf",
-});
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className={pretendard.className}>
+    <html lang="ko">
       <body className="bg-slate-900 text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">
         <Header />
         {children}
