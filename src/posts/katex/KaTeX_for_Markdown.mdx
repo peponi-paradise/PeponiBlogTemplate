@@ -1,0 +1,377 @@
+---
+title: KaTeX 문법 정리 for Markdown
+category: KaTeX
+description: KaTeX는 경량화 TeX 문법으로, LaTeX와 유사하다.
+date: 2024-07-09T00:00:00+09:00
+tags: ["Math", "TeX"]
+---
+
+<h1 id="KaTeX">KaTeX 문법 정리 for Markdown</h1>
+
+- Markdown 문서를 VS Code로 작성하는 경우 $\LaTeX$의 일부는 사용이 어렵다.<br>
+  대신, $\KaTeX$를 이용하면 어느 정도 표현이 가능하다.
+- $\KaTeX$ 문서는 $\LaTeX$ 문서에서 대부분 출력이 가능할 것으로 보인다.
+- $\LaTeX$ 문서의 일부는 $\KaTeX$ 문서에서 일부 출력이 불가할 것으로 보인다.
+- 웹에 업로드 하는 경우 Markdown 구현에 따라 조금씩 달라 작성 후 확인이 필요하다.<br>
+  [KaTeX.org](https://katex.org/)의 document와 GitHub 구현에 차이점이 존재한다.
+
+<br>
+
+- _깃허브 관련_ : 깃허브는 MathJax를 사용한다. 그리지 못하는 $\KaTeX$ 문법의 경우 빨간 글씨로 표시된다.
+
+<br>
+
+<h2 id="Basic">기초 사용법</h2>
+
+|항목|내용|렌더링|
+|---|---|---|
+|Inline block|`$F(x)=a+b$`|$$F(x)=a+b$$|
+|Code Block|`$$F(x)=a+b$$`|$$F(x)=a+b$$|
+
+<br><br>
+
+<h2 id="BaseExpression">기초 표현법</h2>
+
+<br>
+
+|Greeks||||
+|:---:|:---:|:---:|:---:|
+|$$\alpha$$ `\alpha`|$$\Alpha$$ `\Alpha`|$$\beta$$ `\beta`|$$\Beta$$ `\Beta`|
+|$$\gamma$$ `\gamma`|$$\Gamma$$ `\Gamma`|$$\delta$$ `\delta`|$$\Delta$$ `\Delta`|
+|$$\epsilon$$ `\epsilon`|$$\Epsilon$$ `\Epsilon`|$$\zeta$$ `\zeta`|$$\Zeta$$ `\Zeta`|
+|$$\eta$$ `\eta`|$$\Eta$$ `\Eta`|$$\theta$$ `\theta`|$$\Theta$$ `\Theta`|
+|$$\kappa$$ `\kappa`|$$\Kappa$$ `\Kappa`|$$\lambda$$ `\lambda`|$$\Lambda$$ `\Lambda`|
+|$$\nu$$ `\nu`|$$\Nu$$ `\Nu`|$$\xi$$ `\xi`|$$\Xi$$ `\Xi`|
+|$$\pi$$ `\pi`|$$\Pi$$ `\Pi`|$$\rho$$ `\rho`|$$\Rho$$ `\Rho`|
+|$$\sigma$$ `\sigma`|$$\Sigma$$ `\Sigma`|$$\tau$$ `\tau`|$$\Tau$$ `\Tau`|
+|$$\phi$$ `\phi`|$$\Phi$$ `\Phi`|$$\psi$$ `\psi`|$$\Psi$$ `\Psi`|
+|$$\omega$$ `\omega`|$$\Omega$$ `\Omega`|
+
+<br>
+
+|Accents||||
+|:---:|:---:|:---:|:---:|
+|$$a'$$ `a'`|$$a''$$ `a''`|$$\check{a}$$ `\check{a}`|$$\dot{a}$$ `\dot{a}`|
+|$$\ddot{a}$$ `\ddot{a}`|$$\hat{a}$$ `\hat{a}`|$$\underbar{a}$$ `\underbar{a}`|$$\tilde{a}$$ `\tilde{a}`|
+|$$\utilde{a}$$ `\utilde{a}`|$$\vec{a}$$ `\vec{a}`|$$\overleftarrow{a}$$ `\overleftarrow{a}`|$$\overrightarrow{a}$$ `\overrightarrow{a}`|
+|$$\underleftarrow{a}$$ `\underleftarrow{a}`|$$\underrightarrow{a}$$ `\underrightarrow{a}`|$$\overline{ab}$$ `\overline{ab}`|$$\underline{ab}$$ `\underline{ab}`|
+|$$\overlinesegment{ab}$$ `\overlinesegment{ab}`|$$\underlinesegment{ab}$$ `\underlinesegment{ab}`|$$\overgroup{ab}$$ `\overgroup{ab}`|$$\undergroup{ab}$$ `\undergroup{ab}`|
+|$$\overbrace{ab}$$ `\overbrace{ab}`|$$\underbrace{ab}$$ `\underbrace{ab}`|
+
+<br>
+
+|Delimiters||||||||
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|$$()$$|`()`<br>`\lparen`<br>`\rparen`|$$\lbrace\rbrace$$|`\{\}`<br>`\lbrace`<br>`\rbrace`|$$[]$$|`[]`<br>`\lbrack`<br>`\rbrack`|$$⟮⟯$$|`⟮⟯`<br>`\lgroup`<br>`\rgroup`<br>* 키보드 기본 키에 없음|
+|$$⟦⟧$$|`⟦⟧`<br>`\llbracket`<br>`\rrbracket`<br>* 키보드 기본 키에 없음|$$\lBrace\rBrace$$|`\lBrace`<br>`\rBrace`|$$\lt\gt$$|`\lt`<br>`\gt`|$$⟨⟩$$|`⟨⟩`<br>`\lang`<br>`\rang`<br>* 키보드 기본 키에 없음|
+|$$\vert$$|`\|`<br>`\vert`<br>`\lvert`<br>`\rvert`<br>* 마크다운 기호와 겹침 주의|$$\Vert$$|`\|\|`<br>`\Vert`<br>`\lVert`<br>`\rVert`<br>* 마크다운 기호와 겹침 주의|
+
+<br>
+
+|Sizing|||||
+|:---:|:---:|:---:|:---:|:---:|
+|$$($$ `(`|$$\big($$ `\big(`|$$\Big($$ `\Big(`|$$\bigg($$ `\bigg(`|$$\Bigg($$ `\Bigg(`|
+
+<br>
+
+|Logic||||
+|:---:|:---:|:---:|:---:|
+|$$=$$ `=`|$$<$$ `<`|$$>$$ `>`|$$:$$ `:`|
+|$$\approx$$ `\approx`|$$\approxcolon$$ `\approxcolon`|$$\colonapprox$$ `\colonapprox`|$$\approxeq$$ `\approxeq`|
+|$$\cong$$ `\cong`|$$\doteq$$ `\doteq`|$$\Doteq$$ `\Doteq`|$$\sim$$ `\sim`|
+|$$\simeq$$ `\simeq`|$$\eqsim$$ `\eqsim`|$$\equiv$$ `\equiv`|$$\fallingdotseq$$ `\fallingdotseq`|
+|$$\geqq$$ `\geqq`|$$\gtrapprox$$ `\gtrapprox`|$$\leqq$$ `\leqq`|$$\lessapprox$$ `\lessapprox`|
+|$$\forall$$ `\forall`|$$\complement$$ `\complement`|$$\emptyset$$ `\emptyset`|$$\varnothing$$ `\varnothing`|
+|$$\exists$$ `\exists`|$$\nexists$$ `\nexists`|$$\subset$$ `\subset`|$$\supset$$ `\supset`|
+|$$\in$$ `\in`|$$\notin$$ `\notin`|$$\ni$$ `\ni`|$$\not \ni$$ `\not \ni`|
+|$$\to$$ `\to`|$$\gets$$ `\gets`|$$\implies$$ `\implies`|$$\impliedby$$ `\impliedby`|
+|$$\leftrightarrow$$ `\leftrightarrow`|$$\iff$$ `\iff`|$$\therefore$$ `\therefore`|$$\because$$ `\because`|
+|$$\set{ x \vert x > 10}$$|`\set{ x \vert x > 10}`|$$\Set{ x \vert x > 10}$$|`\Set{ x \vert x > 10}`|
+
+<br>
+
+|Spacing||||
+|:---:|:---:|:---:|:---:|
+|$$a\,b$$|`\,`<br>3/18 em|$$a\enspace b$$|`\enspace`<br>1/2 em|
+|$$a\quad b$$|`\quad`<br>1 em|$$a\qquad b$$|`\qquad`<br>2 em|
+
+<br>
+
+|Vertical||||
+|:---:|:---:|:---:|:---:|
+|$$a_b$$ `a_b`|$$a^b$$ `a^b`|$$_a^b$$ `_a^b`|
+|$$\stackrel{a}{b}$$ `\stackrel{a}{b}`|$$\overset{a}{b}$$ `\overset{a}{b}`|$$\underset{a}{b}$$ `\underset{a}{b}`|
+
+<br>
+
+|Annotation||||
+|:---:|:---:|:---:|:---:|
+|$$\not a$$ `\not a`|$$\bcancel{a}$$ `\bcancel{a}`|$$\xcancel{a}$$ `\xcancel{a}`|$$\sout{a}$$ `\sout{a}`|
+|$$\overbrace{abc}^{\text{note}}$$ `\overbrace{abc}^{\text{note}}`| $$\underbrace{abc} _ {\text{note}}$$ `\underbrace{abc}_{\text{note}}`|$$\boxed{a=\frac b c}$$ `\boxed{a=\frac b c}`|$$\phase{60^\circ}$$ `\phase{60^\circ}`|
+|$$\tag{a.b} x=y$$|`\tag{a.b} x=y`|$$\tag*{a.b} x=y$$|`\tag*{a.b} x=y`|
+
+<br>
+
+<h3 id="matrix">Matrix</h3>
+
+-----------------------------
+
+$$\begin{matrix} a & b \\ c & d \end{matrix}$$
+```
+\begin{matrix}
+a&b\\
+c&d
+\end{matrix}
+```
+<br>
+
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+```
+\begin{pmatrix}
+a&b\\
+c&d
+\end{pmatrix}
+```
+<br>
+
+$$\begin{Bmatrix} a & b \\ c & d \end{Bmatrix}$$
+```
+\begin{Bmatrix}
+a&b\\
+c&d
+\end{Bmatrix}
+```
+<br>
+
+$$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$
+```
+\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix}
+```
+<br>
+
+$$\begin{vmatrix} a & b \\ c & d \end{vmatrix}$$
+```
+\begin{vmatrix}
+a&b\\
+c&d
+\end{vmatrix}
+```
+<br>
+
+$$\begin{array}{c:c:c} a & b & c \\ \hline d & e & f \\ \hdashline g & h & i \end{array}$$
+```
+\begin{array}{c:c:c}
+a&b&c\\
+\hline
+d&e&f\\
+\hdashline
+g&h&i
+\end{array}
+```
+<br>
+
+$$\begin{bmatrix} a & \cdots & b \\ \vdots & \ddots & \vdots \\ c & \cdots & d \end{bmatrix}$$
+```
+\begin{bmatrix}
+a&\cdots&b\\
+\vdots&\ddots&\vdots\\
+c&\cdots&d
+\end{bmatrix}
+```
+-----------------------------
+<br><br>
+
+<h2 id="Operators">Math operators, symbols</h2>
+
+<br>
+
+|Operators||||
+|:---:|:---:|:---:|:---:|
+|$$+$$ `+`|$$-$$ `-`|$$*$$ `*`|$$/$$ `/`|
+|$$\pm$$ `\pm`|$$\times$$ `\times`|$$\div$$ `\div`|$$\And$$ `\And`|
+|$$\cdot$$ `\cdot`|$$\circ$$ `\circ`|$$\cap$$ `\cap`|$$\cup$$ `\cup`|
+|$$\oplus$$ `\oplus`|$$\ominus$$ `\ominus`|$$\odot$$ `\odot`|$$\otimes$$ `\otimes`|
+|$$\bmod$$ `\bmod`|$$x\mod a$$ `x\mod a`|$$x\pmod a$$ `x\pmod a`|$$x\pod a$$ `x\pod a`|
+|$$\sin$$ `\sin`|$$\sinh$$ `\sinh`|$$\arcsin$$ `\arcsin`|
+|$$\cos$$ `\cos`|$$\cosh$$ `\cosh`|$$\arccos$$ `\arccos`|
+|$$\tan$$ `\tan`|$$\tanh$$ `\tanh`|$$\arctan$$ `\arctan`|
+|$$\sec$$ `\sec`|$$\csc$$ `\csc`|$$\cot$$ `\cot`|
+|$$\det$$ `\det`|$$\inf$$ `\inf`|$$\min$$ `\min`|$$\max$$ `\max`|
+|$$\deg$$ `\deg`|$$\sec$$ `\sec`|
+|$$\log$$ `\log`|$$\ln$$ `\ln`|$$\exp$$ `\exp`|$$\sup$$ `\sup`|
+|$$\lim$$ `\lim`|$$\varliminf$$ `\varliminf`|$$\varinjlim$$ `\varinjlim`|$$\varprojlim$$ `\varprojlim`|
+|$$\sqrt[a]{b}$$ `\sqrt[a]{b}`|$$\operatorname{f}$$ `\operatorname{f}`|
+
+<br>
+
+|Big Operators||||
+|:---:|:---:|:---:|:---:|
+|$$\sum$$ `\sum`|$$\prod$$ `\prod`|$$\coprod$$ `\coprod`|
+|$$\int$$ `\int`|$$\iint$$ `\iint`|$$\iiint$$ `\iiint`|
+|$$\oint$$ `\oint`|$$\oiint$$ `\oiint`|$$\oiiint$$ `\oiiint`|
+|$$\bigotimes$$ `\bigotimes`|$$\bigoplus$$ `\bigoplus`|$$\bigodot$$ `\bigodot`|
+
+<br>
+
+|Fractions||||
+|:---:|:---:|:---:|:---:|
+|$$a/b$$ `a/b`|$$a\over b$$ `a\over b`|$$\frac{a}{b}$$ `\frac{a}{b}`|$$\dfrac{a}{b}$$ `\dfrac{a}{b}`|
+|$$\genfrac(]{1pt}{}{a}{b+c}$$ `\genfrac(]{1pt}{}{a}{b+c}`|$${a}\above{1pt}{b+c}$$ `{a}\above{1pt}{b+c}`|$$\cfrac{a}{b+\cfrac{c}{d}}$$ `\cfrac{a}{b+\cfrac{c}{d}}`|
+
+<br>
+
+|Binomials||||
+|:---:|:---:|:---:|:---:|
+|$$\binom{a}{b}$$ `\binom{a}{b}`|$$\dbinom{a}{b}$$ `\dbinom{a}{b}`|$${a}\brace{b}$$ `{a}\brace{b}`|$${a}\brack{b}$$ `{a}\brack{b}`|
+
+<br>
+
+|Symbols||||
+|:---:|:---:|:---:|:---:|
+|$$\%$$ `\%`|$$\#$$ `\#`|$$\&$$ `\&`|$$\colon$$ `\colon`|
+|$$\infty$$ `\infty`|$$\infin$$ `\infin`|
+|$$\degree$$ `\degree`|$$\angle$$ `\angle`|$$\measuredangle$$ `\measuredangle`|$$\sphericalangle$$ `\sphericalangle`|
+|$$\prime$$ `\prime`|$$\backprime$$ `\backprime`|
+|$$\cdots$$ `\cdots`|$$\vdots$$ `\vdots`|$$\ddots$$ `\ddots`|$$\ldots$$ `\ldots`|
+|$$\Box$$ `\Box`|$$\triangle$$ `\triangle`|$$\triangledown$$ `\triangledown`|$$\diamond$$ `\diamond`|
+
+<br><br>
+
+<h2 id="Expression">수식 표현법</h2>
+
+<br>
+
+<h3 id="equation">Equation</h3>
+
+-----------------------------
+
+$$\begin{equation} F(x)=a+b \end{equation}$$
+```
+\begin{equation}
+F(x)=a+b
+\end{equation}
+```
+<br>
+
+$$\begin{equation}\begin{split} F(x)=a+b \\ =c+b \end{split}\end{equation}$$
+```
+\begin{equation}
+\begin{split}
+F(x)=a+b\\
+=c+b
+\end{split}
+\end{equation}
+```
+<br>
+
+$$\begin{align} F(x)=a+b \\ =c \end{align}$$
+```
+\begin{align}
+F(x)=a+b\\
+=c
+\end{align}
+```
+<br>
+
+$$\begin{aligned} F(x)=a+b \\ =c \end{aligned}$$
+```
+\begin{aligned}
+F(x)=a+b\\
+=c
+\end{aligned}
+```
+<br>
+
+$$\begin{gather} F(x)=a+b \\ =c \end{gather}$$
+```
+\begin{gather}
+F(x)=a+b\\
+=c
+\end{gather}
+```
+<br>
+
+$$\begin{gathered} F(x)=a+b \\ =c \end{gathered}$$
+```
+\begin{gathered}
+F(x)=a+b\\
+=c
+\end{gathered}
+```
+<br>
+
+$$\begin{align} F(x)&=a+b \\ &=c \end{align}$$
+```
+\begin{align}
+F(x)&=a+b\\
+&=c
+\end{align}
+```
+<br>
+
+$$\begin{align}    \tag{1.1}        a+b=1 \\    \tag{1.2}        c+d=2 \end{align}$$
+```
+\begin{align}
+    \tag{1.1}
+        a+b=1\\
+    \tag{1.2}
+        c+d=2
+\end{align}
+
+* 수식에 태그 붙이는 방법
+```
+-----------------------------
+<br><br>
+
+<h3 id="cases">Cases</h3>
+
+-----------------------------
+
+$$x = \begin{cases}   a & \text{if } b \\   c & \text{if } d \end{cases}$$
+```
+x = \begin{cases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{cases}
+```
+<br>
+
+$$\begin{rcases}   a & \text{if } b \\   c & \text{if } d \end{rcases}⇒…$$
+```
+\begin{rcases}
+   a &\text{if } b \\
+   c &\text{if } d
+\end{rcases}⇒…
+```
+-----------------------------
+
+<br><br>
+
+<h2 id="Font">Font</h2>
+
+<br>
+
+|Color||
+|:---:|:---:|
+|$$\textcolor{blue}{a+b=c}$$|`\textcolor{blue}{a+b=c}`|
+|$$\textcolor{#126A31}{a+b=c}$$|`\textcolor{#126A31}{a+b=c}`|
+|$$\colorbox{skyblue}{$a+b=c$}$$|`\colorbox{skyblue}{$a+b=c$}`|
+|$$\fcolorbox{crimson}{gold}{$a+b=c$}$$|`\fcolorbox{crimson}{gold}{$a+b=c$}`|
+
+<br>
+
+|Font||
+|:---:|:---:|
+|$$\mathrm{abc}$$|`\mathrm{abc}`|
+|$$\mathbf{abc}$$|`\mathbf{abc}`|
+|$$\mathit{abc}$$|`\mathit{abc}`|
+|$$\vdots$$|
+
+<br>
+
+|Size|||||
+|:---:|:---:|:---:|:---:|:---:|
+|$$\large a$$ `\large a`|$$\Large a$$ `\Large a`|$$\LARGE a$$ `\LARGE a`|$$\huge a$$ `\huge a`|$$\Huge a$$ `\Huge a`|

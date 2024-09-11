@@ -10,4 +10,5 @@ export const MetaInformation = {
 
 export const PostInformation = {
   viewCount: 5,
+  pagenationRange: 2,
 };
