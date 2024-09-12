@@ -40,7 +40,7 @@ export default function Posts(props) {
   return (
     <Main>
       <section className="flex flex-row">
-        <div className="hidden pr-4 max-w-64 border-r border-slate-700 sm:block">
+        <div className="hidden ml-auto pr-7 max-w-64 border-r border-slate-700 sm:block">
           <ul>
             <li className="mb-2">
               <Link
@@ -70,7 +70,7 @@ export default function Posts(props) {
             ))}
           </ul>
         </div>
-        <div className="grow sm:pl-4 flex flex-col justify-between">
+        <div className="mr-auto sm:pl-7 sm:basis-3/4 flex flex-col justify-between">
           <PostList posts={posts}></PostList>
           <Pagenation current={currentPage} start={start} end={end} />
         </div>

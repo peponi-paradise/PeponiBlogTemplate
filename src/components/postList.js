@@ -7,7 +7,7 @@ export default function PostList(props) {
   return (
     <ul className={props.className}>
       {props.posts.map((post) => (
-        <li key={post.title} className="mb-6 last:mb-0">
+        <li key={post.title} className="mb-7 last:mb-0">
           <article className="bg-slate-800/60 border border-slate-700 rounded-lg px-4 py-2">
             <Link href={`/posts/${post.folderPath}/${post.slug}`}>
               <div className="flex flex-row justify-between text-sm text-slate-400/50 pb-1">
