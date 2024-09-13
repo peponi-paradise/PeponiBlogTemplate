@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import favicon from "../public/icons/favicon.png";
 import searchIcon from "../public/images/searchIcon.svg";
+import searchIconHover from "../public/images/searchIconHover.svg";
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {
@@ -14,6 +16,26 @@ function handleKeyPress(event) {
 function search() {
   let title = document.getElementById("searchBar").value;
   location.href = `/posts?title=${title}`;
+}
+
+function SearchButton() {
+  const [isHover, setIsHover] = useState(false);
+
+  return (
+    <button
+      type="button"
+      onClick={search}
+      onMouseOver={() => setIsHover(true)}
+      onMouseOut={() => setIsHover(false)}
+      className="border-l border-slate-700 px-1"
+    >
+      <Image
+        src={isHover ? searchIconHover : searchIcon}
+        alt="Search"
+        className="inline-block size-4"
+      ></Image>
+    </button>
+  );
 }
 
 export default function Header() {
@@ -38,17 +60,7 @@ export default function Header() {
             onKeyDown={handleKeyPress}
             className="max-w-40 bg-transparent px-2 py-0.5 text-sm text-sky-400 focus:outline-none"
           />
-          <button
-            type="button"
-            onClick={search}
-            className="border-l border-slate-700 px-1"
-          >
-            <Image
-              src={searchIcon}
-              alt="Search"
-              className="inline-block size-4 bg-[url('../public/images/searchIcon.svg')] hover:bg-[url('../public/images/searchIconHover.svg')]"
-            ></Image>
-          </button>
+          <SearchButton />
         </div>
         <nav className="flex flex-row">
           <Link

@@ -8,24 +8,24 @@ export default function PostList(props) {
     <ul className={props.className}>
       {props.posts.map((post) => (
         <li key={post.title} className="mb-7 last:mb-0">
-          <article className="bg-slate-800/60 border border-slate-700 rounded-lg px-4 py-2">
+          <article className="rounded-lg border border-slate-700 bg-slate-800/60 px-4 py-2 hover:bg-slate-700">
             <Link href={`/posts/${post.folderPath}/${post.slug}`}>
-              <div className="flex flex-row justify-between text-sm text-slate-400/50 pb-1">
+              <div className="flex flex-row justify-between pb-1 text-sm text-slate-400/50">
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 <div className="flex flex-row items-center">
                   <Image
                     src={timer}
                     alt="Minutes to read"
-                    className="size-3.5 mr-1"
+                    className="mr-1 size-3.5"
                   ></Image>
                   <span>{post.minutesToRead}m</span>
                 </div>
               </div>
               <h2 className="pb-2 text-2xl text-slate-200/90">{post.title}</h2>
-              <p className="text-sm line-clamp-3 mb-4">{post.description}</p>
+              <p className="mb-4 line-clamp-3 text-sm">{post.description}</p>
               <div className="flex flex-row">
                 <Chips
-                  className="text-xs text-blue-400/75 bg-blue-900/40 px-1 border border-blue-800/60 rounded-full mr-1"
+                  className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
                   contents={post.tags}
                 ></Chips>
               </div>
