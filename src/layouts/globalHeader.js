@@ -18,46 +18,46 @@ function search() {
 
 export default function Header() {
   return (
-    <header className="flex flex-row text-slate-200/90 border-b border-slate-700 justify-between sticky top-0 backdrop-blur-md z-50">
-      <Link href="/" className="flex flex-row py-4 px-8 gap-4">
+    <header className="sticky top-0 z-50 flex flex-row justify-between border-b border-slate-700 text-slate-200/90 backdrop-blur-md">
+      <Link href="/" className="flex flex-row gap-4 px-8 py-4">
         <Image
           src={favicon}
           alt="Favicon"
-          className="size-6 inline-block mx-auto my-auto"
+          className="mx-auto my-auto inline-block size-6"
         ></Image>
-        <span className="hidden text-xl font-bold text-center sm:inline-block">
+        <span className="hidden text-center text-xl font-bold hover:text-sky-400 sm:inline-block">
           Peponi
         </span>
       </Link>
-      <section className="flex flex-row gap-4 py-4 px-8 my-auto">
-        <div className="hidden sm:inline-block">
+      <section className="my-auto flex flex-row gap-4 px-8 py-4">
+        <div className="hidden rounded-md border border-slate-700 hover:border-sky-400 sm:inline-block">
           <input
             type="text"
             id="searchBar"
             placeholder="Search posts..."
             onKeyDown={handleKeyPress}
-            className="bg-transparent text-sm max-w-40 px-2 py-0.5 border border-slate-700 rounded-l-md focus:outline-none"
+            className="max-w-40 bg-transparent px-2 py-0.5 text-sm text-sky-400 focus:outline-none"
           />
           <button
             type="button"
             onClick={search}
-            className="border-solid border-t border-b border-r border-slate-700 px-1 rounded-tr-md rounded-br-md"
+            className="border-l border-slate-700 px-1"
           >
             <Image
               src={searchIcon}
               alt="Search"
-              className="size-4 inline-block"
-            ></Image>{" "}
+              className="inline-block size-4 bg-[url('../public/images/searchIcon.svg')] hover:bg-[url('../public/images/searchIconHover.svg')]"
+            ></Image>
           </button>
         </div>
         <nav className="flex flex-row">
           <Link
             href="/posts?folderPath=all"
-            className="border-r border-slate-700 pr-2 my-auto"
+            className="my-auto border-r border-slate-700 pr-2 hover:text-sky-400"
           >
             Posts
           </Link>
-          <Link href="/about" className="pl-2 my-auto">
+          <Link href="/about" className="my-auto pl-2 hover:text-sky-400">
             About
           </Link>
         </nav>

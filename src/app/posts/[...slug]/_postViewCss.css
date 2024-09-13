@@ -1,5 +1,5 @@
 .prose {
-  @apply text-slate-400 max-w-max;
+  @apply max-w-max text-slate-400;
 }
 
 .prose h2,
@@ -19,17 +19,13 @@
 }
 
 .prose figure > figcaption {
-  @apply px-4 py-1 font-bold text-base border-t border-x border-slate-700 bg-slate-900/50 rounded-t-md;
-}
-
-.prose figure > figcaption > div > button {
-  @apply text-sm font-normal;
+  @apply rounded-t-md border-x border-t border-slate-700 bg-slate-900/50 px-4 py-1 text-base font-bold;
 }
 
 .prose pre {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  @apply bg-slate-800 p-0 border border-slate-700;
+  @apply border border-slate-700 bg-slate-800 p-0;
 }
 
 .prose figure > figcaption + pre {
@@ -40,10 +36,24 @@
   display: none;
 }
 
+.prose pre > button {
+  @apply absolute bottom-0 right-0 hidden backdrop-blur;
+}
+
+.prose pre:hover button {
+  @apply block;
+}
+
+.prose pre > button > img {
+  @apply m-2 h-8 w-8 p-1;
+}
+
+.prose pre:hover button:hover img {
+  content: url("../../../public/images/clipboardHover.svg");
+}
+
 .prose code {
-  @apply font-['Pretendard_Variable'] text-slate-300 bg-slate-800
-  px-1.5 py-0.5
-  rounded-md;
+  @apply rounded-md bg-slate-800 px-1.5 py-0.5 font-['Pretendard_Variable'] text-slate-300;
 }
 
 .prose code::before {
@@ -83,13 +93,42 @@
 }
 
 .prose pre > code {
-  @apply p-0 border-none;
+  @apply border-none p-0;
 }
 
 .prose pre > code span[data-line] {
   @apply px-4;
 }
 
+.prose pre > code span[data-line]:first-child {
+  @apply pt-2;
+}
+
+.prose pre > code span[data-line]:last-child {
+  @apply pb-2;
+}
+
 .prose pre > code span[data-highlighted-line] {
   @apply border-l-2 border-sky-400/80 bg-slate-700/70 pl-[calc(1rem-2px)] pr-4;
+}
+
+.prose table {
+  width: auto;
+}
+
+.prose .innerlink {
+  @apply invisible ml-4;
+}
+
+.prose .innerlink:after {
+  content: url("../../../public/images/link.svg");
+}
+
+.innerlink:hover,
+.prose *:hover > .innerlink {
+  @apply visible;
+}
+
+.prose .innerlink:hover::after {
+  content: url("../../../public/images/linkHover.svg");
 }

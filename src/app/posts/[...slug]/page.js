@@ -7,6 +7,8 @@ import { getPost } from "@/lib/postsParser";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { remarkAlert } from "remark-github-blockquote-alert";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import "remark-github-blockquote-alert/alert.css";
 import remarkBreaks from "remark-breaks";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -16,7 +18,15 @@ import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
 import "katex/dist/katex.css";
 import "./_postViewCss.css";
 import { visit } from "unist-util-visit";
-import Figcaption from "@/components/figcaption";
+import Pre from "@/components/pre";
+
+const autolinkHeadingsOptions = {
+  behavior: "append",
+  properties: {
+    className: "innerlink",
+    arialabel: "innerlink",
+  },
+};
 
 const rehypePrettyCodeOptions = {
   theme: "dark-plus",
@@ -41,7 +51,7 @@ const afterRehypePretty = () => (tree) => {
       }
 
       for (const child of node.children) {
-        if (child.tagName === "figcaption") {
+        if (child.tagName === "pre") {
           child.properties["raw"] = node.raw;
         }
       }
@@ -50,7 +60,7 @@ const afterRehypePretty = () => (tree) => {
 };
 
 const customComponents = {
-  figcaption: Figcaption,
+  pre: Pre,
 };
 
 const options = {
@@ -63,6 +73,8 @@ const options = {
       remarkGfm,
     ],
     rehypePlugins: [
+      rehypeSlug,
+      [rehypeAutolinkHeadings, autolinkHeadingsOptions],
       rehypeKatex,
       beforeRehypePretty,
       [rehypePrettyCode, rehypePrettyCodeOptions],
@@ -75,14 +87,19 @@ export default function Slug(props) {
   let page = getPost(props.params.slug[0], props.params.slug[1]);
   return (
     <Main>
-      <section className="flex flex-row">
-        <div className="grow prose prose-invert">
+      <section className="prose prose-invert flex min-w-full flex-col justify-between lg:flex-row">
+        <p className="min-w-40 text-3xl lg:hidden">article header</p>
+        <p className="mx-auto hidden min-w-40 text-3xl lg:block">
+          article header
+        </p>
+        <div className="max-w-1/2">
           <MDXRemote
             source={page.content}
             options={options}
             components={customComponents}
           />
         </div>
+        <p className="mx-auto hidden min-w-40 text-3xl lg:block">TOC</p>
       </section>
     </Main>
   );

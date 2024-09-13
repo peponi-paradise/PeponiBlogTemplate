@@ -3,6 +3,9 @@
 "use client";
 
 import { useState } from "react";
+import clipboardIcon from "@/public/images/clipboard.svg";
+import greenCheck from "@/public/images/greenCheck.svg";
+import Image from "next/image";
 
 export const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false);
@@ -18,7 +21,11 @@ export const CopyButton = ({ text }) => {
 
   return (
     <button disabled={isCopied} onClick={copy}>
-      {isCopied ? "Copied!" : "Copy"}
+      <Image
+        alt="Copy code"
+        title="Copy code"
+        src={isCopied ? greenCheck : clipboardIcon}
+      />
     </button>
   );
 };
