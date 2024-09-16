@@ -14,7 +14,7 @@ export default function Pagenation(props) {
 
   if (pages.length > 0) {
     return (
-      <div className="flex flex-row items-center justify-center mt-8">
+      <div className="mt-8 flex flex-row items-center justify-center">
         {pages.map((page) => Page(page, current))}
       </div>
     );
@@ -22,7 +22,8 @@ export default function Pagenation(props) {
 }
 
 function Page(pageNumber, current) {
-  let classData = "px-2 py-2 cursor-pointer ";
+  let classData =
+    "px-2 py-2 cursor-pointer hover:text-sky-400 hover:underline ";
   if (pageNumber === current) {
     classData += "text-sky-400";
   }

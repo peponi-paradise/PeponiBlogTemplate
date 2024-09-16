@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import "./_postList.css";
 import { Chips } from "./chip";
 import timer from "@/public/images/timer.svg";
 

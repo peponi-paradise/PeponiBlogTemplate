@@ -19,12 +19,12 @@ const otherCategoryClass =
 export default function Posts(props) {
   let currentPosts = applyPostFilter(
     props.searchParams.folderPath,
-    props.searchParams.title
+    props.searchParams.title,
   );
   let posts = pagenation(
     currentPosts,
     PostInformation.viewCount,
-    props.searchParams.page
+    props.searchParams.page,
   );
   let currentPage = Number(props.searchParams.page);
   if (isNaN(currentPage)) {
@@ -40,7 +40,7 @@ export default function Posts(props) {
   return (
     <Main>
       <section className="flex flex-row">
-        <div className="hidden ml-auto pr-7 max-w-64 border-r border-slate-700 sm:block">
+        <div className="ml-auto hidden max-w-64 border-r border-slate-700 pr-7 sm:block">
           <ul>
             <li className="mb-2">
               <Link
@@ -48,7 +48,7 @@ export default function Posts(props) {
                 className={
                   props.searchParams.folderPath == "all"
                     ? "text-xl text-sky-400"
-                    : "text-xl text-slate-200/90"
+                    : "text-xl text-slate-200/90 hover:text-sky-400"
                 }
               >
                 Categories
@@ -63,14 +63,17 @@ export default function Posts(props) {
                     : otherCategoryClass
                 }
               >
-                <Link href={`/posts?folderPath=${category[1]}`}>
+                <Link
+                  className="hover:text-sky-400"
+                  href={`/posts?folderPath=${category[1]}`}
+                >
                   {category[0]}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div className="mr-auto sm:pl-7 sm:basis-3/4 flex flex-col justify-between">
+        <div className="mr-auto flex flex-col justify-between sm:basis-3/4 sm:pl-7">
           <PostList posts={posts}></PostList>
           <Pagenation current={currentPage} start={start} end={end} />
         </div>

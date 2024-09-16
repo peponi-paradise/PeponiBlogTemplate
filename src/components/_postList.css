@@ -1,0 +1,3 @@
+ul>li>article:hover>a>h2{
+    @apply text-sky-400;
+}
