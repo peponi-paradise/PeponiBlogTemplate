@@ -19,6 +19,9 @@ import "katex/dist/katex.css";
 import "./_postViewCss.css";
 import { visit } from "unist-util-visit";
 import Pre from "@/components/pre";
+import ArticleHeaderMobile from "@/components/articleHeaderMobile";
+import { MetaInformation } from "@/app/constants";
+import ArticleHeaderDesktop from "@/components/articleHeaderDesktop";
 
 const autolinkHeadingsOptions = {
   behavior: "append",
@@ -88,11 +91,21 @@ export default function Slug(props) {
   return (
     <Main>
       <section className="prose prose-invert flex min-w-full flex-col justify-between lg:flex-row">
-        <p className="min-w-40 text-3xl lg:hidden">article header</p>
-        <p className="mx-auto hidden min-w-40 text-3xl lg:block">
-          article header
-        </p>
-        <div className="max-w-1/2">
+        <ArticleHeaderMobile
+          className="border-b border-slate-700 pb-4 lg:hidden"
+          title={page.title}
+          date={page.date}
+          author={MetaInformation.author}
+          tags={page.tags}
+        />
+        <ArticleHeaderDesktop
+          className="ml-auto mt-[3rem] hidden border-r border-slate-700 pr-8 lg:block"
+          title={page.title}
+          date={page.date}
+          author={MetaInformation.author}
+          tags={page.tags}
+        />
+        <div className="lg:pl-8">
           <MDXRemote
             source={page.content}
             options={options}

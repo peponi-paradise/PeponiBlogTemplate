@@ -2,6 +2,7 @@
   @apply max-w-max text-slate-400;
 }
 
+.prose h1,
 .prose h2,
 .prose h3,
 .prose h4,
