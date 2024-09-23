@@ -4,14 +4,17 @@
 
 import { useState } from "react";
 import clipboardIcon from "@/public/images/clipboard.svg";
+import clipboardHover from "@/public/images/clipboardHover.svg";
 import greenCheck from "@/public/images/greenCheck.svg";
 import Image from "next/image";
 
 export const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false);
+  const [isHover, setIsHover] = useState(false);
 
   const copy = async () => {
     await navigator.clipboard.writeText(text);
+    setIsHover(false);
     setIsCopied(true);
 
     setTimeout(() => {
@@ -19,12 +22,23 @@ export const CopyButton = ({ text }) => {
     }, 3000);
   };
 
+  async function hoverChange(isHover) {
+    if (!isCopied) {
+      setIsHover(isHover);
+    }
+  }
+
   return (
-    <button disabled={isCopied} onClick={copy}>
+    <button
+      disabled={isCopied}
+      onMouseOver={() => hoverChange(true)}
+      onMouseOut={() => hoverChange(false)}
+      onClick={copy}
+    >
       <Image
         alt="Copy code"
         title="Copy code"
-        src={isCopied ? greenCheck : clipboardIcon}
+        src={isHover ? clipboardHover : isCopied ? greenCheck : clipboardIcon}
       />
     </button>
   );

@@ -1,14 +1,33 @@
-import { Chips } from "./chip";
+import Image from "next/image";
+import timer from "@/public/images/timer.svg";
+import { Chip, Chips } from "./chip";
 
 export default function ArticleHeaderDesktop(props) {
   return (
     <section className={`${props.className}`}>
-      <h1>{props.title}</h1>
-      <p>
-        <span>{props.author}</span>
-        {" │ "}
-        <span>{new Date(props.date).toLocaleDateString()}</span>
-      </p>
+      <h1 className="mb-4">{props.title}</h1>
+      <hr className="my-4" />
+      <>
+        <div className="my-1 flex flex-row justify-between">
+          <span>{new Date(props.date).toLocaleDateString()}</span>
+          <div className="flex flex-row items-center">
+            <Image
+              src={timer}
+              alt="Minutes to read"
+              className="my-0 mr-1 size-3.5"
+            ></Image>
+            <span>{props.minutesToRead}m</span>
+          </div>
+        </div>
+        <p className="my-1">{props.author}</p>
+      </>
+      <hr className="my-4" />
+      <div>
+        <Chip
+          className="mr-1 rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+          content={props.category}
+        />
+      </div>
       <Chips
         className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
         contents={props.tags}

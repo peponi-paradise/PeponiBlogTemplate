@@ -17,8 +17,8 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko">
-      <body className="bg-slate-900 text-slate-400 container mx-auto min-h-screen flex flex-col justify-between">
+    <html lang="ko" className="scroll-smooth">
+      <body className="container mx-auto flex min-h-screen flex-col justify-between bg-slate-900 text-slate-400">
         <Header />
         {children}
         <Footer />

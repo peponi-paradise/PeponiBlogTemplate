@@ -1,5 +1,5 @@
 .prose {
-  @apply max-w-max text-slate-400;
+  @apply text-slate-400;
 }
 
 .prose h1,
@@ -11,8 +11,17 @@
   @apply text-slate-200/90;
 }
 
+.prose h2,
+.prose h3 {
+  @apply scroll-mt-28;
+}
+
 .prose a {
   @apply text-sky-400/80;
+}
+
+.not-prose a {
+  @apply text-slate-400;
 }
 
 .prose figure[data-rehype-pretty-code-figure] {
@@ -38,7 +47,7 @@
 }
 
 .prose pre > button {
-  @apply absolute bottom-0 right-0 hidden backdrop-blur;
+  @apply absolute right-0 top-0 hidden backdrop-blur;
 }
 
 .prose pre:hover button {
@@ -47,10 +56,6 @@
 
 .prose pre > button > img {
   @apply m-2 h-8 w-8 p-1;
-}
-
-.prose pre:hover button:hover img {
-  content: url("../../../public/images/clipboardHover.svg");
 }
 
 .prose code {
@@ -114,7 +119,7 @@
 }
 
 .prose table {
-  width: auto;
+  @apply break-all;
 }
 
 .prose .innerlink {

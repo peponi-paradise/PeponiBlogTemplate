@@ -1,4 +1,4 @@
-// code copy from
+// code copy button from
 // 1. https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
 // 2. https://www.nokiahub.name/posts/prettify-mdx-code-blocks
 
@@ -22,6 +22,8 @@ import Pre from "@/components/pre";
 import ArticleHeaderMobile from "@/components/articleHeaderMobile";
 import { MetaInformation } from "@/app/constants";
 import ArticleHeaderDesktop from "@/components/articleHeaderDesktop";
+import Toc from "@/components/toc";
+import getToc from "@/lib/tocParser";
 
 const autolinkHeadingsOptions = {
   behavior: "append",
@@ -93,26 +95,33 @@ export default function Slug(props) {
       <section className="prose prose-invert flex min-w-full flex-col justify-between lg:flex-row">
         <ArticleHeaderMobile
           className="border-b border-slate-700 pb-4 lg:hidden"
+          category={page.category}
           title={page.title}
           date={page.date}
+          minutesToRead={page.minutesToRead}
           author={MetaInformation.author}
           tags={page.tags}
         />
         <ArticleHeaderDesktop
-          className="ml-auto mt-[3rem] hidden border-r border-slate-700 pr-8 lg:block"
+          className="ml-auto mt-[3rem] hidden max-w-64 border-r border-slate-700 pr-8 lg:block xl:max-w-80 2xl:max-w-96"
+          category={page.category}
           title={page.title}
           date={page.date}
+          minutesToRead={page.minutesToRead}
           author={MetaInformation.author}
           tags={page.tags}
         />
-        <div className="lg:pl-8">
+        <div className="min-w-0 lg:px-8">
           <MDXRemote
             source={page.content}
             options={options}
             components={customComponents}
           />
         </div>
-        <p className="mx-auto hidden min-w-40 text-3xl lg:block">TOC</p>
+        <Toc
+          className="not-prose sticky top-28 mr-auto mt-[3rem] hidden min-w-40 self-start pl-8 lg:block xl:min-w-48 2xl:min-w-56"
+          Toc={getToc(page.content)}
+        ></Toc>
       </section>
     </Main>
   );
