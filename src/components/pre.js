@@ -4,9 +4,11 @@ import { CopyButton } from "./codeCopyButton";
 
 export default function Pre({ children, raw, ...props }) {
   return (
-    <pre className="relative" {...props}>
-      {children}
-      <CopyButton text={raw} />
-    </pre>
+    <div className="relative">
+      <pre {...props}>
+        {children}
+        <CopyButton text={raw} />
+      </pre>
+    </div>
   );
 }

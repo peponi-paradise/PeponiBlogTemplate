@@ -92,9 +92,9 @@ export default function Slug(props) {
   let page = getPost(props.params.slug[0], props.params.slug[1]);
   return (
     <Main>
-      <section className="prose prose-invert flex min-w-full flex-col justify-between lg:flex-row">
+      <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">
         <ArticleHeaderMobile
-          className="border-b border-slate-700 pb-4 lg:hidden"
+          className="mt-[3rem] lg:hidden"
           category={page.category}
           title={page.title}
           date={page.date}
@@ -103,7 +103,7 @@ export default function Slug(props) {
           tags={page.tags}
         />
         <ArticleHeaderDesktop
-          className="ml-auto mt-[3rem] hidden max-w-64 border-r border-slate-700 pr-8 lg:block xl:max-w-80 2xl:max-w-96"
+          className="mt-[3rem] hidden lg:col-span-3 lg:block xl:max-w-80 2xl:max-w-96"
           category={page.category}
           title={page.title}
           date={page.date}
@@ -111,7 +111,7 @@ export default function Slug(props) {
           author={MetaInformation.author}
           tags={page.tags}
         />
-        <div className="min-w-0 lg:px-8">
+        <div className="lg:col-span-7">
           <MDXRemote
             source={page.content}
             options={options}
@@ -119,7 +119,7 @@ export default function Slug(props) {
           />
         </div>
         <Toc
-          className="not-prose sticky top-28 mr-auto mt-[3rem] hidden min-w-40 self-start pl-8 lg:block xl:min-w-48 2xl:min-w-56"
+          className="not-prose sticky top-28 mt-[3rem] hidden min-w-40 self-start lg:col-span-2 lg:block xl:min-w-48 2xl:min-w-56"
           Toc={getToc(page.content)}
         ></Toc>
       </section>

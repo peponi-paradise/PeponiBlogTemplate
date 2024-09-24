@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import "./_postList.css";
-import { Chips } from "./chip";
+import { Chip, Chips } from "./chip";
 import timer from "@/public/images/timer.svg";
 
 export default function PostList(props) {
@@ -24,12 +24,16 @@ export default function PostList(props) {
               </div>
               <h2 className="pb-2 text-2xl text-slate-200/90">{post.title}</h2>
               <p className="mb-4 line-clamp-3 text-sm">{post.description}</p>
-              <div className="flex flex-row">
-                <Chips
-                  className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
-                  contents={post.tags}
-                ></Chips>
+              <div>
+                <Chip
+                  className="rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+                  content={post.category}
+                />
               </div>
+              <Chips
+                className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
+                contents={post.tags}
+              ></Chips>
             </Link>
           </article>
         </li>

@@ -24,7 +24,7 @@ export default function ArticleHeaderDesktop(props) {
       <hr className="my-4" />
       <div>
         <Chip
-          className="mr-1 rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+          className="rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
           content={props.category}
         />
       </div>

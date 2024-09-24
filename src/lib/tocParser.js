@@ -11,6 +11,7 @@ export default function getToc(markdown) {
         .replace(/#/g, "")
         .replace(/ /g, "-")
         .replace("?", "")
+        .replace(/,/g, "")
         .replace(/\./g, "")
         .toLowerCase(),
       padding: header.includes("###") ? padding : noPadding,

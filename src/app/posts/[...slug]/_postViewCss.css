@@ -31,15 +31,14 @@
 .prose figure > figcaption {
   @apply rounded-t-md border-x border-t border-slate-700 bg-slate-900/50 px-4 py-1 text-base font-bold;
 }
+.prose figure figcaption + div pre {
+  @apply rounded-none rounded-b-md;
+}
 
 .prose pre {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  @apply border border-slate-700 bg-slate-800 p-0;
-}
-
-.prose figure > figcaption + pre {
-  @apply rounded-none rounded-b-md;
+  @apply my-0 border border-slate-700 bg-slate-800 p-0;
 }
 
 .prose pre::-webkit-scrollbar {
@@ -47,7 +46,7 @@
 }
 
 .prose pre > button {
-  @apply absolute right-0 top-0 hidden backdrop-blur;
+  @apply absolute bottom-0 right-0 hidden rounded-md backdrop-blur;
 }
 
 .prose pre:hover button {
