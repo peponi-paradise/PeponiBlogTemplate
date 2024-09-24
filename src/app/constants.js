@@ -1,4 +1,5 @@
 import Favicon from "@/public/icons/favicon.ico";
+import PersonalImage from "@/public/icons/favicon.png";
 
 export const MetaInformation = {
   charset: "UTF-8",
@@ -11,4 +12,13 @@ export const MetaInformation = {
 export const PostInformation = {
   viewCount: 5,
   pagenationRange: 2,
+};
+
+export const PersonalInformation = {
+  personalImage: PersonalImage,
+  name: "Peponi",
+  occupation: "Software engineer",
+  responsibility: "Team leader",
+  company: "My company",
+  description: "Sample description",
 };

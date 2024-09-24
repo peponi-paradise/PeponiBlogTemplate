@@ -104,7 +104,7 @@ export default function Slug(props) {
           tags={page.tags}
         />
         <ArticleHeaderDesktop
-          className="mt-[3rem] hidden lg:col-span-3 lg:block xl:max-w-80 2xl:max-w-96"
+          className="mt-[3rem] hidden lg:col-span-3 lg:block"
           category={page.category}
           title={page.title}
           date={page.date}
@@ -121,7 +121,7 @@ export default function Slug(props) {
           <GiscusComments />
         </div>
         <Toc
-          className="not-prose sticky top-28 mt-[3rem] hidden min-w-40 self-start lg:col-span-2 lg:block xl:min-w-48 2xl:min-w-56"
+          className="not-prose sticky top-28 mt-[3rem] hidden min-w-40 self-start lg:col-span-2 lg:block"
           Toc={getToc(page.content)}
         ></Toc>
       </section>
