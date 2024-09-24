@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.2",
+    "@giscus/react": "^3.0.0",
     "glob": "^11.0.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.8",

@@ -10,7 +10,7 @@ export default function Toc(props) {
         {props.Toc.map((item) => (
           <li
             key={item.text}
-            className={`ml-1.5 truncate border-l border-slate-700 hover:border-sky-400 pl-${4 + item.padding} ${item.padding == 0 ? "text-base" : "text-sm"}`}
+            className={`ml-1.5 truncate border-l border-slate-700 pl-${4 + item.padding} hover:border-sky-400 ${item.padding == 0 ? "text-base" : "text-sm"}`}
           >
             <Link className="hover:text-sky-400" href={"#" + item.innerLink}>
               {item.text}
