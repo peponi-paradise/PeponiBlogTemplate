@@ -1,4 +1,4 @@
-import "./_statCard.css";
+import "./_gradientBorder.css";
 
 const defaultClassName =
   "gradient-border text-pretty border border-slate-700 px-8 py-4 text-center text-slate-200/90 hover:border-0 ";

@@ -1,8 +1,11 @@
 import Image from "next/image";
 
+const defaultClassName =
+  "mx-auto grid grid-cols-4 gap-8 rounded-xl border border-sky-400/80 bg-slate-700/70 px-8 py-4 ";
+
 export default function PersonalCard(props) {
   return (
-    <section className="mx-auto grid grid-cols-4 gap-8 rounded-xl border border-slate-700 bg-slate-800/60 px-8 py-4">
+    <section className={defaultClassName + props.className}>
       <Image
         src={props.personalImage}
         alt="Personal image"

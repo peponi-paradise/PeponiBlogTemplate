@@ -1,5 +1,5 @@
 import Favicon from "@/public/icons/favicon.ico";
-import PersonalImage from "@/public/icons/favicon.png";
+import PersonalImage from "@/public/icons/favicon.ico";
 
 export const MetaInformation = {
   charset: "UTF-8",
@@ -20,5 +20,10 @@ export const PersonalInformation = {
   occupation: "Software engineer",
   responsibility: "Team leader",
   company: "My company",
+  description: "Sample description",
+};
+
+export const ServiceInformation = {
+  title: "Services",
   description: "Sample description",
 };
