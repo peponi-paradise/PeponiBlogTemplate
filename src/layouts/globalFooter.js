@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-row justify-between border-t border-slate-700">
       <p className="px-8 py-4">ⓒ 2024. Peponi All rights reserved</p>
-      <section className="flex flex-row gap-4 px-8 py-4">
+      <section className="flex flex-row items-center gap-4 px-8 py-4">
         <LinkButton
           url="https://github.com"
           normalSrc={github}

@@ -1,61 +1,98 @@
 import PersonalCard from "@/components/personalCard";
-import { PersonalInformation, ServiceInformation } from "./constants";
+import {
+  PersonalInformation,
+  ServiceInformation,
+  PostInformation,
+} from "./constants";
 import Main from "@/layouts/globalMain";
 import StatCard from "@/components/statCard";
 import ServiceTitle from "@/components/serviceTitle";
 import ServiceCard from "@/components/serviceCard";
 import Cat from "@/public/images/github.svg";
+import { applyPostFilter, pagenation } from "@/lib/postsParser";
+import PostList from "@/components/postList";
+import Link from "next/link";
 
 export default function Home() {
+  let totalPosts = applyPostFilter();
+  let posts = pagenation(totalPosts, PostInformation.viewCount);
   return (
-    <Main>
-      <PersonalCard
-        personalImage={PersonalInformation.personalImage}
-        name={PersonalInformation.name}
-        occupation={PersonalInformation.occupation}
-        responsibility={PersonalInformation.responsibility}
-        company={PersonalInformation.company}
-        description={PersonalInformation.description}
-      />
-      <section className="mx-auto mt-4 flex flex-row gap-4">
-        <StatCard className="basis-1/3" value="10+" title="Projects" />
-        <StatCard className="basis-1/3" value="5+" title="Open Sources" />
-        <StatCard
-          className="basis-1/3"
-          value="5+"
-          title="Years of Experience"
+    <Main className="mx-auto mt-8 max-w-screen-lg">
+      <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 md:grid-cols-3">
+        <PersonalCard
+          className="my-auto"
+          name={PersonalInformation.name}
+          occupation={PersonalInformation.occupation}
+          responsibility={PersonalInformation.responsibility}
+          company={PersonalInformation.company}
+          additionalInformation={PersonalInformation.additionalInformation}
+          description={PersonalInformation.description}
         />
+        <section className="flex flex-col gap-4 md:col-span-2">
+          <div className="grid grid-cols-2 gap-4">
+            <StatCard
+              className="gradient-normal border-0"
+              value="10+"
+              title="Projects"
+            />
+            <StatCard
+              className="gradient-normal border-0"
+              value="5+"
+              title="Open Sources"
+            />
+          </div>
+          <iframe
+            className="lg:min-h-56"
+            src="https://github-readme-activity-graph.vercel.app/graph?username=peponi-paradise&bg_color=transparent&hide_border=true&title_color=38bdf8&color=94a3b8&line=7dd3fc&point=38bdf8&days=30"
+          ></iframe>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <iframe
+              className="size-full"
+              src="https://github-readme-stats.vercel.app/api?username=peponi-paradise&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8"
+            ></iframe>
+            <iframe
+              className="size-full"
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=peponi-paradise&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8"
+            ></iframe>
+          </div>
+        </section>
       </section>
-      <ServiceTitle
-        className="mt-16"
-        title={ServiceInformation.title}
-        description={ServiceInformation.description}
-      />
-      <section className="mx-auto mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <ServiceCard
-          imageSrc={Cat}
-          imageAlt="Sample image"
-          title="My Service 1"
-          description="My Service 1 description"
+      <section className="mx-auto mt-16 grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
+        <ServiceTitle
+          className="my-auto"
+          title={ServiceInformation.title}
+          description={ServiceInformation.description}
         />
-        <ServiceCard
-          imageSrc={PersonalInformation.personalImage}
-          imageAlt="Sample image"
-          title="My Service 2"
-          description="My Service 2 description"
-        />
-        <ServiceCard
-          imageSrc={PersonalInformation.personalImage}
-          imageAlt="Sample image"
-          title="My Service 3"
-          description="My Service 3 description"
-        />
-        <ServiceCard
-          imageSrc={PersonalInformation.personalImage}
-          imageAlt="Sample image"
-          title="My Service 4"
-          description="My Service 4 description"
-        />
+        <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
+          <ServiceCard
+            className="gradient-normal border-0"
+            imageSrc={Cat}
+            imageAlt="Sample image"
+            title="My Service 1"
+            description="My Service 1 description"
+          />
+          <ServiceCard
+            className="gradient-normal border-0"
+            imageSrc={PersonalInformation.personalImage}
+            imageAlt="Sample image"
+            title="My Service 2"
+            description="My Service 2 description"
+          />
+        </div>
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <div className="flex flex-row items-baseline justify-between">
+          <span className="text-2xl font-bold text-slate-200/90">
+            Recent Posts
+          </span>
+          <Link
+            href="/posts?folderPath=all"
+            className="text-sm hover:text-sky-400"
+          >
+            Show more →
+          </Link>
+        </div>
+        <PostList className="mt-8" posts={posts}></PostList>
       </section>
     </Main>
   );

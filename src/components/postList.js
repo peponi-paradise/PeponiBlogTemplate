@@ -4,12 +4,14 @@ import "./_postList.css";
 import { Chip, Chips } from "./chip";
 import timer from "@/public/images/timer.svg";
 
+// bg-gradient-to-br from-slate-800 from-30% to-slate-700
+
 export default function PostList(props) {
   return (
     <ul className={props.className}>
       {props.posts.map((post) => (
         <li key={post.title} className="mb-7 last:mb-0">
-          <article className="rounded-lg border border-slate-700 bg-slate-800/60 px-4 py-2 hover:bg-slate-700">
+          <article className="rounded-lg border border-slate-700 bg-slate-800/60 px-4 py-2 hover:border-sky-400 hover:bg-gradient-to-br hover:from-slate-800 hover:from-30% hover:to-slate-700">
             <Link href={`/posts/${post.folderPath}/${post.slug}`}>
               <div className="flex flex-row justify-between pb-1 text-sm text-slate-400/50">
                 <span>{new Date(post.date).toLocaleDateString()}</span>

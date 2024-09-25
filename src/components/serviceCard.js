@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./_gradientBorder.css";
 
 const defaultClassName =
-  "gradient-border grid grid-cols-3 items-center gap-8 text-pretty border border-slate-700 px-8 py-4 hover:border-0 ";
+  "grid grid-cols-3 grid-rows-2 items-center gap-4 text-pretty bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-4 py-4 sm:px-8 ";
 
 export default function ServiceCard(props) {
   return (
@@ -10,14 +10,14 @@ export default function ServiceCard(props) {
       <Image
         src={props.imageSrc}
         alt={props.imageAlt}
-        className="m-auto size-full"
+        className="m-auto size-full max-h-16 max-w-16"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPkF9eqBwABXgDR9lkLFAAAAABJRU5ErkJggg=="
       />
-      <div className="col-span-2">
-        <p className="mb-4 text-2xl font-bold text-slate-200/90">
-          {props.title}
-        </p>
-        <p className="text-sm">{props.description}</p>
-      </div>
+      <p className="col-span-2 text-xl font-bold text-slate-200/90">
+        {props.title}
+      </p>
+      <p className="col-span-2 col-start-2 text-sm">{props.description}</p>
     </div>
   );
 }

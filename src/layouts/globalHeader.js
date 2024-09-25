@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import favicon from "../public/icons/favicon.png";
+import favicon from "../public/icons/favicon.svg";
 import searchIcon from "../public/images/searchIcon.svg";
 import searchIconHover from "../public/images/searchIconHover.svg";
 
@@ -46,6 +46,8 @@ export default function Header() {
           src={favicon}
           alt="Favicon"
           className="mx-auto my-auto inline-block size-6"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPkF9eqBwABXgDR9lkLFAAAAABJRU5ErkJggg=="
         ></Image>
         <span className="hidden text-center text-xl font-bold hover:text-sky-400 sm:inline-block">
           Peponi

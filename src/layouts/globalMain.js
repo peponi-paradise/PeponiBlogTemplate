@@ -1,3 +1,5 @@
-export default function Main({ children }) {
-  return <main className="grow px-8 py-4">{children}</main>;
+const defaultClassName = "grow px-8 py-4 ";
+
+export default function Main({ children, ...props }) {
+  return <main className={defaultClassName + props.className}>{children}</main>;
 }

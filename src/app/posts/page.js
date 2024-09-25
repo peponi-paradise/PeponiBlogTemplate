@@ -12,9 +12,9 @@ export const metadata = {
 };
 
 const selectedCategoryClass =
-  "ml-1.5 pl-4 border-l border-sky-400 text-sky-400 pb-1 pt-1 last:pb-0";
+  "ml-1.5 pl-4 border-l border-sky-400 truncate text-sky-400 pb-1 pt-1 last:pb-0";
 const otherCategoryClass =
-  "ml-1.5 pl-4 border-l border-slate-700 pb-1 pt-1 last:pb-0";
+  "ml-1.5 pl-4 border-l border-slate-700 truncate pb-1 pt-1 last:pb-0";
 
 export default function Posts(props) {
   let currentPosts = applyPostFilter(
@@ -38,9 +38,9 @@ export default function Posts(props) {
       ? totalPages
       : currentPage + PostInformation.pagenationRange;
   return (
-    <Main>
+    <Main className="mt-8">
       <section className="flex flex-row">
-        <div className="ml-auto hidden max-w-64 border-r border-slate-700 pr-8 sm:block">
+        <div className="ml-auto hidden max-w-40 border-r border-slate-700 pr-8 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>
             <li className="mb-2">
               <Link
@@ -74,6 +74,9 @@ export default function Posts(props) {
           </ul>
         </div>
         <div className="mr-auto flex flex-col justify-between sm:basis-3/4 sm:pl-8">
+          <p className="mb-5 text-2xl font-bold text-slate-200/90 sm:hidden">
+            Posts
+          </p>
           <PostList posts={posts}></PostList>
           <Pagenation current={currentPage} start={start} end={end} />
         </div>

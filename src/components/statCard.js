@@ -1,7 +1,7 @@
 import "./_gradientBorder.css";
 
 const defaultClassName =
-  "gradient-border text-pretty border border-slate-700 px-8 py-4 text-center text-slate-200/90 hover:border-0 ";
+  "bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-2 py-2 sm:px-4 sm:py-4 text-center text-slate-200/90 hover:border-0 ";
 
 export default function StatCard(props) {
   return (
