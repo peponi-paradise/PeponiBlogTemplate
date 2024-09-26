@@ -28,3 +28,27 @@ export const ServiceInformation = {
   title: "Services",
   description: "Sample description",
 };
+
+export const WorkStyleInformation = {
+  title: "Work Style",
+  description: "Sample description",
+  chartSeries: [
+    {
+      name: "Work Style",
+      data: [90, 80, 60, 40],
+    },
+  ],
+  chartOption: {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+    },
+    xaxis: {
+      categories: ["Documentation", "Design", "Communication", "Development"],
+    },
+  },
+};

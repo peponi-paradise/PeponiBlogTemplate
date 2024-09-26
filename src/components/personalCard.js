@@ -4,7 +4,9 @@ import "./_gradientBorder.css";
 export default function PersonalCard(props) {
   if (props.personalImage !== undefined) {
     return (
-      <section className={"grid grid-cols-4 gap-8 " + props.className}>
+      <section
+        className={"grid grid-cols-4 gap-8 break-words " + props.className}
+      >
         <Image
           src={props.personalImage}
           alt="Personal image"
@@ -30,7 +32,7 @@ export default function PersonalCard(props) {
     );
   } else {
     return (
-      <section className={props.className}>
+      <section className={"break-words " + props.className}>
         <p className="mb-2 text-2xl font-bold text-slate-200/90">
           {props.name}
         </p>

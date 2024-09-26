@@ -2,7 +2,7 @@ import Image from "next/image";
 import "./_gradientBorder.css";
 
 const defaultClassName =
-  "grid grid-cols-3 grid-rows-2 items-center gap-4 text-pretty bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-4 py-4 sm:px-8 ";
+  "grid grid-cols-3 grid-rows-2 items-center gap-4 break-words bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-4 py-4 sm:px-8 ";
 
 export default function ServiceCard(props) {
   return (

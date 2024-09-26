@@ -8,7 +8,6 @@ import Main from "@/layouts/globalMain";
 import StatCard from "@/components/statCard";
 import ServiceTitle from "@/components/serviceTitle";
 import ServiceCard from "@/components/serviceCard";
-import Cat from "@/public/images/github.svg";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
 import PostList from "@/components/postList";
 import Link from "next/link";
@@ -19,15 +18,22 @@ export default function Home() {
   return (
     <Main className="mx-auto mt-8 max-w-screen-lg">
       <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 md:grid-cols-3">
-        <PersonalCard
-          className="my-auto"
-          name={PersonalInformation.name}
-          occupation={PersonalInformation.occupation}
-          responsibility={PersonalInformation.responsibility}
-          company={PersonalInformation.company}
-          additionalInformation={PersonalInformation.additionalInformation}
-          description={PersonalInformation.description}
-        />
+        <div className="my-auto flex flex-row justify-between md:flex-col">
+          <PersonalCard
+            className="min-w-0 sm:mb-8"
+            name={PersonalInformation.name}
+            occupation={PersonalInformation.occupation}
+            responsibility={PersonalInformation.responsibility}
+            company={PersonalInformation.company}
+            description={PersonalInformation.description}
+          />
+          <Link
+            href="/about"
+            className="mt-[6px] max-h-fit text-nowrap text-sm hover:text-sky-400 sm:mt-0"
+          >
+            Read more →
+          </Link>
+        </div>
         <section className="flex flex-col gap-4 md:col-span-2">
           <div className="grid grid-cols-2 gap-4">
             <StatCard
@@ -38,7 +44,7 @@ export default function Home() {
             <StatCard
               className="gradient-normal border-0"
               value="5+"
-              title="Open Sources"
+              title="Nuget Packages"
             />
           </div>
           <iframe
@@ -66,7 +72,7 @@ export default function Home() {
         <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={Cat}
+            imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 1"
             description="My Service 1 description"
@@ -81,7 +87,7 @@ export default function Home() {
         </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
-        <div className="flex flex-row items-baseline justify-between">
+        <div className="flex flex-row items-center justify-between">
           <span className="text-2xl font-bold text-slate-200/90">
             Recent Posts
           </span>
@@ -89,7 +95,7 @@ export default function Home() {
             href="/posts?folderPath=all"
             className="text-sm hover:text-sky-400"
           >
-            Show more →
+            Read more →
           </Link>
         </div>
         <PostList className="mt-8" posts={posts}></PostList>
