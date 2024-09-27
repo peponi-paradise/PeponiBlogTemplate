@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import favicon from "../public/icons/favicon.svg";
-import searchIcon from "../public/images/searchIcon.svg";
-import searchIconHover from "../public/images/searchIconHover.svg";
+import favicon from "../public/svgs/favicon.svg";
+import searchIcon from "../public/svgs/searchIcon.svg";
+import searchIconHover from "../public/svgs/searchIconHover.svg";
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {

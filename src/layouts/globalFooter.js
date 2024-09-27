@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import github from "../public/images/github.svg";
-import githubHover from "../public/images/githubHover.svg";
-import linkedIn from "../public/images/linkedIn.svg";
-import linkedInHover from "../public/images/linkedInHover.svg";
+import github from "../public/svgs/github.svg";
+import githubHover from "../public/svgs/githubHover.svg";
+import linkedIn from "../public/svgs/linkedIn.svg";
+import linkedInHover from "../public/svgs/linkedInHover.svg";
 
 function LinkButton(props) {
   const [isHover, setIsHover] = useState(false);

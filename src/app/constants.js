@@ -1,5 +1,5 @@
 import Favicon from "@/public/icons/favicon.ico";
-import PersonalImage from "@/public/icons/favicon.svg";
+import PersonalImage from "@/public/svgs/favicon.svg";
 
 export const MetaInformation = {
   charset: "UTF-8",

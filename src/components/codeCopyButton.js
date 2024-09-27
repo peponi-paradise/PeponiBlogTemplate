@@ -3,9 +3,9 @@
 "use client";
 
 import { useState } from "react";
-import clipboardIcon from "@/public/images/clipboard.svg";
-import clipboardHover from "@/public/images/clipboardHover.svg";
-import greenCheck from "@/public/images/greenCheck.svg";
+import clipboardIcon from "@/public/svgs/clipboard.svg";
+import clipboardHover from "@/public/svgs/clipboardHover.svg";
+import greenCheck from "@/public/svgs/greenCheck.svg";
 import Image from "next/image";
 
 export const CopyButton = ({ text }) => {
