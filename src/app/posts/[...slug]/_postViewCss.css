@@ -11,6 +11,10 @@
   @apply text-slate-200/90;
 }
 
+.prose h2:first-child{
+  @apply mt-0;
+}
+
 .prose h2,
 .prose h3 {
   @apply scroll-mt-28;

@@ -92,10 +92,10 @@ const options = {
 export default function Slug(props) {
   let page = getPost(props.params.slug[0], props.params.slug[1]);
   return (
-    <Main>
+    <Main className="my-8">
       <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">
         <ArticleHeaderMobile
-          className="mt-[3rem] lg:hidden"
+          className="lg:hidden"
           category={page.category}
           title={page.title}
           date={page.date}
@@ -104,7 +104,7 @@ export default function Slug(props) {
           tags={page.tags}
         />
         <ArticleHeaderDesktop
-          className="mt-[3rem] hidden lg:col-span-3 lg:block"
+          className="hidden lg:col-span-3 lg:block"
           category={page.category}
           title={page.title}
           date={page.date}
@@ -121,7 +121,7 @@ export default function Slug(props) {
           <GiscusComments />
         </div>
         <Toc
-          className="not-prose sticky top-28 mt-[3rem] hidden min-w-40 self-start lg:col-span-2 lg:block"
+          className="not-prose sticky top-28 hidden min-w-40 self-start lg:col-span-2 lg:block"
           Toc={getToc(page.content)}
         ></Toc>
       </section>

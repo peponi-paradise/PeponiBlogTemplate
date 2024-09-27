@@ -15,7 +15,7 @@ export default function PersonalCard(props) {
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPkF9eqBwABXgDR9lkLFAAAAABJRU5ErkJggg=="
         />
         <div className="col-span-3 my-auto">
-          <p className="mb-2 text-2xl font-bold text-slate-200/90">
+          <p className="mb-4 text-2xl font-bold text-slate-200/90">
             {props.name}
           </p>
           <p className="text-sm">{props.occupation}</p>
@@ -25,15 +25,15 @@ export default function PersonalCard(props) {
               : ""}{" "}
             {props.company}
           </p>
-          <p className="mb-2 text-sm">{props.additionalInformation}</p>
-          <p className="text-sm">{props.description}</p>
+          <p className="mb-4 text-sm">{props.additionalInformation}</p>
+          <p>{props.description}</p>
         </div>
       </section>
     );
   } else {
     return (
       <section className={"break-words " + props.className}>
-        <p className="mb-2 text-2xl font-bold text-slate-200/90">
+        <p className="mb-4 text-2xl font-bold text-slate-200/90">
           {props.name}
         </p>
         <p className="text-sm">{props.occupation}</p>
@@ -43,8 +43,8 @@ export default function PersonalCard(props) {
             : ""}{" "}
           {props.company}
         </p>
-        <p className="mb-2 text-sm">{props.additionalInformation}</p>
-        <p className="text-sm">{props.description}</p>
+        <p className="mb-4 text-sm">{props.additionalInformation}</p>
+        <p>{props.description}</p>
       </section>
     );
   }

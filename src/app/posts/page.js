@@ -38,7 +38,7 @@ export default function Posts(props) {
       ? totalPages
       : currentPage + PostInformation.pagenationRange;
   return (
-    <Main className="mt-8">
+    <Main className="my-8">
       <section className="flex flex-row">
         <div className="ml-auto hidden max-w-40 border-r border-slate-700 pr-8 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>

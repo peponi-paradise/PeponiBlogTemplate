@@ -20,18 +20,20 @@ export const PersonalInformation = {
   occupation: "Software engineer",
   responsibility: "Team leader",
   company: "My company",
-  additionalInformation: "peponi_paradise@naver.com",
-  description: "Sample description",
+  additionalInformation: "Lorem@ipsum.com",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 };
 
 export const ServiceInformation = {
   title: "Services",
-  description: "Sample description",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 };
 
 export const WorkStyleInformation = {
   title: "Work Style",
-  description: "Sample description",
+  description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
   chartSeries: [
     {
       name: "Work Style",
@@ -52,3 +54,45 @@ export const WorkStyleInformation = {
     },
   },
 };
+
+export const ExperienceInformation = [
+  {
+    title: "Company 3",
+    dateTime: "2023 - Present",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+  {
+    title: "Company 2",
+    dateTime: "2021 - 2023",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+  {
+    title: "Company 1",
+    dateTime: "2020 - 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+];
+
+export const EducationInformation = [
+  {
+    title: "University 2",
+    dateTime: "2023 - Present",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+  {
+    title: "University 1",
+    dateTime: "2021 - 2023",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+  {
+    title: "School 1",
+    dateTime: "2020 - 2021",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+  },
+];

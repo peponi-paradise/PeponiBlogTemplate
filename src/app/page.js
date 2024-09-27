@@ -16,11 +16,11 @@ export default function Home() {
   let totalPosts = applyPostFilter();
   let posts = pagenation(totalPosts, PostInformation.viewCount);
   return (
-    <Main className="mx-auto mt-8 max-w-screen-lg">
+    <Main className="mx-auto my-8 max-w-screen-lg">
       <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 md:grid-cols-3">
         <div className="my-auto flex flex-row justify-between md:flex-col">
           <PersonalCard
-            className="min-w-0 sm:mb-8"
+            className="line-clamp-[9] min-w-0 sm:mb-8"
             name={PersonalInformation.name}
             occupation={PersonalInformation.occupation}
             responsibility={PersonalInformation.responsibility}
@@ -29,7 +29,7 @@ export default function Home() {
           />
           <Link
             href="/about"
-            className="mt-[6px] max-h-fit text-nowrap text-sm hover:text-sky-400 sm:mt-0"
+            className="mt-1.5 max-h-fit max-w-fit text-nowrap text-sm hover:text-sky-400 md:mt-0"
           >
             Read more →
           </Link>
@@ -64,25 +64,33 @@ export default function Home() {
         </section>
       </section>
       <section className="mx-auto mt-16 grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
-        <ServiceTitle
-          className="my-auto"
-          title={ServiceInformation.title}
-          description={ServiceInformation.description}
-        />
+        <div className="my-auto flex flex-row justify-between lg:flex-col">
+          <ServiceTitle
+            className="line-clamp-[7] min-w-0 lg:mb-8"
+            title={ServiceInformation.title}
+            description={ServiceInformation.description}
+          />
+          <Link
+            href="/about"
+            className="mt-1.5 max-h-fit max-w-fit text-nowrap text-sm hover:text-sky-400 lg:mt-0"
+          >
+            Read more →
+          </Link>
+        </div>
         <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 1"
-            description="My Service 1 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 2"
-            description="My Service 2 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
         </div>
       </section>

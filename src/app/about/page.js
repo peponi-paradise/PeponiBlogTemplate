@@ -4,15 +4,18 @@ import ServiceTitle from "@/components/serviceTitle";
 import ServiceCard from "@/components/serviceCard";
 import PersonalCard from "@/components/personalCard";
 import {
+  EducationInformation,
+  ExperienceInformation,
   PersonalInformation,
   ServiceInformation,
   WorkStyleInformation,
 } from "@/app/constants";
 import RadarCharts from "@/components/apexCharts";
+import TimelineList from "@/components/timelineList";
 
 export default function About() {
   return (
-    <Main className="mx-auto mt-8 max-w-screen-lg">
+    <Main className="mx-auto my-8 max-w-screen-lg">
       <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 md:grid-cols-3">
         <PersonalCard
           className="my-auto"
@@ -74,41 +77,59 @@ export default function About() {
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 1"
-            description="My Service 1 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 2"
-            description="My Service 2 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 3"
-            description="My Service 3 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={PersonalInformation.personalImage}
             imageAlt="Sample image"
             title="My Service 4"
-            description="My Service 4 description"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
         </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
-        <p className="mb-2 text-2xl font-bold text-slate-200/90">
+        <p className="text-2xl font-bold text-slate-200/90">
           {WorkStyleInformation.title}
         </p>
-        <p className="mb-8 text-sm">{WorkStyleInformation.description}</p>
         <RadarCharts
           series={WorkStyleInformation.chartSeries}
           options={WorkStyleInformation.chartOption}
         />
-        <p>Description</p>
+        <p className="whitespace-pre-line">
+          {WorkStyleInformation.description}
+        </p>
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="text-2xl font-bold text-slate-200/90">Experience</p>
+        <TimelineList className="ml-2 mt-4" timelines={ExperienceInformation} />
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="text-2xl font-bold text-slate-200/90">Education</p>
+        <TimelineList className="ml-2 mt-4" timelines={EducationInformation} />
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="text-2xl font-bold text-slate-200/90">Coding Skills</p>
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="text-2xl font-bold text-slate-200/90">Knowledges</p>
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="text-2xl font-bold text-slate-200/90">Language Skills</p>
       </section>
     </Main>
   );
