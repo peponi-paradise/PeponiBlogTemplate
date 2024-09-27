@@ -12,6 +12,7 @@ import {
 } from "@/app/constants";
 import RadarCharts from "@/components/apexCharts";
 import TimelineList from "@/components/timelineList";
+import ProgressBar from "@/components/progressBar";
 
 export default function About() {
   return (
@@ -122,14 +123,47 @@ export default function About() {
         <p className="text-2xl font-bold text-slate-200/90">Education</p>
         <TimelineList className="ml-2 mt-4" timelines={EducationInformation} />
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
-        <p className="text-2xl font-bold text-slate-200/90">Coding Skills</p>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 text-slate-200/90 sm:px-8">
+        <p className="text-2xl font-bold">Top Skills</p>
+        <div className="mt-4">
+          <p>Skill 1</p>
+          <ProgressBar className="mt-2" progress="w-[95%]"></ProgressBar>
+        </div>
+        <div className="mt-4">
+          <p>Skill 2</p>
+          <ProgressBar className="mt-2" progress="w-[80%]"></ProgressBar>
+        </div>
+        <div className="mt-4">
+          <p>Skill 3</p>
+          <ProgressBar className="mt-2" progress="w-[50%]"></ProgressBar>
+        </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Knowledges</p>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Language Skills</p>
+        <div className="mt-4">
+          <div className="flex justify-between">
+            <p className="text-slate-200/90">Skill 1</p>
+            <p className="self-center text-xs">Description 1</p>
+          </div>
+          <ProgressBar className="mt-2" progress="w-[95%]"></ProgressBar>
+        </div>
+        <div className="mt-4">
+          <div className="flex justify-between">
+            <p className="text-slate-200/90">Skill 2</p>
+            <p className="self-center text-xs">Description 2</p>
+          </div>
+          <ProgressBar className="mt-2" progress="w-[80%]"></ProgressBar>
+        </div>
+        <div className="mt-4">
+          <div className="flex justify-between">
+            <p className="text-slate-200/90">Skill 3</p>
+            <p className="self-center text-xs">Description 3</p>
+          </div>
+          <ProgressBar className="mt-2" progress="w-[50%]"></ProgressBar>
+        </div>
       </section>
     </Main>
   );
