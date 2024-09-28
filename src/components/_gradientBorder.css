@@ -1,7 +1,7 @@
 /* border from https://codepen.io/mike-schultz/pen/NgQvGO */
 
 .gradient-normal {
-    --borderWidth: 1px;
+    --borderWidth: 2px;
     position: relative;
     border-radius: 0.75rem;
   }
@@ -20,7 +20,7 @@
   }
 
 .gradient-hover {
-    --borderWidth: 1px;
+    --borderWidth: 2px;
     position: relative;
     border-radius: 0.75rem;
   }
