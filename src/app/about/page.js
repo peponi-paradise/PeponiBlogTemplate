@@ -13,6 +13,7 @@ import {
 import RadarCharts from "@/components/apexCharts";
 import TimelineList from "@/components/timelineList";
 import ProgressBar from "@/components/progressBar";
+import KnowledgeBadge from "@/components/knowledgeBadge";
 
 export default function About() {
   return (
@@ -50,10 +51,6 @@ export default function About() {
               title="Nuget Packages"
             />
           </div>
-          <iframe
-            className="lg:min-h-56"
-            src="https://github-readme-activity-graph.vercel.app/graph?username=peponi-paradise&bg_color=transparent&hide_border=true&title_color=38bdf8&color=94a3b8&line=7dd3fc&point=38bdf8&days=30"
-          ></iframe>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <iframe
               className="size-full"
@@ -64,6 +61,10 @@ export default function About() {
               src="https://github-readme-stats.vercel.app/api/top-langs/?username=peponi-paradise&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8"
             ></iframe>
           </div>
+          <iframe
+            className="lg:min-h-56"
+            src="https://github-readme-activity-graph.vercel.app/graph?username=peponi-paradise&bg_color=transparent&hide_border=true&title_color=38bdf8&color=94a3b8&line=7dd3fc&point=38bdf8&days=30"
+          ></iframe>
         </section>
       </section>
       <section className="mx-auto mt-16 grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
@@ -140,6 +141,50 @@ export default function About() {
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Knowledges</p>
+        <div className="mt-4 flex flex-wrap gap-4">
+          <KnowledgeBadge name="Next.js" />
+          <KnowledgeBadge name="React" />
+          <KnowledgeBadge name="JavaScript" />
+          <KnowledgeBadge name="HTML5" />
+          <KnowledgeBadge name="CSS3" />
+          <KnowledgeBadge name="TailwindCSS" />
+          <KnowledgeBadge name="ESLint" />
+          <KnowledgeBadge name="C#" />
+          <KnowledgeBadge name=".NET" />
+          <KnowledgeBadge name=".NET framework" />
+          <KnowledgeBadge name="ASP.NET" />
+          <KnowledgeBadge name="WinForms" />
+          <KnowledgeBadge name="WPF" />
+          <KnowledgeBadge name="OpenCVSharp" />
+          <KnowledgeBadge name="Python" />
+          <KnowledgeBadge name="NumPy" />
+          <KnowledgeBadge name="pandas" />
+          <KnowledgeBadge name="scikit-learn" />
+          <KnowledgeBadge name="ONNX" />
+          <KnowledgeBadge name="PyQt" />
+          <KnowledgeBadge name="Modbus" />
+          <KnowledgeBadge name="EtherCAT" />
+          <KnowledgeBadge name="RestAPI" />
+          <KnowledgeBadge name="gRPC" />
+          <KnowledgeBadge name="JSON" />
+          <KnowledgeBadge name="Xml" />
+          <KnowledgeBadge name="Yaml" />
+          <KnowledgeBadge name="Markdown" />
+          <KnowledgeBadge name="MDX" />
+          <KnowledgeBadge name="KaTeX" />
+          <KnowledgeBadge name="PlantUml" />
+          <KnowledgeBadge name="Visual Studio" />
+          <KnowledgeBadge name="Visual Studio Code" />
+          <KnowledgeBadge name="Sublime Text" />
+          <KnowledgeBadge name="NuGet" />
+          <KnowledgeBadge name="NSIS" />
+          <KnowledgeBadge name="Git" />
+          <KnowledgeBadge name="GitHub" />
+          <KnowledgeBadge name="GitKraken" />
+          <KnowledgeBadge name="Notion" />
+          <KnowledgeBadge name="Figma" />
+          <KnowledgeBadge name="diagrams.net" />
+        </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Language Skills</p>
