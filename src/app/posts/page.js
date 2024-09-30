@@ -7,8 +7,9 @@ import { MetaInformation, PostInformation } from "../constants";
 import Pagenation from "@/components/pagination";
 
 export const metadata = {
-  title: `${MetaInformation.title} - Posts`,
+  title: `Posts`,
   description: "Blog posts",
+  keywords: totalCategories.map((category) => category[0]),
 };
 
 const selectedCategoryClass =

@@ -1,12 +1,19 @@
 import Favicon from "@/public/icons/favicon.ico";
+import AppleFavicon from "@/public/icons/favicon-apple.png";
 import PersonalImage from "@/public/svgs/favicon.svg";
 
 export const MetaInformation = {
   charset: "UTF-8",
-  title: "Peponi",
+  title: {
+    template: "%s - Peponi",
+    default: "Peponi",
+  },
   description: "Peponi's blog",
   author: "Peponi",
-  icons: [{ rel: "icon", url: Favicon.src }],
+  icons: [
+    { rel: "icon", url: Favicon.src },
+    { rel: "apple-touch-icon", url: AppleFavicon.src },
+  ],
 };
 
 export const PostInformation = {
