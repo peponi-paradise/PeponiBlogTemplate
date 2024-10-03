@@ -26,6 +26,26 @@ import Toc from "@/components/toc";
 import getToc from "@/lib/tocParser";
 import GiscusComments from "@/components/giscusComments";
 
+export const metadata = {
+  title: "",
+  description: "",
+  keywords: [],
+  openGraph: {
+    title: "",
+    description: "",
+    url: "",
+    images: [
+      {
+        url: "./opengraph-image.png",
+        width: 256,
+        height: 256,
+        type: "image/png",
+        alt: "Favicon",
+      },
+    ],
+  },
+};
+
 const autolinkHeadingsOptions = {
   behavior: "append",
   properties: {
@@ -89,8 +109,20 @@ const options = {
   },
 };
 
+function SetMetadata(page) {
+  metadata.title = page.title;
+  metadata.description = page.description;
+  metadata.keywords.push(page.category);
+  metadata.keywords.push(page.tags);
+  metadata.openGraph.title = metadata.title;
+  metadata.openGraph.description = page.description;
+  metadata.openGraph.url =
+    MetaInformation.baseUrl + `/posts/${page.folderPath}/${page.slug}`;
+}
+
 export default function Slug(props) {
   let page = getPost(props.params.slug[0], props.params.slug[1]);
+  SetMetadata(page);
   return (
     <Main className="my-8">
       <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">

@@ -4,6 +4,7 @@ import ServiceTitle from "@/components/serviceTitle";
 import ServiceCard from "@/components/serviceCard";
 import PersonalCard from "@/components/personalCard";
 import {
+  MetaInformation,
   EducationInformation,
   ExperienceInformation,
   PersonalInformation,
@@ -14,6 +15,25 @@ import RadarCharts from "@/components/apexCharts";
 import TimelineList from "@/components/timelineList";
 import ProgressBar from "@/components/progressBar";
 import KnowledgeBadge from "@/components/knowledgeBadge";
+
+export const metadata = {
+  title: `About`,
+  description: "About " + MetaInformation.author,
+  openGraph: {
+    title: "About",
+    description: "About " + MetaInformation.author,
+    url: MetaInformation.baseUrl + "/about",
+    images: [
+      {
+        url: "./opengraph-image.png",
+        width: 256,
+        height: 256,
+        type: "image/png",
+        alt: "Favicon",
+      },
+    ],
+  },
+};
 
 export default function About() {
   return (

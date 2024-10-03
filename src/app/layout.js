@@ -5,9 +5,15 @@ import Footer from "@/layouts/globalFooter";
 
 export const metadata = {
   charset: MetaInformation.charset,
+  authors: [{ name: MetaInformation.author }],
   title: MetaInformation.title,
   description: MetaInformation.description,
   icons: MetaInformation.icons,
+  openGraph: {
+    title: MetaInformation.title,
+    description: MetaInformation.description,
+    url: MetaInformation.baseUrl,
+  },
 };
 
 export const viewport = {
