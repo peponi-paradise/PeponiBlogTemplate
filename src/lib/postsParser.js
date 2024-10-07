@@ -16,7 +16,7 @@ export function applyPostFilter(folderPath, title) {
     currentPosts = totalPosts.filter((post) => post.folderPath == folderPath);
   } else if (title != undefined || title != null) {
     currentPosts = totalPosts.filter((post) =>
-      post.title.toLowerCase().includes(title.toLowerCase())
+      post.title.toLowerCase().includes(title.toLowerCase()),
     );
   } else {
     currentPosts = totalPosts;
@@ -43,7 +43,7 @@ export function getPost(folderPath, slug) {
     process.cwd(),
     "src\\posts",
     folderPath,
-    `${slug}.mdx`
+    `${slug}.mdx`,
   );
   return parsePost(filePath);
 }

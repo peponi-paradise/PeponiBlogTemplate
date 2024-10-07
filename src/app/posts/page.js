@@ -3,7 +3,7 @@ import PostList from "@/components/postList";
 import { totalCategories } from "@/lib/postsParser";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
 import Link from "next/link";
-import { MetaInformation, PostInformation } from "../constants";
+import { MetaInformation, PostInformation } from "@/app/constants";
 import Pagenation from "@/components/pagination";
 
 export const metadata = {
