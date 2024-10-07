@@ -1,0 +1,412 @@
+---
+title: KaTeX 문법 정리
+category: KaTeX
+description: KaTeX는 경량화 TeX 문법으로, LaTeX와 유사하다.
+date: 2024-10-07T00:00:00+09:00
+tags: ["Math", "TeX"]
+---
+
+## 1. Introduction
+
+- Markdown 문서를 VS Code로 작성하는 경우 $\LaTeX$의 일부는 사용이 어렵다.
+    대신, $\KaTeX$을 이용하면 어느 정도 표현이 가능하다.
+- $\KaTeX$ 문서는 $\LaTeX$ 문서에서 대부분 출력이 가능할 것으로 보인다.
+- $\LaTeX$ 문서의 일부는 $\KaTeX$ 문서에서 출력이 불가할 것으로 보인다.
+- 웹에 업로드 하는 경우 Markdown 구현에 따라 조금씩 달라 확인이 필요하다.  
+    [KaTeX.org](https://katex.org/)의 document와 GitHub 구현에 차이점이 존재한다.
+    (깃허브는 MathJax를 사용한다. 그리지 못하는 $\KaTeX$ 문법의 경우 빨간 글씨로 표시된다.)
+
+## 2. 기초 사용법
+
+| 항목  | 내용  | 렌더링 |
+| --- | --- | --- |
+| Inline block | `$F(x)=a+b${:latex}` | $$F(x)=a+b$$ |
+| Code Block | `$$F(x)=a+b$${:latex}` | $$F(x)=a+b$$ |
+
+## 3. 기초 표현법
+
+| Greeks |     |     |     |
+| --- | --- | --- | --- |
+| $$\alpha$$ `\alpha{:latex}` | $$\Alpha$$ `\Alpha{:latex}` | $$\beta$$ `\beta{:latex}` | $$\Beta$$ `\Beta{:latex}` |
+| $$\gamma$$ `\gamma{:latex}` | $$\Gamma$$ `\Gamma{:latex}` | $$\delta$$ `\delta{:latex}` | $$\Delta$$ `\Delta{:latex}` |
+| $$\epsilon$$ `\epsilon{:latex}` | $$\Epsilon$$ `\Epsilon{:latex}` | $$\zeta$$ `\zeta{:latex}` | $$\Zeta$$ `\Zeta{:latex}` |
+| $$\eta$$ `\eta{:latex}` | $$\Eta$$ `\Eta{:latex}` | $$\theta$$ `\theta{:latex}` | $$\Theta$$ `\Theta{:latex}` |
+| $$\kappa$$ `\kappa{:latex}` | $$\Kappa$$ `\Kappa{:latex}` | $$\lambda$$ `\lambda{:latex}` | $$\Lambda$$ `\Lambda{:latex}` |
+| $$\nu$$ `\nu{:latex}` | $$\Nu$$ `\Nu{:latex}` | $$\xi$$ `\xi{:latex}` | $$\Xi$$ `\Xi{:latex}` |
+| $$\pi$$ `\pi{:latex}` | $$\Pi$$ `\Pi{:latex}` | $$\rho$$ `\rho{:latex}` | $$\Rho$$ `\Rho{:latex}` |
+| $$\sigma$$ `\sigma{:latex}` | $$\Sigma$$ `\Sigma{:latex}` | $$\tau$$ `\tau{:latex}` | $$\Tau$$ `\Tau{:latex}` |
+| $$\phi$$ `\phi{:latex}` | $$\Phi$$ `\Phi{:latex}` | $$\psi$$ `\psi{:latex}` | $$\Psi$$ `\Psi{:latex}` |
+| $$\omega$$ `\omega{:latex}` | $$\Omega$$ `\Omega{:latex}` |     |     |
+
+  
+| Accents |     |     |     |
+| --- | --- | --- | --- |
+| $$a'$$ `a'{:latex}` | $$a''$$ `a''{:latex}` | $$\check{a}$$ `\check{a}{:latex}` | $$\dot{a}$$ `\dot{a}{:latex}` |
+| $$\ddot{a}$$ `\ddot{a}{:latex}` | $$\hat{a}$$ `\hat{a}{:latex}` | $$\underbar{a}$$ `\underbar{a}{:latex}` | $$\tilde{a}$$ `\tilde{a}{:latex}` |
+| $$\utilde{a}$$ `\utilde{a}{:latex}` | $$\vec{a}$$ `\vec{a}{:latex}` | $$\overleftarrow{a}$$ `\overleftarrow{a}{:latex}` | $$\overrightarrow{a}$$ `\overrightarrow{a}{:latex}` |
+| $$\underleftarrow{a}$$ `\underleftarrow{a}{:latex}` | $$\underrightarrow{a}$$ `\underrightarrow{a}{:latex}` | $$\overline{ab}$$ `\overline{ab}{:latex}` | $$\underline{ab}$$ `\underline{ab}{:latex}` |
+| $$\overlinesegment{ab}$$ `\overlinesegment{ab}{:latex}` | $$\underlinesegment{ab}$$ `\underlinesegment{ab}{:latex}` | $$\overgroup{ab}$$ `\overgroup{ab}{:latex}` | $$\undergroup{ab}$$ `\undergroup{ab}{:latex}` |
+| $$\overbrace{ab}$$ `\overbrace{ab}{:latex}` | $$\underbrace{ab}$$ `\underbrace{ab}{:latex}` |     |     |
+
+  
+| Delimiters |     |     |     |     |     |     |     |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| $$()$$ | `(){:latex}`  <br/>`\lparen{:latex}`  <br/>`\rparen{:latex}` | $$\lbrace\rbrace$$ | `{}{:latex}`  <br/>`\lbrace{:latex}`  <br/>`\rbrace{:latex}` | $$[]$$ | `[]{:latex}`  <br/>`\lbrack{:latex}`  <br/>`\rbrack{:latex}` | $$⟮⟯$$ | `⟮⟯{:latex}`  <br/>`\lgroup{:latex}`  <br/>`\rgroup{:latex}`  <br/>\* 키보드 기본 키에 없음 |
+| $$⟦⟧$$ | `⟦⟧{:latex}`  <br/>`\llbracket{:latex}`  <br/>`\rrbracket{:latex}`  <br/>\* 키보드 기본 키에 없음 | $$\lBrace\rBrace$$ | `\lBrace{:latex}`  <br/>`\rBrace{:latex}` | $$\lt\gt$$ | `\lt{:latex}`  <br/>`\gt{:latex}` | $$⟨⟩$$ | `⟨⟩{:latex}`  <br/>`\lang{:latex}`  <br/>`\rang{:latex}`  <br/>\* 키보드 기본 키에 없음 |
+| $$\vert$$ | `\|{:latex}`  <br/>`\vert{:latex}`  <br/>`\lvert{:latex}`  <br/>`\rvert{:latex}`  <br/>\* 마크다운 기호와 겹침 주의 | $$\Vert$$ | `\|{:latex}`  <br/>`\Vert{:latex}`  <br/>`\lVert{:latex}`  <br/>`\rVert{:latex}`  <br/>\* 마크다운 기호와 겹침 주의 |     |     |     |     |
+
+
+| Sizing |     |     |     |     |
+| --- | --- | --- | --- | --- |
+| $$($$ `({:latex}` | $$\big($$ `\big({:latex}` | $$\Big($$ `\Big({:latex}` | $$\bigg($$ `\bigg({:latex}` | $$\Bigg($$ `\Bigg({:latex}` |
+  
+
+| Logic |     |     |     |
+| --- | --- | --- | --- |
+| $$=$$ `={:latex}` | $$<$$ `<{:latex}` | $$>$$ `>{:latex}` | $$:$$ `:{:latex}` |
+| $$\approx$$ `\approx{:latex}` | $$\approxcolon$$ `\approxcolon{:latex}` | $$\colonapprox$$ `\colonapprox{:latex}` | $$\approxeq$$ `\approxeq{:latex}` |
+| $$\cong$$ `\cong{:latex}` | $$\doteq$$ `\doteq{:latex}` | $$\Doteq$$ `\Doteq{:latex}` | $$\sim$$ `\sim{:latex}` |
+| $$\simeq$$ `\simeq{:latex}` | $$\eqsim$$ `\eqsim{:latex}` | $$\equiv$$ `\equiv{:latex}` | $$\fallingdotseq$$ `\fallingdotseq{:latex}` |
+| $$\geqq$$ `\geqq{:latex}` | $$\gtrapprox$$ `\gtrapprox{:latex}` | $$\leqq$$ `\leqq{:latex}` | $$\lessapprox$$ `\lessapprox{:latex}` |
+| $$\forall$$ `\forall{:latex}` | $$\complement$$ `\complement{:latex}` | $$\emptyset$$ `\emptyset{:latex}` | $$\varnothing$$ `\varnothing{:latex}` |
+| $$\exists$$ `\exists{:latex}` | $$\nexists$$ `\nexists{:latex}` | $$\subset$$ `\subset{:latex}` | $$\supset$$ `\supset{:latex}` |
+| $$\in$$ `\in{:latex}` | $$\notin$$ `\notin{:latex}` | $$\ni$$ `\ni{:latex}` | $$\not \ni$$ `\not \ni{:latex}` |
+| $$\to$$ `\to{:latex}` | $$\gets$$ `\gets{:latex}` | $$\implies$$ `\implies{:latex}` | $$\impliedby$$ `\impliedby{:latex}` |
+| $$\leftrightarrow$$ `\leftrightarrow{:latex}` | $$\iff$$ `\iff{:latex}` | $$\therefore$$ `\therefore{:latex}` | $$\because$$ `\because{:latex}` |
+| $$\set{ x \vert x > 10}$$ | `\set{ x \vert x > 10}{:latex}` | $$\Set{ x \vert x > 10}$$ | `\Set{ x \vert x > 10}{:latex}` |
+
+  
+| Spacing |     |     |     |
+| --- | --- | --- | --- |
+| $$a\,b$$ | `\,{:latex}`  <br/>3/18 em | $$a\enspace b$$ | `\enspace{:latex}`  <br/>1/2 em |
+| $$a\quad b$$ | `\quad{:latex}`  <br/>1 em | $$a\qquad b$$ | `\qquad{:latex}`  <br/>2 em |
+  
+
+| Vertical |     |     |     |
+| --- | --- | --- | --- |
+| $$a\_b$$ `a_b{:latex}` | $$a^b$$ `a^b{:latex}` | $$\_a^b$$ `_a^b{:latex}` |     |
+| $$\stackrel{a}{b}$$ `\stackrel{a}{b}{:latex}` | $$\overset{a}{b}$$ `\overset{a}{b}{:latex}` | $$\underset{a}{b}$$ `\underset{a}{b}{:latex}` |     |
+  
+
+| Annotation |     |     |     |
+| --- | --- | --- | --- |
+| $$\not a$$ `\not a{:latex}` | $$\bcancel{a}$$ `\bcancel{a}{:latex}` | $$\xcancel{a}$$ `\xcancel{a}{:latex}` | $$\sout{a}$$ `\sout{a}{:latex}` |
+| $$\overbrace{abc}^{\text{note}}$$ `\overbrace{abc}^{\text{note}}{:latex}` | $$\underbrace{abc} \_ {\text{note}}$$ `\underbrace{abc}_{\text{note}}{:latex}` | $$\boxed{a=\frac b c}$$ `\boxed{a=\frac b c}{:latex}` | $$\phase{60^\circ}$$ `\phase{60^\circ}{:latex}` |
+
+<p>
+<span className="inline-block">
+$$
+\tag{a.b} x=y
+$$
+</span>
+`\tag{a.b} x=y{:latex}`
+</p>
+
+$$
+\tag*{a.b} x=y
+$$
+`\tag*{a.b} x=y{:latex}`
+
+### 3.1. Matrix
+
+$$\begin{matrix} a & b \\ c & d \end{matrix}$$
+
+```tex
+\begin{matrix}
+a&b\
+c&d
+\end{matrix}
+```
+
+  
+
+$$\begin{pmatrix} a & b \\ c & d \end{pmatrix}$$
+
+```
+\begin{pmatrix}
+a&b\
+c&d
+\end{pmatrix}
+```
+
+  
+
+$$\begin{Bmatrix} a & b \\ c & d \end{Bmatrix}$$
+
+```
+\begin{Bmatrix}
+a&b\
+c&d
+\end{Bmatrix}
+```
+
+  
+
+$$\begin{bmatrix} a & b \\ c & d \end{bmatrix}$$
+
+```
+\begin{bmatrix}
+a&b\
+c&d
+\end{bmatrix}
+```
+
+  
+
+$$\begin{vmatrix} a & b \\ c & d \end{vmatrix}$$
+
+```
+\begin{vmatrix}
+a&b\
+c&d
+\end{vmatrix}
+```
+
+  
+
+$$\begin{array}{c:c:c} a & b & c \\ \hline d & e & f \\ \hdashline g & h & i \end{array}$$
+
+```
+\begin{array}{c:c:c}
+a&b&c\
+\hline
+d&e&f\
+\hdashline
+g&h&i
+\end{array}
+```
+
+  
+
+$$\begin{bmatrix} a & \cdots & b \ \vdots & \ddots & \vdots \ c & \cdots & d \end{bmatrix}$$
+
+```
+\begin{bmatrix}
+a&\cdots&b\
+\vdots&\ddots&\vdots\
+c&\cdots&d
+\end{bmatrix}
+```
+
+- - -
+
+  
+  
+
+## Math operators, symbols
+
+  
+
+| Operators |     |     |     |
+| --- | --- | --- | --- |
+| $$+$$ `+` | $$-$$ `-` | $$\*$$ `*` | $$/$$ `/` |
+| $$\pm$$ `\pm` | $$\times$$ `\times` | $$\div$$ `\div` | $$\And$$ `\And` |
+| $$\cdot$$ `\cdot` | $$\circ$$ `\circ` | $$\cap$$ `\cap` | $$\cup$$ `\cup` |
+| $$\oplus$$ `\oplus` | $$\ominus$$ `\ominus` | $$\odot$$ `\odot` | $$\otimes$$ `\otimes` |
+| $$\bmod$$ `\bmod` | $$x\mod a$$ `x\mod a` | $$x\pmod a$$ `x\pmod a` | $$x\pod a$$ `x\pod a` |
+| $$\sin$$ `\sin` | $$\sinh$$ `\sinh` | $$\arcsin$$ `\arcsin` |     |
+| $$\cos$$ `\cos` | $$\cosh$$ `\cosh` | $$\arccos$$ `\arccos` |     |
+| $$\tan$$ `\tan` | $$\tanh$$ `\tanh` | $$\arctan$$ `\arctan` |     |
+| $$\sec$$ `\sec` | $$\csc$$ `\csc` | $$\cot$$ `\cot` |     |
+| $$\det$$ `\det` | $$\inf$$ `\inf` | $$\min$$ `\min` | $$\max$$ `\max` |
+| $$\deg$$ `\deg` | $$\sec$$ `\sec` |     |     |
+| $$\log$$ `\log` | $$\ln$$ `\ln` | $$\exp$$ `\exp` | $$\sup$$ `\sup` |
+| $$\lim$$ `\lim` | $$\varliminf$$ `\varliminf` | $$\varinjlim$$ `\varinjlim` | $$\varprojlim$$ `\varprojlim` |
+| $$\sqrt\[a\]{b}$$ `\sqrt[a]{b}` | $$\operatorname{f}$$ `\operatorname{f}` |     |     |
+
+  
+
+| Big Operators |     |     |     |
+| --- | --- | --- | --- |
+| $$\sum$$ `\sum` | $$\prod$$ `\prod` | $$\coprod$$ `\coprod` |     |
+| $$\int$$ `\int` | $$\iint$$ `\iint` | $$\iiint$$ `\iiint` |     |
+| $$\oint$$ `\oint` | $$\oiint$$ `\oiint` | $$\oiiint$$ `\oiiint` |     |
+| $$\bigotimes$$ `\bigotimes` | $$\bigoplus$$ `\bigoplus` | $$\bigodot$$ `\bigodot` |     |
+
+  
+
+| Fractions |     |     |     |
+| --- | --- | --- | --- |
+| $$a/b$$ `a/b` | $$a\over b$$ `a\over b` | $$\frac{a}{b}$$ `\frac{a}{b}` | $$\dfrac{a}{b}$$ `\dfrac{a}{b}` |
+| $$\genfrac(\]{1pt}{}{a}{b+c}$$ `\genfrac(]{1pt}{}{a}{b+c}` | $${a}\above{1pt}{b+c}$$ `{a}\above{1pt}{b+c}` | $$\cfrac{a}{b+\cfrac{c}{d}}$$ `\cfrac{a}{b+\cfrac{c}{d}}` |     |
+
+  
+
+| Binomials |     |     |     |
+| --- | --- | --- | --- |
+| $$\binom{a}{b}$$ `\binom{a}{b}` | $$\dbinom{a}{b}$$ `\dbinom{a}{b}` | $${a}\brace{b}$$ `{a}\brace{b}` | $${a}\brack{b}$$ `{a}\brack{b}` |
+
+  
+
+| Symbols |     |     |     |
+| --- | --- | --- | --- |
+| $$\%$$ `\%` | $$#$$ `\#` | $$\&$$ `\&` | $$\colon$$ `\colon` |
+| $$\infty$$ `\infty` | $$\infin$$ `\infin` |     |     |
+| $$\degree$$ `\degree` | $$\angle$$ `\angle` | $$\measuredangle$$ `\measuredangle` | $$\sphericalangle$$ `\sphericalangle` |
+| $$\prime$$ `\prime` | $$\backprime$$ `\backprime` |     |     |
+| $$\cdots$$ `\cdots` | $$\vdots$$ `\vdots` | $$\ddots$$ `\ddots` | $$\ldots$$ `\ldots` |
+| $$\Box$$ `\Box` | $$\triangle$$ `\triangle` | $$\triangledown$$ `\triangledown` | $$\diamond$$ `\diamond` |
+
+  
+  
+
+## 수식 표현법
+
+  
+
+### Equation
+
+- - -
+
+$$
+\begin{equation} F(x)=a+b \end{equation}
+$$
+
+```
+\begin{equation}
+F(x)=a+b
+\end{equation}
+```
+
+  
+
+$$\begin{equation}\begin{split} F(x)=a+b \ =c+b \end{split}\end{equation}$$
+
+```
+\begin{equation}
+\begin{split}
+F(x)=a+b\
+=c+b
+\end{split}
+\end{equation}
+```
+
+  
+
+$$\begin{align} F(x)=a+b \ =c \end{align}$$
+
+```
+\begin{align}
+F(x)=a+b\
+=c
+\end{align}
+```
+
+  
+
+$$\begin{aligned} F(x)=a+b \ =c \end{aligned}$$
+
+```
+\begin{aligned}
+F(x)=a+b\
+=c
+\end{aligned}
+```
+
+  
+
+$$\begin{gather} F(x)=a+b \ =c \end{gather}$$
+
+```
+\begin{gather}
+F(x)=a+b\
+=c
+\end{gather}
+```
+
+  
+
+$$\begin{gathered} F(x)=a+b \ =c \end{gathered}$$
+
+```
+\begin{gathered}
+F(x)=a+b\
+=c
+\end{gathered}
+```
+
+  
+
+$$\begin{align} F(x)&=a+b \ &=c \end{align}$$
+
+```plaintext
+\begin{align}
+F(x)&=a+b\
+&=c
+\end{align}
+```
+
+  
+
+$$\begin{align} \tag{1.1} a+b=1 \ \tag{1.2} c+d=2 \end{align}$$
+
+```text
+\begin{align}
+    \tag{1.1}
+        a+b=1\
+    \tag{1.2}
+        c+d=2
+\end{align}
+
+* 수식에 태그 붙이는 방법
+```
+
+- - -
+
+  
+  
+
+### Cases
+
+- - -
+
+$$x = \begin{cases} a & \text{if } b \ c & \text{if } d \end{cases}$$
+
+```latex
+x = \begin{cases}
+   a &\text{if } b \
+   c &\text{if } d
+\end{cases}
+```
+
+  
+
+$$\begin{rcases} a & \text{if } b \ c & \text{if } d \end{rcases}⇒…$$
+
+```tex
+\begin{rcases}
+   a &\text{if } b \
+   c &\text{if } d
+\end{rcases}⇒…
+```
+
+- - -
+
+  
+  
+
+## Font
+
+  
+
+| Color |     |
+| --- | --- |
+| $$\textcolor{blue}{a+b=c}$$ | `\textcolor{blue}{a+b=c}` |
+| $$\textcolor{#126A31}{a+b=c}$$ | `\textcolor{#126A31}{a+b=c}` |
+| $$\colorbox{skyblue}{$a+b=c$}$$ | `\colorbox{skyblue}{$a+b=c$}` |
+| $$\fcolorbox{crimson}{gold}{$a+b=c$}$$ | `\fcolorbox{crimson}{gold}{$a+b=c$}` |
+
+  
+
+| Font |     |
+| --- | --- |
+| $$\mathrm{abc}$$ | `\mathrm{abc}` |
+| $$\mathbf{abc}$$ | `\mathbf{abc}` |
+| $$\mathit{abc}$$ | `\mathit{abc}` |
+| $$\vdots$$ |     |
+
+  
+
+| Size |     |     |     |     |
+| --- | --- | --- | --- | --- |
+| $$\large a$$ `\large a` | $$\Large a$$ `\Large a` | $$\LARGE a$$ `\LARGE a` | $$\huge a$$ `\huge a` | $$\Huge a$$ `\Huge a` |
