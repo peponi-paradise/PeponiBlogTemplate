@@ -1,0 +1,129 @@
+---
+title: Links
+category: Markdown
+description: Link를 이용해 하이퍼링크를 생성한다.
+date: 2024-10-08T00:00:00+09:00
+tags: ["Syntax", "<a>", "Hyperlink"]
+---
+
+## 1. Introduction
+
+- 글에 링크를 다는 기능
+- `[링크 이름](링크 주소)` 형식으로 작성
+
+## 2. Example
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Render</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            [Github](https://github.com)
+            ```
+            </td>
+            <td>
+            [Github](https://github.com)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            [네이버](https://naver.com "툴팁")
+            ```
+            </td>
+            <td>
+            [네이버](https://naver.com "툴팁")
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            <!-- 링크 강조 -->
+
+            *[Italic link](https://markdownguide.org)*
+            ```
+            </td>
+            <td>
+            *[Italic link](https://markdownguide.org)*
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            <!-- 다이렉트 링크 (이메일 또는 URL) -->
+
+            <https://microsoft.com>
+            ```
+            </td>
+            <td>
+            {/* MDX <https://microsoft.com> 표현 불가 */}
+            [https://microsoft.com](https://microsoft.com)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            <!-- 내부 링크 -->
+
+            [1. Introduction](#1-introduction)
+            ```
+            </td>
+            <td>
+            [1. Introduction](#1-introduction)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            <!-- 참조 링크 -->
+
+            [참조링크][1]
+
+            <!-- 주소 삽입. 페이지에서는 안보임 -->
+            [1]: https://google.com "Google"
+            ```
+            </td>
+            <td>
+            [참조링크][1]
+
+            [1]: https://google.com "Google"
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## 3. Link Target
+
+- `Markdown`의 경우 새 창에서 열기 같은 링크 기능을 제공하지 않는다.
+- 필요한 경우 직접 `<a>{:html}` 태그를 삽입한다.
+
+<table>
+<thead>
+        <tr>
+            <th>Code</th>
+            <th>Render</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            ```html title="HTML"
+            <a href="https://google.com" target="_blank">Google</a>
+            ```
+            </td>
+            <td>
+            <a href="https://google.com" target="_blank">Google</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## 4. 참조 자료
+
+- [Links](https://www.markdownguide.org/basic-syntax/#links)

@@ -1,0 +1,151 @@
+---
+title: Lists
+category: Markdown
+description: 번호 또는 기호를 사용하는 리스트를 표현할 수 있다.
+date: 2024-10-08T00:00:00+09:00
+tags: ["Syntax", "<ol>", "Ordered list", "<ul>", "Unordered list"]
+---
+
+## 1. Introduction
+
+- 번호 또는 기호를 사용하여 리스트 만듦. 글 조직화에 이용
+- 두 가지 리스트 타입을 혼합해서 사용할 수 있다.
+
+## 2. 기본 사용법
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Render</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            1. 번호를
+            2. 사용하는
+            3. 리스트
+            ```
+            </td>
+            <td>
+            1. 번호를
+            2. 사용하는
+            3. 리스트
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            <!-- -, *, + 사용 가능 -->
+
+            - 기호를
+            - 사용하는
+            - 리스트
+            ```
+            </td>
+            <td>
+            - 기호를
+            - 사용하는
+            - 리스트
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            1. 중첩된
+                - 리스트
+                    1. 표현
+            ```
+            </td>
+            <td>
+            1. 중첩된
+                - 리스트
+                    1. 표현
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## 3. 리스트 안에 다른 마크다운 요소 넣기
+
+- 여기서는 간단히 다른 마크다운 요소가 삽입될 수 있다는 정도만 보여준다.
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Render</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            ````md title="Markdown"
+            - code
+                ```python
+                def TestFunction(PrintString:str):
+                    print(PrintString)
+                ```
+            ````
+            </td>
+            <td>
+            - code
+                ```python
+                def TestFunction(PrintString:str):
+                    print(PrintString)
+                ```
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            - 인용문
+                > 인용문
+            ```
+            </td>
+            <td>
+            - 인용문
+                > 인용문
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            - 단락
+                1번 단락
+
+                2번 단락
+            ```
+            </td>
+            <td>
+            - 단락
+                1번 단락
+
+                2번 단락
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            - 이미지
+                ![이미지](https://images.unsplash.com/photo-1726293993561-ae9901d8c6d0?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+            ```
+            </td>
+            <td>
+            - 이미지
+                ![이미지](https://images.unsplash.com/photo-1726293993561-ae9901d8c6d0?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## 4. Ordered list 구성시 팁
+
+> [!TIP]
+> CommonMark에 따르면 일부 markdown에서 순서가 있는 리스트 구성 시 `)` 기호를 delimiter로 사용할 수 있으나 `.` 사용을 권장한다고 한다.
+
+## 5. 참조 자료
+
+- [Lists](https://www.markdownguide.org/basic-syntax/#lists-1)

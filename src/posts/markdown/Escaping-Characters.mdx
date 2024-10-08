@@ -1,0 +1,72 @@
+---
+title: Escaping Characters
+category: Markdown
+description: "'\\' 기호를 사용해 마크다운의 형식 지정 문자를 글자로 사용할 수 있다."
+date: 2024-10-08T00:00:00+09:00
+tags: ["Syntax", "\\", "Backslash"]
+---
+
+## 1. Introduction
+
+- 마크다운에서 사용되는 형식 지정 문자를 문자로 표현하기 위해 사용
+- 문자 앞에 백슬래쉬 기호 `\` 를 사용한다.
+
+## 2. Example
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Render</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            \*\*With escaping\*\*
+            **Without escaping**
+            ```
+            </td>
+            <td>
+            \*\*With escaping\*\*
+            **Without escaping**
+            </td>
+        </tr>
+        <tr>
+            <td>
+            ```md title="Markdown"
+            \#\#\# With escaping
+            ### Without escaping
+            ```
+            </td>
+            <td>
+            \#\#\# With escaping
+            ### Without escaping
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+## 3. 적용 가능 문자 리스트
+
+| 항목 | 이름        |
+|:--:|-----------|
+| \  | Backslash |
+| ` |Backtick, Grave|
+| * |Asterisk|
+| _ |Underline, Underscore|
+| { } |Curly braces|
+| [ ] |Brackets|
+| < > |Angle brackets|
+| ( ) |Parentheses|
+| # |Pound sign, Crosshatch, Sharp|
+| + |Plus sign
+| - |Minus sign, Hyphen|
+| . |Dot, Period, Full stop, Point|
+| ! |Exclamation mark|
+| \| |Pipe|
+
+## 4. 참조 자료
+
+- [Escaping Characters](https://www.markdownguide.org/basic-syntax/#escaping-characters)

@@ -22,6 +22,10 @@
   @apply scroll-mt-28;
 }
 
+.prose .markdown-alert > :first-child{
+  @apply mt-0;
+}
+
 .prose a {
   @apply text-sky-400/80;
 }

@@ -1,0 +1,54 @@
+---
+title: Sub & Super script
+category: Markdown
+description: 아래 또는 위 첨자를 이용하여 정보를 알맞게 표현할 수 있다.
+date: 2024-10-08T00:00:00+09:00
+tags: ["Syntax", "<sub>", "<sup>"]
+---
+
+## 1. Introduction
+
+1. 몇몇 Markdown은 아래 & 위 첨자를 지원한다.
+2. 아래 첨자의 경우 물결 `~` 기호를 적용할 글자 전후에 사용한다.
+    - 일부 markdown은 `~` 기호를 취소선에 사용한다.
+3. 위 첨자의 경우 제곱 `^` 기호를 적용할 글자 전후에 사용한다.
+
+## 2. Example
+
+```md title="Markdown"
+- Subscript (아래 첨자)
+    - 아래 첨자 사용법 : NH~3~
+
+- Superscript (위 첨자)
+    - 위 첨자 사용법 : aX^2^ + bX + C
+```
+
+## 3. Rendering
+
+- Subscript (아래 첨자)
+    - 아래 첨자 사용법 : NH~3~
+
+- Superscript (위 첨자)
+    - 위 첨자 사용법 : aX^2^ + bX + C
+
+## 4. HTML로 작성
+
+- 마크다운에서 지원되지 않는 경우, `HTML`로 작성할 수 있다.
+
+```html title="HTML"
+- Subscript (아래 첨자)
+    - 아래 첨자 사용법 : NH<sub>3</sub>
+
+- Superscript (위 첨자)
+    - 위 첨자를 사용법 : aX<sup>2</sup> + bX + C
+```
+
+- Subscript (아래 첨자)
+    - 아래 첨자 사용법 : NH<sub>3</sub>
+
+- Superscript (위 첨자)
+    - 위 첨자를 사용법 : aX<sup>2</sup> + bX + C
+
+## 5. 참조 자료
+
+- [markdownguide.org - Extended syntax](https://www.markdownguide.org/extended-syntax/#subscript "Extended syntax overview")
