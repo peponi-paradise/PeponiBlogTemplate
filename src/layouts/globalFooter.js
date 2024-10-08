@@ -7,6 +7,7 @@ import github from "../public/svgs/github.svg";
 import githubHover from "../public/svgs/githubHover.svg";
 import linkedIn from "../public/svgs/linkedIn.svg";
 import linkedInHover from "../public/svgs/linkedInHover.svg";
+import { MetaInformation } from "@/app/constants";
 
 function LinkButton(props) {
   const [isHover, setIsHover] = useState(false);
@@ -27,7 +28,9 @@ function LinkButton(props) {
 export default function Footer() {
   return (
     <footer className="flex flex-row justify-between border-t border-slate-700">
-      <p className="px-8 py-4">ⓒ 2024. Peponi All rights reserved</p>
+      <p className="px-8 py-4">
+        ⓒ 2024. {MetaInformation.author} All rights reserved
+      </p>
       <section className="flex flex-row items-center gap-4 px-8 py-4">
         <LinkButton
           url="https://github.com"
