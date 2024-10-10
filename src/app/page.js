@@ -65,7 +65,7 @@ export default function Home() {
           ></iframe>
         </section>
       </section>
-      <section className="mx-auto mt-16 grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
+      <section className="mx-auto mt-16 grid gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
         <div className="my-auto flex flex-row justify-between lg:flex-col">
           <ServiceTitle
             className="line-clamp-[7] min-w-0 lg:mb-8"
@@ -79,7 +79,7 @@ export default function Home() {
             Read more →
           </Link>
         </div>
-        <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-2 lg:col-span-2">
           <ServiceCard
             className="gradient-normal border-0"
             imageSrc={Jeje}
