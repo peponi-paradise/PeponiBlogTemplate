@@ -6,7 +6,7 @@ const defaultClassName =
 
 export default function ServiceCard(props) {
   return (
-    <div role="serviceCard" className={defaultClassName + props.className}>
+    <div className={defaultClassName + props.className}>
       <Image
         src={props.imageSrc}
         alt={props.imageAlt}
@@ -17,7 +17,7 @@ export default function ServiceCard(props) {
       <p className="col-span-2 text-xl font-bold text-slate-200/90">
         {props.title}
       </p>
-      <p className="col-span-2 col-start-2 line-clamp-4 self-start text-sm">
+      <p className="col-span-2 col-start-2 line-clamp-4 text-sm">
         {props.description}
       </p>
     </div>

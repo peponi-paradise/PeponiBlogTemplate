@@ -4,7 +4,7 @@ import { sync } from "glob";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-const postPath = path.join(process.cwd(), "src\\posts");
+const postPath = path.join(process.cwd(), "posts");
 export let totalPosts = getAllPosts();
 export let totalCategories = getAllCategories();
 
@@ -39,12 +39,7 @@ export function pagenation(posts, count, page) {
 }
 
 export function getPost(folderPath, slug) {
-  let filePath = path.join(
-    process.cwd(),
-    "src\\posts",
-    folderPath,
-    `${slug}.mdx`,
-  );
+  let filePath = path.join(process.cwd(), "posts", folderPath, `${slug}.mdx`);
   return parsePost(filePath);
 }
 

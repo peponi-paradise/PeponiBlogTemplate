@@ -1,6 +1,6 @@
-import Favicon from "@/public/icons/favicon.ico";
-import AppleFavicon from "@/public/icons/favicon-apple.png";
-import PersonalImage from "@/public/svgs/favicon.svg";
+import Favicon from "@/assets/icons/favicon.ico";
+import AppleFavicon from "@/assets/icons/favicon-apple.png";
+import PersonalImage from "@/assets/svgs/favicon.svg";
 
 export const MetaInformation = {
   charset: "UTF-8",
@@ -65,19 +65,19 @@ export const WorkStyleInformation = {
 
 export const ExperienceInformation = [
   {
-    title: "Company 3",
+    name: "Company 3",
     dateTime: "2023 - Present",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   },
   {
-    title: "Company 2",
+    name: "Company 2",
     dateTime: "2021 - 2023",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   },
   {
-    title: "Company 1",
+    name: "Company 1",
     dateTime: "2020 - 2021",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
@@ -86,19 +86,19 @@ export const ExperienceInformation = [
 
 export const EducationInformation = [
   {
-    title: "University 2",
+    name: "University 2",
     dateTime: "2023 - Present",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   },
   {
-    title: "University 1",
+    name: "University 1",
     dateTime: "2021 - 2023",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
   },
   {
-    title: "School 1",
+    name: "School 1",
     dateTime: "2020 - 2021",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",

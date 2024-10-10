@@ -15,6 +15,11 @@ import RadarCharts from "@/components/apexCharts";
 import TimelineList from "@/components/timelineList";
 import ProgressBar from "@/components/progressBar";
 import KnowledgeBadge from "@/components/knowledgeBadge";
+import Jeje from "../../../public/services/jeje1.jpg";
+import Jeje2 from "../../../public/services/jeje2.jpg";
+import Jeje3 from "../../../public/services/jeje3.jpg";
+import Jeje4 from "../../../public/services/jeje4.jpg";
+import ProjectCard from "@/components/projectCard";
 
 export const metadata = {
   title: `About`,
@@ -96,31 +101,68 @@ export default function About() {
         <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje}
+            imageAlt="My cat, Jeje"
             title="My Service 1"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje2}
+            imageAlt="My cat, Jeje"
             title="My Service 2"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje3}
+            imageAlt="My cat, Jeje"
             title="My Service 3"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje4}
+            imageAlt="My cat, Jeje"
             title="My Service 4"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+          />
+        </div>
+      </section>
+      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+        <p className="mb-4 text-2xl font-bold text-slate-200/90">Projects</p>
+        <div className="flex flex-wrap gap-4">
+          <ProjectCard
+            title="My Project 1"
+            company="Company 1"
+            date="2018.08 - 2020.02"
+            description="Sample description for My Project 1"
+            thumbnail="/projects/Company 1/jeje5.jpg"
+            alt="Jeje"
+          />
+          <ProjectCard
+            title="My Project 2"
+            company="Company 2"
+            date="2018.08 - 2020.02"
+            description="Sample description for My Project 2"
+            thumbnail="/projects/Company 2/jeje6.jpg"
+            alt="Jeje"
+          />
+          <ProjectCard
+            title="My Project 3"
+            company="Company 3"
+            date="2018.08 - 2020.02"
+            description="Sample description for My Project 3"
+            thumbnail="/projects/Company 3/jeje7.jpg"
+            alt="Jeje"
+          />
+          <ProjectCard
+            title="My Project 4"
+            company="Company 3"
+            date="2018.08 - 2020.02"
+            description="Sample description for My Project 4"
+            thumbnail="/projects/Company 3/jeje8.jpg"
+            alt="Jeje"
           />
         </div>
       </section>

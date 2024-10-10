@@ -6,8 +6,8 @@ export default function TimelineList(props) {
       {props.timelines.map((timelineItem) => (
         <TimelineListItem
           className="mb-4 ml-4 last:mb-0"
-          key={timelineItem.title}
-          title={timelineItem.title}
+          key={timelineItem.name}
+          title={timelineItem.name}
           dateTime={timelineItem.dateTime}
           description={timelineItem.description}
         />

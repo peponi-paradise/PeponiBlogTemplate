@@ -5,7 +5,7 @@ const defaultClassName =
 
 export default function StatCard(props) {
   return (
-    <div role="statCard" className={defaultClassName + props.className}>
+    <div className={defaultClassName + props.className}>
       <p className="mb-4 text-4xl font-bold text-sky-400">{props.value}</p>
       <p>{props.title}</p>
     </div>

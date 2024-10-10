@@ -11,6 +11,8 @@ import ServiceCard from "@/components/serviceCard";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
 import PostList from "@/components/postList";
 import Link from "next/link";
+import Jeje from "../../public/services/jeje1.jpg";
+import Jeje2 from "../../public/services/jeje2.jpg";
 
 export default function Home() {
   let totalPosts = applyPostFilter();
@@ -80,15 +82,15 @@ export default function Home() {
         <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje}
+            imageAlt="My cat, Jeje"
             title="My Service 1"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
             className="gradient-normal border-0"
-            imageSrc={PersonalInformation.personalImage}
-            imageAlt="Sample image"
+            imageSrc={Jeje2}
+            imageAlt="My cat, Jeje"
             title="My Service 2"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />

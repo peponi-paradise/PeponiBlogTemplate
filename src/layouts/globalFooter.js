@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import github from "../public/svgs/github.svg";
-import githubHover from "../public/svgs/githubHover.svg";
-import linkedIn from "../public/svgs/linkedIn.svg";
-import linkedInHover from "../public/svgs/linkedInHover.svg";
+import github from "@/assets/svgs/github.svg";
+import githubHover from "@/assets/svgs/githubHover.svg";
+import linkedIn from "@/assets/svgs/linkedIn.svg";
+import linkedInHover from "@/assets/svgs/linkedInHover.svg";
 import { MetaInformation } from "@/app/constants";
 
 function LinkButton(props) {

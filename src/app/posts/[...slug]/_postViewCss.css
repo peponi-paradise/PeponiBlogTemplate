@@ -136,7 +136,7 @@
 }
 
 .prose .innerlink:after {
-  content: url("../../../public/svgs/link.svg");
+  content: url("../../../assets/svgs/link.svg");
 }
 
 .innerlink:hover,
@@ -145,5 +145,5 @@
 }
 
 .prose .innerlink:hover::after {
-  content: url("../../../public/svgs/linkHover.svg");
+  content: url("../../../assets/svgs/linkHover.svg");
 }

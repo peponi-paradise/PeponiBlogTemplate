@@ -1,5 +1,5 @@
 import Image from "next/image";
-import timer from "@/public/svgs/timer.svg";
+import timer from "@/assets/svgs/timer.svg";
 import { Chip, Chips } from "./chip";
 
 export default function ArticleHeaderMobile(props) {

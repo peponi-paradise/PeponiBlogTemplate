@@ -2,9 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import "./_postList.css";
 import { Chip, Chips } from "./chip";
-import timer from "@/public/svgs/timer.svg";
-
-// bg-gradient-to-br from-slate-800 from-30% to-slate-700
+import timer from "@/assets/svgs/timer.svg";
 
 export default function PostList(props) {
   return (
