@@ -1,6 +1,6 @@
 import Favicon from "@/assets/icons/favicon.ico";
 import AppleFavicon from "@/assets/icons/favicon-apple.png";
-import PersonalImage from "@/assets/svgs/favicon.svg";
+import PersonalImage from "../../public/jeje.jpg";
 
 export const MetaInformation = {
   charset: "UTF-8",

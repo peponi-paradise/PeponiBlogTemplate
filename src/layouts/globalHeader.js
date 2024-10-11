@@ -69,6 +69,12 @@ export default function Header() {
           >
             Posts
           </Link>
+          <Link
+            href="/projects"
+            className="my-auto border-r border-slate-700 px-2 hover:text-sky-400"
+          >
+            Projects
+          </Link>
           <Link href="/about" className="my-auto pl-2 hover:text-sky-400">
             About
           </Link>

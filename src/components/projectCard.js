@@ -1,39 +1,40 @@
-/* eslint-disable @next/next/no-img-element */
-import "./_gradientBorder.css";
+import Image from "next/image";
 
-const withoutImage =
-  "gradient-hover my-auto grid grid-cols-1 items-center gap-4 break-words bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-4 py-4 sm:px-8 ";
-const withImage =
-  "gradient-hover my-auto grid grid-cols-2 items-center gap-4 break-words bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-slate-700 px-4 py-4 sm:px-8 ";
+const defaultClassName =
+  "grid grid-flow-row gap-4 break-words bg-gradient-to-br from-slate-800 from-30% to-slate-700 border border-sky-700 rounded-xl px-4 py-4 sm:px-8 ";
+const withTextOption = "items-center ";
+const withImageOption = "auto-rows-fr ";
 
 export default function ProjectCard(props) {
   if (props.thumbnail == undefined) {
     return (
-      <div className={withoutImage + props.className}>
+      <div className={defaultClassName + withTextOption + props.className}>
         <p className="text-xl font-bold text-slate-200/90">{props.title}</p>
-        <div>
+        <p className="line-clamp-6 text-sm">{props.description}</p>
+        <div className="grid grid-cols-2">
           <p className="text-xs">{props.company}</p>
-          <p className="text-xs">{props.date}</p>
+          <p className="text-right text-xs">{props.date}</p>
         </div>
-        <p className="line-clamp-4 self-start text-sm">{props.description}</p>
       </div>
     );
   } else {
     return (
-      <div className={withImage + props.className}>
-        <img
-          src={props.thumbnail}
-          alt={props.alt}
-          className="m-auto"
-          loading="lazy"
-        />
-        <div className="grid grid-flow-row gap-4">
+      <div className={defaultClassName + withImageOption + props.className}>
+        <div className="relative h-[auto] w-full">
+          <Image
+            className="rounded-xl object-cover object-center"
+            src={props.thumbnail}
+            alt={props.alt}
+            fill
+          />
+        </div>
+        <div className="flex flex-col gap-4">
           <p className="text-xl font-bold text-slate-200/90">{props.title}</p>
-          <div>
+          <p className="line-clamp-3 text-sm">{props.description}</p>
+          <div className="grid grid-cols-2">
             <p className="text-xs">{props.company}</p>
-            <p className="text-xs">{props.date}</p>
+            <p className="text-right text-xs">{props.date}</p>
           </div>
-          <p className="line-clamp-4 text-sm">{props.description}</p>
         </div>
       </div>
     );

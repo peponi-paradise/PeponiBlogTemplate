@@ -15,10 +15,6 @@ import RadarCharts from "@/components/apexCharts";
 import TimelineList from "@/components/timelineList";
 import ProgressBar from "@/components/progressBar";
 import KnowledgeBadge from "@/components/knowledgeBadge";
-import Jeje from "../../../public/services/jeje1.jpg";
-import Jeje2 from "../../../public/services/jeje2.jpg";
-import Jeje3 from "../../../public/services/jeje3.jpg";
-import Jeje4 from "../../../public/services/jeje4.jpg";
 import ProjectCard from "@/components/projectCard";
 
 export const metadata = {
@@ -28,22 +24,13 @@ export const metadata = {
     title: "About",
     description: "About " + MetaInformation.author,
     url: MetaInformation.baseUrl + "/about",
-    images: [
-      {
-        url: "./opengraph-image.png",
-        width: 256,
-        height: 256,
-        type: "image/png",
-        alt: "Favicon",
-      },
-    ],
   },
 };
 
 export default function About() {
   return (
     <Main className="mx-auto my-8 max-w-screen-lg">
-      <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 md:grid-cols-3">
+      <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <PersonalCard
           className="my-auto"
           name={PersonalInformation.name}
@@ -52,31 +39,16 @@ export default function About() {
           company={PersonalInformation.company}
           additionalInformation={PersonalInformation.additionalInformation}
           description={PersonalInformation.description}
+          personalImage={PersonalInformation.personalImage}
         />
-        <section className="flex flex-col gap-4 md:col-span-2">
-          <div className="grid grid-cols-2 gap-4">
-            <StatCard
-              className="gradient-normal border-0"
-              value="5+"
-              title="Years Experience"
-            />
-            <StatCard
-              className="gradient-normal border-0"
-              value="5+"
-              title="Clients"
-            />
-            <StatCard
-              className="gradient-normal border-0"
-              value="10+"
-              title="Projects"
-            />
-            <StatCard
-              className="gradient-normal border-0"
-              value="5+"
-              title="Nuget Packages"
-            />
+        <section className="flex flex-col gap-4">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <StatCard value="5+" title="Years Experience" />
+            <StatCard value="10+" title="Projects" />
+            <StatCard value="5+" title="Nuget Packages" />
+            <StatCard value="5+" title="Clients" />
           </div>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <iframe
               className="size-full"
               src="https://github-readme-stats.vercel.app/api?username=peponi-paradise&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8"
@@ -92,38 +64,34 @@ export default function About() {
           ></iframe>
         </section>
       </section>
-      <section className="mx-auto mt-16 grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
+      <section className="mx-auto mt-16 grid gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
         <ServiceTitle
-          className="my-auto"
+          className="m-auto"
           title={ServiceInformation.title}
           description={ServiceInformation.description}
         />
-        <div className="grid gap-4 md:col-span-2 md:grid-cols-2">
+        <div className="grid grid-flow-row gap-4 min-[480px]:grid-cols-2 lg:col-span-2">
           <ServiceCard
-            className="gradient-normal border-0"
-            imageSrc={Jeje}
-            imageAlt="My cat, Jeje"
+            thumbnail="/services/jeje1.jpg"
+            alt="My cat, Jeje"
             title="My Service 1"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
-            className="gradient-normal border-0"
-            imageSrc={Jeje2}
-            imageAlt="My cat, Jeje"
+            thumbnail="/services/jeje2.jpg"
+            alt="My cat, Jeje"
             title="My Service 2"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
-            className="gradient-normal border-0"
-            imageSrc={Jeje3}
-            imageAlt="My cat, Jeje"
+            thumbnail="/services/jeje3.jpg"
+            alt="My cat, Jeje"
             title="My Service 3"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
           <ServiceCard
-            className="gradient-normal border-0"
-            imageSrc={Jeje4}
-            imageAlt="My cat, Jeje"
+            thumbnail="/services/jeje4.jpg"
+            alt="My cat, Jeje"
             title="My Service 4"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
           />
@@ -131,12 +99,12 @@ export default function About() {
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="mb-4 text-2xl font-bold text-slate-200/90">Projects</p>
-        <div className="flex flex-wrap gap-4">
+        <div className="grid grid-flow-row gap-4 min-[480px]:grid-cols-2">
           <ProjectCard
             title="My Project 1"
             company="Company 1"
             date="2018.08 - 2020.02"
-            description="Sample description for My Project 1"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
             thumbnail="/projects/Company 1/jeje5.jpg"
             alt="Jeje"
           />
@@ -144,7 +112,7 @@ export default function About() {
             title="My Project 2"
             company="Company 2"
             date="2018.08 - 2020.02"
-            description="Sample description for My Project 2"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
             thumbnail="/projects/Company 2/jeje6.jpg"
             alt="Jeje"
           />
@@ -152,7 +120,7 @@ export default function About() {
             title="My Project 3"
             company="Company 3"
             date="2018.08 - 2020.02"
-            description="Sample description for My Project 3"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
             thumbnail="/projects/Company 3/jeje7.jpg"
             alt="Jeje"
           />
@@ -160,7 +128,7 @@ export default function About() {
             title="My Project 4"
             company="Company 3"
             date="2018.08 - 2020.02"
-            description="Sample description for My Project 4"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
             thumbnail="/projects/Company 3/jeje8.jpg"
             alt="Jeje"
           />
