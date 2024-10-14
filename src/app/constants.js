@@ -15,6 +15,7 @@ export const MetaInformation = {
     { rel: "apple-touch-icon", url: AppleFavicon.src },
   ],
   baseUrl: "https://github.com/peponi-paradise",
+  googleSiteVerification: "",
 };
 
 export const PostInformation = {

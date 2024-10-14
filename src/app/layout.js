@@ -25,6 +25,18 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className="scroll-smooth">
+      <head>
+        {/* Add custom scripts, metadata like google search console */}
+        {MetaInformation.googleSiteVerification !== undefined &&
+        MetaInformation.googleSiteVerification != "" ? (
+          <meta
+            name="google-site-verification"
+            content={MetaInformation.googleSiteVerification}
+          />
+        ) : (
+          <></>
+        )}
+      </head>
       <body className="container mx-auto flex min-h-screen flex-col justify-between bg-slate-900 text-slate-400">
         <Header />
         {children}
