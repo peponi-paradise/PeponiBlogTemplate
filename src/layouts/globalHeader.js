@@ -6,6 +6,7 @@ import Image from "next/image";
 import favicon from "@/assets/svgs/favicon.svg";
 import searchIcon from "@/assets/svgs/searchIcon.svg";
 import searchIconHover from "@/assets/svgs/searchIconHover.svg";
+import "./_globalHeader.css";
 
 function handleKeyPress(event) {
   if (event.key === "Enter") {
@@ -47,7 +48,7 @@ export default function Header() {
           alt="Favicon"
           className="mx-auto my-auto inline-block size-6"
         ></Image>
-        <span className="hidden text-center text-xl font-bold hover:text-sky-400 sm:inline-block">
+        <span className="titleSpan hidden text-center text-xl font-bold sm:inline-block">
           Peponi
         </span>
       </Link>

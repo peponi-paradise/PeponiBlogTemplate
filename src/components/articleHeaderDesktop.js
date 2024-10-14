@@ -9,7 +9,11 @@ export default function ArticleHeaderDesktop(props) {
       <hr className="my-4" />
       <>
         <div className="my-1 flex flex-row justify-between">
-          <span>{new Date(props.date).toLocaleDateString()}</span>
+          <span>
+            {props.date.constructor == Date
+              ? new Date(props.date).toLocaleDateString()
+              : props.date}
+          </span>
           <div className="flex flex-row items-center">
             <Image
               src={timer}
@@ -28,10 +32,14 @@ export default function ArticleHeaderDesktop(props) {
           content={props.category}
         />
       </div>
-      <Chips
-        className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
-        contents={props.tags}
-      ></Chips>
+      {props.tags !== undefined && props.tags.length > 0 ? (
+        <Chips
+          className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
+          contents={props.tags}
+        ></Chips>
+      ) : (
+        <></>
+      )}
     </section>
   );
 }

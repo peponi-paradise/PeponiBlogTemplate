@@ -1,5 +1,6 @@
 import { totalPosts } from "@/lib/postsParser";
 import { MetaInformation } from "./constants";
+import { totalProjects } from "@/lib/projectParser";
 
 export default function sitemap() {
   let home = {
@@ -14,6 +15,10 @@ export default function sitemap() {
     url: `${MetaInformation.baseUrl}/posts/${post.folderPath}/${post.slug}`,
     lastModified: post.date,
   }));
+  let projects = totalProjects.map((project) => ({
+    url: `${MetaInformation.baseUrl}/projects/${project.slug}`,
+    lastModified: project.published,
+  }));
 
-  return [home, about, ...posts];
+  return [home, about, ...posts, ...projects];
 }

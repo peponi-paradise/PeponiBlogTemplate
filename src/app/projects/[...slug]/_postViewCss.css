@@ -1,0 +1,149 @@
+.prose {
+  @apply text-slate-400;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply text-slate-200/90;
+}
+
+.prose h2:first-child{
+  @apply mt-0;
+}
+
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5 {
+  @apply scroll-mt-28;
+}
+
+.prose .markdown-alert > :first-child{
+  @apply mt-0;
+}
+
+.prose a {
+  @apply text-sky-400/80;
+}
+
+.not-prose a {
+  @apply text-slate-400;
+}
+
+.prose figure[data-rehype-pretty-code-figure] {
+  @apply my-4;
+}
+
+.prose figure > figcaption {
+  @apply rounded-t-md border-x border-t border-slate-700 px-4 py-1 text-base font-bold;
+}
+.prose figure figcaption + div pre {
+  @apply rounded-none rounded-b-md;
+}
+
+.prose pre {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  @apply my-0 border border-slate-700 bg-slate-800 p-0;
+}
+
+.prose pre::-webkit-scrollbar {
+  display: none;
+}
+
+.prose pre > button {
+  @apply absolute bottom-0 right-0 hidden rounded-md backdrop-blur;
+}
+
+.prose pre:hover button {
+  @apply block;
+}
+
+.prose pre > button > img {
+  @apply m-2 h-8 w-8 p-1;
+}
+
+.prose code {
+  @apply rounded-md bg-slate-800 px-1.5 py-0.5 font-['Pretendard_Variable'] text-slate-300;
+}
+
+.prose code::before {
+  @apply content-[];
+}
+
+.prose code::after {
+  @apply content-[];
+}
+
+.prose code[data-line-numbers] {
+  counter-reset: line;
+}
+
+.prose code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+.prose code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 1.25rem;
+}
+
+.prose code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 1.75rem;
+}
+
+.prose code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.25rem;
+}
+
+.prose pre > code {
+  @apply border-none p-0;
+}
+
+.prose pre > code span[data-line] {
+  @apply px-4;
+}
+
+.prose pre > code span[data-line]:first-child {
+  @apply pt-2;
+}
+
+.prose pre > code span[data-line]:last-child {
+  @apply pb-2;
+}
+
+.prose pre > code span[data-highlighted-line] {
+  @apply border-l-2 border-sky-400/80 bg-slate-700/70 pl-[calc(1rem-2px)] pr-4;
+}
+
+.prose table {
+  @apply break-words table-fixed;
+}
+
+.prose .innerlink {
+  @apply invisible ml-4;
+}
+
+.prose .innerlink:after {
+  content: url("../../../assets/svgs/link.svg");
+}
+
+.innerlink:hover,
+.prose *:hover > .innerlink {
+  @apply visible;
+}
+
+.prose .innerlink:hover::after {
+  content: url("../../../assets/svgs/linkHover.svg");
+}

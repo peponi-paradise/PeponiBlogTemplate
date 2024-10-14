@@ -4,6 +4,7 @@ import Header from "@/layouts/globalHeader";
 import Footer from "@/layouts/globalFooter";
 
 export const metadata = {
+  metadataBase: new URL(MetaInformation.baseUrl),
   charset: MetaInformation.charset,
   authors: [{ name: MetaInformation.author }],
   title: MetaInformation.title,

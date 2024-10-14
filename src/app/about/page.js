@@ -16,6 +16,7 @@ import TimelineList from "@/components/timelineList";
 import ProgressBar from "@/components/progressBar";
 import KnowledgeBadge from "@/components/knowledgeBadge";
 import ProjectCard from "@/components/projectCard";
+import { projectsPreview } from "@/lib/projectParser";
 
 export const metadata = {
   title: `About`,
@@ -100,38 +101,23 @@ export default function About() {
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="mb-4 text-2xl font-bold text-slate-200/90">Projects</p>
         <div className="grid grid-flow-row gap-4 min-[480px]:grid-cols-2">
-          <ProjectCard
-            title="My Project 1"
-            company="Company 1"
-            date="2018.08 - 2020.02"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-            thumbnail="/projects/Company 1/jeje5.jpg"
-            alt="Jeje"
-          />
-          <ProjectCard
-            title="My Project 2"
-            company="Company 2"
-            date="2018.08 - 2020.02"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-            thumbnail="/projects/Company 2/jeje6.jpg"
-            alt="Jeje"
-          />
-          <ProjectCard
-            title="My Project 3"
-            company="Company 3"
-            date="2018.08 - 2020.02"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-            thumbnail="/projects/Company 3/jeje7.jpg"
-            alt="Jeje"
-          />
-          <ProjectCard
-            title="My Project 4"
-            company="Company 3"
-            date="2018.08 - 2020.02"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-            thumbnail="/projects/Company 3/jeje8.jpg"
-            alt="Jeje"
-          />
+          {projectsPreview.length > 0 ? (
+            projectsPreview.map((project) => (
+              <ProjectCard
+                key={project.title}
+                slug={project.slug}
+                title={project.title}
+                company={project.company}
+                dateFrom={project.dateFrom}
+                dateTo={project.dateTo}
+                description={project.description}
+                thumbnail={project.thumbnail}
+                alt={project.alt}
+              />
+            ))
+          ) : (
+            <p>To be updated...</p>
+          )}
         </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">

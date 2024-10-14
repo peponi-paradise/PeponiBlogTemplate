@@ -1,0 +1,3 @@
+div>a>div:hover .titlePara{
+    @apply text-sky-400;
+}

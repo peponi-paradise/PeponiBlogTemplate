@@ -1,0 +1,4 @@
+header>a:hover .titleSpan
+{
+    @apply text-sky-400;
+}

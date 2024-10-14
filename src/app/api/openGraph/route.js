@@ -15,7 +15,7 @@ export function GET(request) {
   let date = searchParams.get("date");
   let minutesToRead = searchParams.get("minutesToRead");
   let category = searchParams.get("category");
-  let tags = searchParams.get("tags").split(",");
+  let tags = searchParams.get("tags")?.split(",");
 
   return new ImageResponse(
     (
@@ -27,7 +27,12 @@ export function GET(request) {
         <p tw="mb-8">
           <span tw="mr-1">{MetaInformation.author}</span>
           {" | "}
-          <span tw="mx-1">{new Date(date).toLocaleDateString()}</span>
+          <span tw="mx-1">
+            {" "}
+            {date.constructor == Date
+              ? new Date(date).toLocaleDateString()
+              : date}
+          </span>
           {" | "}
           <span tw="flex flex-row items-baseline ml-1">
             <svg
@@ -52,13 +57,17 @@ export function GET(request) {
             className="mr-1 rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
             content={category}
           />
-          {tags.map((tag) => (
-            <Chip
-              key={tag}
-              className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75 last:mr-0"
-              content={tag}
-            />
-          ))}
+          {tags !== undefined && tags.length > 0 ? (
+            tags.map((tag) => (
+              <Chip
+                key={tag}
+                className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75 last:mr-0"
+                content={tag}
+              />
+            ))
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     ),
