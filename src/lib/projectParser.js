@@ -4,7 +4,7 @@ import { sync } from "glob";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 
-const postPath = path.join(process.cwd(), "projects");
+const projectPath = path.join(process.cwd(), "projects");
 export let totalProjects = getAllProjects();
 export let projectsPreview = totalProjects.slice(0, 4);
 
@@ -24,7 +24,7 @@ function parseProject(path) {
 
 function getAllProjects() {
   let paths = sync(`/*.mdx`, {
-    root: postPath,
+    root: projectPath,
   });
   let projects = paths.map((path) => parseProject(path));
   projects.sort(function (a, b) {
