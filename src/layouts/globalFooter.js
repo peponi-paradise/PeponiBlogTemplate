@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  GithubInformation,
-  LinkedInInformation,
-  MetaInformation,
-} from "@/app/constants";
+import { MetaInformation, SocialInInformation } from "@/app/constants";
 import github from "@/assets/svgs/github.svg";
 import githubHover from "@/assets/svgs/githubHover.svg";
 import linkedIn from "@/assets/svgs/linkedIn.svg";
@@ -19,12 +15,12 @@ export default function Footer() {
       </p>
       <section className="flex flex-row items-center gap-4 px-8 py-4">
         <SvgLink
-          href={`https://github.com/${GithubInformation.userName}`}
+          href={SocialInInformation.githubUserName}
           src={github}
           hoverSrc={githubHover}
         />
         <SvgLink
-          href={LinkedInInformation.profileUrl}
+          href={SocialInInformation.linkedIn}
           src={linkedIn}
           hoverSrc={linkedInHover}
         />

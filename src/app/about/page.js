@@ -2,11 +2,10 @@
 import {
   EducationInformation,
   ExperienceInformation,
-  GithubInformation,
-  LinkedInInformation,
   MetaInformation,
   PersonalInformation,
   ServiceInformation,
+  SocialInInformation,
   WorkStyleInformation,
 } from "@/app/constants";
 import github from "@/assets/svgs/github.svg";
@@ -39,7 +38,7 @@ export const metadata = {
 
 export default async function About() {
   let response = await fetch(
-    `https://github-contributions-api.jogruber.de/v4/${GithubInformation.userName}?y=last`,
+    `https://github-contributions-api.jogruber.de/v4/${SocialInInformation.githubUserName}?y=last`,
   );
   let githubContributionData = await response.json();
   return (
@@ -57,12 +56,12 @@ export default async function About() {
         >
           <section className="mt-4 flex flex-row items-center gap-4">
             <SvgLink
-              href={`https://github.com/${GithubInformation.userName}`}
+              href={SocialInInformation.github}
               src={github}
               hoverSrc={githubHover}
             />
             <SvgLink
-              href={LinkedInInformation.profileUrl}
+              href={SocialInInformation.linkedIn}
               src={linkedIn}
               hoverSrc={linkedInHover}
             />
@@ -81,13 +80,13 @@ export default async function About() {
               loading="lazy"
               alt="Github stats"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api?username=${GithubInformation.userName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api?username=${SocialInInformation.githubUserName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
             />
             <img
               loading="lazy"
               alt="Github used languages"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GithubInformation.userName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${SocialInInformation.githubUserName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
             />
           </div>
         </section>

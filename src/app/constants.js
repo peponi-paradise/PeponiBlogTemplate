@@ -19,12 +19,11 @@ export const MetaInformation = {
   baseUrl: "https://peponi-paradise.vercel.app",
 };
 
-export const GithubInformation = {
-  userName: "peponi-paradise",
-};
-
-export const LinkedInInformation = {
-  profileUrl: "https://linkedin.com",
+export const SocialInInformation = {
+  githubUserName: "peponi-paradise",
+  github: "https://github.com/peponi-paradise",
+  linkedIn: "https://linkedin.com",
+  nuget: "https://www.nuget.org/profiles/Peponi",
 };
 
 export const PostInformation = {

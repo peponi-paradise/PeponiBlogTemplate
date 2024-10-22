@@ -12,17 +12,16 @@ import Main from "@/layouts/globalMain";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
 
 import {
-  GithubInformation,
-  LinkedInInformation,
   PersonalInformation,
   PostInformation,
+  SocialInInformation,
 } from "./constants";
 
 export default async function Home() {
   let totalPosts = applyPostFilter();
   let posts = pagenation(totalPosts, PostInformation.viewCount);
   let response = await fetch(
-    `https://github-contributions-api.jogruber.de/v4/${GithubInformation.userName}?y=last`,
+    `https://github-contributions-api.jogruber.de/v4/${SocialInInformation.githubUserName}?y=last`,
   );
   let githubContributionData = await response.json();
   return (
@@ -39,12 +38,12 @@ export default async function Home() {
         >
           <section className="mt-4 flex flex-row items-center gap-4">
             <SvgLink
-              href={`https://github.com/${GithubInformation.userName}`}
+              href={SocialInInformation.github}
               src={github}
               hoverSrc={githubHover}
             />
             <SvgLink
-              href={LinkedInInformation.profileUrl}
+              href={SocialInInformation.linkedIn}
               src={linkedIn}
               hoverSrc={linkedInHover}
             />
@@ -61,13 +60,13 @@ export default async function Home() {
               loading="lazy"
               alt="Github stats"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api?username=${GithubInformation.userName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api?username=${SocialInInformation.githubUserName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
             />
             <img
               loading="lazy"
               alt="Github used languages"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GithubInformation.userName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${SocialInInformation.githubUserName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
             />
           </div>
           <ButtonLink className="self-center" href="/about" text="Read More" />
