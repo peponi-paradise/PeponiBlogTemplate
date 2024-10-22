@@ -1,12 +1,11 @@
-// button from https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
-
 "use client";
 
-import { useState } from "react";
+// button from https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
 import clipboardIcon from "@/assets/svgs/clipboard.svg";
 import clipboardHover from "@/assets/svgs/clipboardHover.svg";
 import greenCheck from "@/assets/svgs/greenCheck.svg";
 import Image from "next/image";
+import { useState } from "react";
 
 export const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false);

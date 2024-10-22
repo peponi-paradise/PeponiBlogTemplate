@@ -1,30 +1,31 @@
 // code copy button from
 // 1. https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
 // 2. https://www.nokiahub.name/posts/prettify-mdx-code-blocks
-
-import Main from "@/layouts/globalMain";
-import { getPost } from "@/lib/postsParser";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
-import { remarkAlert } from "remark-github-blockquote-alert";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import "remark-github-blockquote-alert/alert.css";
-import remarkBreaks from "remark-breaks";
-import rehypePrettyCode from "rehype-pretty-code";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
-import "katex/dist/katex.css";
-import "./_postViewCss.css";
-import { visit } from "unist-util-visit";
-import Pre from "@/components/pre";
-import ArticleHeaderMobile from "@/components/articleHeaderMobile";
 import { MetaInformation } from "@/app/constants";
 import ArticleHeaderDesktop from "@/components/articleHeaderDesktop";
-import Toc from "@/components/toc";
-import getToc from "@/lib/tocParser";
+import ArticleHeaderMobile from "@/components/articleHeaderMobile";
 import GiscusComments from "@/components/giscusComments";
+import Pre from "@/components/pre";
+import Toc from "@/components/toc";
+import Main from "@/layouts/globalMain";
+import { getPost } from "@/lib/postsParser";
+import getToc from "@/lib/tocParser";
+import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
+import "katex/dist/katex.css";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import path from "path";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeKatex from "rehype-katex";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
+import { remarkAlert } from "remark-github-blockquote-alert";
+import "remark-github-blockquote-alert/alert.css";
+import remarkMath from "remark-math";
+import { visit } from "unist-util-visit";
+
+import "./_postViewCss.css";
 
 const autolinkHeadingsOptions = {
   behavior: "append",
@@ -90,7 +91,7 @@ const options = {
 };
 
 export function generateMetadata(props) {
-  let page = getPost(props.params.slug[0], props.params.slug[1]);
+  let page = getPost(path.join(...props.params.slug));
 
   let ogSearchParams = new URL(`${MetaInformation.baseUrl}/api/openGraph`);
   ogSearchParams.searchParams.set("title", page.title);
@@ -114,7 +115,7 @@ export function generateMetadata(props) {
       type: "article",
       authors: [`${MetaInformation.author}`],
       publishedTime: new Date(page.date).toISOString(),
-      url: `${MetaInformation.baseUrl}/posts/${page.folderPath}/${page.slug}`,
+      url: `${path.join(MetaInformation.baseUrl, page.folderPath, page.slug)}`,
       images: [
         {
           url: ogSearchParams.toString(),
@@ -129,7 +130,7 @@ export function generateMetadata(props) {
 }
 
 export default function Slug(props) {
-  let page = getPost(props.params.slug[0], props.params.slug[1]);
+  let page = getPost(path.join(...props.params.slug));
   return (
     <Main className="my-8">
       <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">

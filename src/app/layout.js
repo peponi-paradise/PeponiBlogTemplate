@@ -1,7 +1,8 @@
-import "./globals.css";
-import { MetaInformation } from "./constants";
-import Header from "@/layouts/globalHeader";
 import Footer from "@/layouts/globalFooter";
+import Header from "@/layouts/globalHeader";
+
+import { MetaInformation } from "./constants";
+import "./globals.css";
 
 export const metadata = {
   metadataBase: new URL(MetaInformation.baseUrl),
@@ -24,14 +25,14 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className="scroll-smooth">
+    <html lang={MetaInformation.language} className="scroll-smooth">
       <head>
         {/* Add custom scripts, metadata like google search console */}
-        {MetaInformation.googleSiteVerification !== undefined &&
-        MetaInformation.googleSiteVerification != "" ? (
+        {process.env.GOOGLE_SITE_VERIFICATION !== undefined &&
+        process.env.GOOGLE_SITE_VERIFICATION != "" ? (
           <meta
             name="google-site-verification"
-            content={MetaInformation.googleSiteVerification}
+            content={process.env.GOOGLE_SITE_VERIFICATION}
           />
         ) : (
           <></>

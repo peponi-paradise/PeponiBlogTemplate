@@ -1,8 +1,10 @@
-import Link from "next/link";
+import timer from "@/assets/svgs/timer.svg";
 import Image from "next/image";
+import Link from "next/link";
+import path from "path";
+
 import "./_postList.css";
 import { Chip, Chips } from "./chip";
-import timer from "@/assets/svgs/timer.svg";
 
 export default function PostList(props) {
   return (
@@ -10,7 +12,7 @@ export default function PostList(props) {
       {props.posts.map((post) => (
         <li key={post.title} className="mb-7 last:mb-0">
           <article className="rounded-lg border border-slate-700 bg-slate-800/60 px-4 py-2 hover:border-sky-400 hover:bg-gradient-to-br hover:from-slate-800 hover:from-30% hover:to-slate-700">
-            <Link href={`/posts/${post.folderPath}/${post.slug}`}>
+            <Link href={path.join(post.folderPath, post.slug)}>
               <div className="flex flex-row justify-between pb-1 text-sm text-slate-400/50">
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 <div className="flex flex-row items-center">

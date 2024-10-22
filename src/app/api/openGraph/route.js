@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { ImageResponse } from "next/og";
 import { MetaInformation } from "@/app/constants";
+import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 

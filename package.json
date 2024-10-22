@@ -1,8 +1,7 @@
 {
-  "name": "PeponiBlogTemplate",
+  "name": "peponiblogtemplate",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/peponi-paradise",
   "scripts": {
     "dev": "next dev",
     "dev-https": "next dev --experimental-https",
@@ -13,6 +12,7 @@
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.2",
     "@giscus/react": "^3.0.0",
+    "@uiw/react-heat-map": "^2.2.2",
     "apexcharts": "^3.53.0",
     "glob": "^11.0.0",
     "gray-matter": "^4.0.3",
@@ -21,6 +21,7 @@
     "react": "^18",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
+    "react-tooltip": "^5.28.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-katex": "^7.0.1",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.8",
     "postcss": "^8",

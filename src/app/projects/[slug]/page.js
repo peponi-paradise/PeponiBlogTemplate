@@ -1,31 +1,31 @@
 // code copy button from
 // 1. https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
 // 2. https://www.nokiahub.name/posts/prettify-mdx-code-blocks
-
-import Main from "@/layouts/globalMain";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import remarkGfm from "remark-gfm";
-import { remarkAlert } from "remark-github-blockquote-alert";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import "remark-github-blockquote-alert/alert.css";
-import remarkBreaks from "remark-breaks";
-import rehypePrettyCode from "rehype-pretty-code";
-import remarkMath from "remark-math";
-import rehypeKatex from "rehype-katex";
-import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
-import "katex/dist/katex.css";
-import "./_postViewCss.css";
-import { visit } from "unist-util-visit";
-import Pre from "@/components/pre";
-import ArticleHeaderMobile from "@/components/articleHeaderMobile";
 import { MetaInformation } from "@/app/constants";
 import ArticleHeaderDesktop from "@/components/articleHeaderDesktop";
-import Toc from "@/components/toc";
-import getToc from "@/lib/tocParser";
+import ArticleHeaderMobile from "@/components/articleHeaderMobile";
 import GiscusComments from "@/components/giscusComments";
+import Pre from "@/components/pre";
+import Toc from "@/components/toc";
+import Main from "@/layouts/globalMain";
 import { getProject } from "@/lib/projectParser";
+import getToc from "@/lib/tocParser";
+import remarkSimplePlantumlPlugin from "@akebifiky/remark-simple-plantuml";
+import "katex/dist/katex.css";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeKatex from "rehype-katex";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
+import { remarkAlert } from "remark-github-blockquote-alert";
+import "remark-github-blockquote-alert/alert.css";
+import remarkMath from "remark-math";
+import { visit } from "unist-util-visit";
+
+import "./_postViewCss.css";
 
 const autolinkHeadingsOptions = {
   behavior: "append",

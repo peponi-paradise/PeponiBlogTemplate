@@ -68,7 +68,8 @@
 }
 
 .prose code {
-  @apply rounded-md bg-slate-800 px-1.5 py-0.5 font-['Pretendard_Variable'] text-slate-300;
+  @apply rounded-md bg-slate-800 px-1.5 py-0.5 text-slate-300;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 .prose code::before {

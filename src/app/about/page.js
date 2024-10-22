@@ -1,21 +1,30 @@
-import Main from "@/layouts/globalMain";
-import StatCard from "@/components/statCard";
-import ServiceTitle from "@/components/serviceTitle";
-import ServiceCard from "@/components/serviceCard";
-import PersonalCard from "@/components/personalCard";
+/* eslint-disable @next/next/no-img-element */
 import {
-  MetaInformation,
   EducationInformation,
   ExperienceInformation,
+  GithubInformation,
+  LinkedInInformation,
+  MetaInformation,
   PersonalInformation,
   ServiceInformation,
   WorkStyleInformation,
 } from "@/app/constants";
+import github from "@/assets/svgs/github.svg";
+import githubHover from "@/assets/svgs/githubHover.svg";
+import linkedIn from "@/assets/svgs/linkedIn.svg";
+import linkedInHover from "@/assets/svgs/linkedInHover.svg";
 import RadarCharts from "@/components/apexCharts";
-import TimelineList from "@/components/timelineList";
-import ProgressBar from "@/components/progressBar";
+import GithubHeatMap from "@/components/githubHeatMap";
 import KnowledgeBadge from "@/components/knowledgeBadge";
+import { SvgLink } from "@/components/linkButtons";
+import PersonalCard from "@/components/personalCard";
+import ProgressBar from "@/components/progressBar";
 import ProjectCard from "@/components/projectCard";
+import ServiceCard from "@/components/serviceCard";
+import ServiceTitle from "@/components/serviceTitle";
+import StatCard from "@/components/statCard";
+import TimelineList from "@/components/timelineList";
+import Main from "@/layouts/globalMain";
 import { projectsPreview } from "@/lib/projectParser";
 
 export const metadata = {
@@ -28,7 +37,11 @@ export const metadata = {
   },
 };
 
-export default function About() {
+export default async function About() {
+  let response = await fetch(
+    `https://github-contributions-api.jogruber.de/v4/${GithubInformation.userName}?y=last`,
+  );
+  let githubContributionData = await response.json();
   return (
     <Main className="mx-auto my-8 max-w-screen-lg">
       <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
@@ -41,7 +54,20 @@ export default function About() {
           additionalInformation={PersonalInformation.additionalInformation}
           description={PersonalInformation.description}
           personalImage={PersonalInformation.personalImage}
-        />
+        >
+          <section className="mt-4 flex flex-row items-center gap-4">
+            <SvgLink
+              href={`https://github.com/${GithubInformation.userName}`}
+              src={github}
+              hoverSrc={githubHover}
+            />
+            <SvgLink
+              href={LinkedInInformation.profileUrl}
+              src={linkedIn}
+              hoverSrc={linkedInHover}
+            />
+          </section>
+        </PersonalCard>
         <section className="flex flex-col gap-4">
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             <StatCard value="5+" title="Years Experience" />
@@ -49,20 +75,21 @@ export default function About() {
             <StatCard value="5+" title="Nuget Packages" />
             <StatCard value="5+" title="Clients" />
           </div>
+          <GithubHeatMap data={githubContributionData} />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <iframe
-              className="size-full"
-              src="https://github-readme-stats.vercel.app/api?username=peponi-paradise&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8"
-            ></iframe>
-            <iframe
-              className="size-full"
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=peponi-paradise&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8"
-            ></iframe>
+            <img
+              loading="lazy"
+              alt="Github stats"
+              className="m-auto"
+              src={`https://github-readme-stats.vercel.app/api?username=${GithubInformation.userName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
+            />
+            <img
+              loading="lazy"
+              alt="Github used languages"
+              className="m-auto"
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${GithubInformation.userName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
+            />
           </div>
-          <iframe
-            className="lg:min-h-56"
-            src="https://github-readme-activity-graph.vercel.app/graph?username=peponi-paradise&bg_color=transparent&hide_border=true&title_color=38bdf8&color=94a3b8&line=7dd3fc&point=38bdf8&days=30"
-          ></iframe>
         </section>
       </section>
       <section className="mx-auto mt-16 grid gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">

@@ -1,19 +1,19 @@
-import Main from "@/layouts/globalMain";
+import { MetaInformation, PostInformation } from "@/app/constants";
+import { TextLink } from "@/components/linkButtons";
+import Pagenation from "@/components/pagination";
 import PostList from "@/components/postList";
+import Main from "@/layouts/globalMain";
 import { totalCategories } from "@/lib/postsParser";
 import { applyPostFilter, pagenation } from "@/lib/postsParser";
-import Link from "next/link";
-import { MetaInformation, PostInformation } from "@/app/constants";
-import Pagenation from "@/components/pagination";
 
 export const metadata = {
   title: `Posts`,
   description: "Blog posts",
-  keywords: totalCategories.map((category) => category[0]),
+  keywords: totalCategories,
   openGraph: {
     title: "Posts",
     description: "Blog posts",
-    url: MetaInformation.baseUrl + "/posts?folderPath=all",
+    url: MetaInformation.baseUrl + "/posts?category=all",
     images: [
       {
         url: "./opengraph-image.png",
@@ -33,7 +33,7 @@ const otherCategoryClass =
 
 export default function Posts(props) {
   let currentPosts = applyPostFilter(
-    props.searchParams.folderPath,
+    props.searchParams.category,
     props.searchParams.title,
   );
   let posts = pagenation(
@@ -58,32 +58,29 @@ export default function Posts(props) {
         <div className="ml-auto hidden max-w-40 border-r border-slate-700 pr-8 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>
             <li className="mb-2">
-              <Link
-                href={`/posts?folderPath=all`}
+              <TextLink
                 className={
-                  props.searchParams.folderPath == "all"
+                  props.searchParams.category == "all"
                     ? "text-xl text-sky-400"
-                    : "text-xl text-slate-200/90 hover:text-sky-400"
+                    : "text-xl text-slate-200/90"
                 }
-              >
-                Categories
-              </Link>
+                href="/posts?category=all"
+                text="Categories"
+              />
             </li>
             {totalCategories.map((category) => (
               <li
-                key={category[0]}
+                key={category}
                 className={
-                  category[1] == props.searchParams.folderPath
+                  category == props.searchParams.category
                     ? selectedCategoryClass
                     : otherCategoryClass
                 }
               >
-                <Link
-                  className="hover:text-sky-400"
-                  href={`/posts?folderPath=${category[1]}`}
-                >
-                  {category[0]}
-                </Link>
+                <TextLink
+                  href={`/posts?category=${category}`}
+                  text={category}
+                />
               </li>
             ))}
           </ul>

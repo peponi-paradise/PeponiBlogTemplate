@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import favicon from "@/assets/svgs/favicon.svg";
 import searchIcon from "@/assets/svgs/searchIcon.svg";
 import searchIconHover from "@/assets/svgs/searchIconHover.svg";
+import { TextLink } from "@/components/linkButtons";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
 import "./_globalHeader.css";
 
 function handleKeyPress(event) {
@@ -64,21 +66,17 @@ export default function Header() {
           <SearchButton />
         </div>
         <nav className="flex flex-row">
-          <Link
-            href="/posts?folderPath=all"
-            className="my-auto border-r border-slate-700 pr-2 hover:text-sky-400"
-          >
-            Posts
-          </Link>
-          <Link
+          <TextLink
+            className="my-auto border-r border-slate-700 pr-2"
+            href="/posts?category=all"
+            text="Posts"
+          />
+          <TextLink
+            className="my-auto border-r border-slate-700 px-2"
             href="/projects"
-            className="my-auto border-r border-slate-700 px-2 hover:text-sky-400"
-          >
-            Projects
-          </Link>
-          <Link href="/about" className="my-auto pl-2 hover:text-sky-400">
-            About
-          </Link>
+            text="Projects"
+          />
+          <TextLink className="my-auto pl-2" href="/about" text="About" />
         </nav>
       </section>
     </header>

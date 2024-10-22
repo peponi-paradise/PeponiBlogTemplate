@@ -1,5 +1,6 @@
-import Image from "next/image";
 import timer from "@/assets/svgs/timer.svg";
+import Image from "next/image";
+
 import { Chip, Chips } from "./chip";
 
 export default function ArticleHeaderDesktop(props) {

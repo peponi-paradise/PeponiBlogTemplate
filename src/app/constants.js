@@ -1,9 +1,11 @@
-import Favicon from "@/assets/icons/favicon.ico";
 import AppleFavicon from "@/assets/icons/favicon-apple.png";
+import Favicon from "@/assets/icons/favicon.ico";
+
 import PersonalImage from "../../public/jeje.jpg";
 
 export const MetaInformation = {
   charset: "UTF-8",
+  language: "ko",
   title: {
     template: "%s - Peponi",
     default: "Peponi",
@@ -14,8 +16,15 @@ export const MetaInformation = {
     { rel: "icon", url: Favicon.src },
     { rel: "apple-touch-icon", url: AppleFavicon.src },
   ],
-  baseUrl: "https://github.com/peponi-paradise",
-  googleSiteVerification: "",
+  baseUrl: "https://peponi-paradise.vercel.app",
+};
+
+export const GithubInformation = {
+  userName: "peponi-paradise",
+};
+
+export const LinkedInInformation = {
+  profileUrl: "https://linkedin.com",
 };
 
 export const PostInformation = {
@@ -29,7 +38,8 @@ export const PersonalInformation = {
   occupation: "Software engineer",
   responsibility: "Team leader",
   company: "My company",
-  additionalInformation: "Lorem@ipsum.com",
+  additionalInformation: `Lorem@ipsum.com
+82+10-1234-5678`,
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 };

@@ -1,19 +1,19 @@
 import fs from "fs";
-import path from "path";
 import { sync } from "glob";
 import matter from "gray-matter";
+import path from "path";
 import readingTime from "reading-time";
 
 const postPath = path.join(process.cwd(), "posts");
-export let totalPosts = getAllPosts();
-export let totalCategories = getAllCategories();
+export const totalPosts = getAllPosts();
+export const totalCategories = getAllCategories();
 
-export function applyPostFilter(folderPath, title) {
+export function applyPostFilter(category, title) {
   let currentPosts = [];
-  if (folderPath == "all" || title == "") {
+  if (category == "all" || title == "") {
     currentPosts = totalPosts;
-  } else if (folderPath != undefined || folderPath != null) {
-    currentPosts = totalPosts.filter((post) => post.folderPath == folderPath);
+  } else if (category != undefined || category != null) {
+    currentPosts = totalPosts.filter((post) => post.category == category);
   } else if (title != undefined || title != null) {
     currentPosts = totalPosts.filter((post) =>
       post.title.toLowerCase().includes(title.toLowerCase()),
@@ -38,17 +38,16 @@ export function pagenation(posts, count, page) {
   return sliced.length != 0 ? sliced : posts;
 }
 
-export function getPost(folderPath, slug) {
-  let filePath = path.join(process.cwd(), "posts", folderPath, `${slug}.mdx`);
-  return parsePost(filePath);
+export function getPost(filePath) {
+  let totalPath = path.join(process.cwd(), "posts", filePath + ".mdx");
+  return parsePost(totalPath);
 }
 
-function parsePost(path) {
-  let { data, content } = matter(fs.readFileSync(path, "utf8"));
+function parsePost(filepath) {
+  let { data, content } = matter(fs.readFileSync(filepath, "utf8"));
   let grayMatter = data;
-  let sl = path.slice(path.indexOf("\\posts")).replace("\\posts\\", "");
-  let folderPath = sl.substring(0, sl.indexOf("\\"));
-  let slug = sl.slice(sl.indexOf("\\") + 1).replace(".mdx", "");
+  let folderPath = path.dirname(filepath).replace(process.cwd(), "");
+  let slug = path.basename(filepath, ".mdx");
   let minutesToRead = Math.ceil(readingTime(content).minutes);
   return { ...grayMatter, folderPath, slug, minutesToRead, content };
 }
@@ -67,8 +66,8 @@ function getAllPosts() {
 function getAllCategories() {
   let categories = [];
   totalPosts.forEach((post) => {
-    if (categories.some((item) => item[1] === post.folderPath) == false) {
-      categories.push([post.category, post.folderPath]);
+    if (!categories.some((category) => category == post.category)) {
+      categories.push(post.category);
     }
   });
   return categories;
