@@ -1,11 +1,8 @@
 "use client";
 
-import { MetaInformation, SocialInInformation } from "@/app/constants";
-import github from "@/assets/svgs/github.svg";
-import githubHover from "@/assets/svgs/githubHover.svg";
-import linkedIn from "@/assets/svgs/linkedIn.svg";
-import linkedInHover from "@/assets/svgs/linkedInHover.svg";
+import { MetaInformation, SocialInformation } from "@/app/constants";
 import { SvgLink } from "@/components/linkButtons";
+import * as Icons from "@/components/svgComponents";
 
 export default function Footer() {
   return (
@@ -14,16 +11,12 @@ export default function Footer() {
         ⓒ 2024. {MetaInformation.author} All rights reserved
       </p>
       <section className="flex flex-row items-center gap-4 px-8 py-4">
-        <SvgLink
-          href={SocialInInformation.githubUserName}
-          src={github}
-          hoverSrc={githubHover}
-        />
-        <SvgLink
-          href={SocialInInformation.linkedIn}
-          src={linkedIn}
-          hoverSrc={linkedInHover}
-        />
+        <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
+          <Icons.GitHub className="hover:fill-sky-400" />
+        </SvgLink>
+        <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
+          <Icons.LinkedIn className="hover:fill-sky-400" />
+        </SvgLink>
       </section>
     </footer>
   );

@@ -1,5 +1,4 @@
-import timer from "@/assets/svgs/timer.svg";
-import Image from "next/image";
+import * as Icons from "@/components/svgComponents";
 import Link from "next/link";
 import path from "path";
 
@@ -16,11 +15,7 @@ export default function PostList(props) {
               <div className="flex flex-row justify-between pb-1 text-sm text-slate-400/50">
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 <div className="flex flex-row items-center">
-                  <Image
-                    src={timer}
-                    alt="Minutes to read"
-                    className="mr-1 size-3.5"
-                  ></Image>
+                  <Icons.Clock className="mr-1 size-3.5 fill-slate-400/50 hover:fill-slate-400/50" />
                   <span>{post.minutesToRead}m</span>
                 </div>
               </div>

@@ -1,12 +1,10 @@
 "use client";
 
-import favicon from "@/assets/svgs/favicon.svg";
-import searchIcon from "@/assets/svgs/searchIcon.svg";
-import searchIconHover from "@/assets/svgs/searchIconHover.svg";
+import favicon from "@/assets/icons/favicon-apple.png";
 import { TextLink } from "@/components/linkButtons";
+import * as Icons from "@/components/svgComponents";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 import "./_globalHeader.css";
 
@@ -22,21 +20,14 @@ function search() {
 }
 
 function SearchButton() {
-  const [isHover, setIsHover] = useState(false);
-
   return (
     <button
       type="button"
       onClick={search}
-      onMouseOver={() => setIsHover(true)}
-      onMouseOut={() => setIsHover(false)}
       className="border-l border-slate-700 px-1"
+      title="Search button"
     >
-      <Image
-        src={isHover ? searchIconHover : searchIcon}
-        alt="Search"
-        className="inline-block size-4"
-      ></Image>
+      <Icons.Search className="inline-block size-4 hover:fill-sky-400" />
     </button>
   );
 }

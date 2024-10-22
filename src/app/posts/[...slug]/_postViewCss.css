@@ -63,7 +63,7 @@
   @apply block;
 }
 
-.prose pre > button > img {
+.prose pre > button > svg {
   @apply m-2 h-8 w-8 p-1;
 }
 

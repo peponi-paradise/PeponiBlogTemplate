@@ -19,7 +19,7 @@ export const MetaInformation = {
   baseUrl: "https://peponi-paradise.vercel.app",
 };
 
-export const SocialInInformation = {
+export const SocialInformation = {
   githubUserName: "peponi-paradise",
   github: "https://github.com/peponi-paradise",
   linkedIn: "https://linkedin.com",

@@ -1,19 +1,14 @@
 "use client";
 
 // button from https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
-import clipboardIcon from "@/assets/svgs/clipboard.svg";
-import clipboardHover from "@/assets/svgs/clipboardHover.svg";
-import greenCheck from "@/assets/svgs/greenCheck.svg";
-import Image from "next/image";
+import * as Icons from "@/components/svgComponents";
 import { useState } from "react";
 
 export const CopyButton = ({ text }) => {
   const [isCopied, setIsCopied] = useState(false);
-  const [isHover, setIsHover] = useState(false);
 
   const copy = async () => {
     await navigator.clipboard.writeText(text);
-    setIsHover(false);
     setIsCopied(true);
 
     setTimeout(() => {
@@ -21,24 +16,13 @@ export const CopyButton = ({ text }) => {
     }, 3000);
   };
 
-  async function hoverChange(isHover) {
-    if (!isCopied) {
-      setIsHover(isHover);
-    }
-  }
-
   return (
-    <button
-      disabled={isCopied}
-      onMouseOver={() => hoverChange(true)}
-      onMouseOut={() => hoverChange(false)}
-      onClick={copy}
-    >
-      <Image
-        alt="Copy code"
-        title="Copy code"
-        src={isHover ? clipboardHover : isCopied ? greenCheck : clipboardIcon}
-      />
+    <button disabled={isCopied} onClick={copy}>
+      {isCopied ? (
+        <Icons.GreenCheck className="fill-emerald-400" />
+      ) : (
+        <Icons.Clipboard className="hover:fill-sky-400" />
+      )}
     </button>
   );
 };

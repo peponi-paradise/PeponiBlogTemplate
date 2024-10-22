@@ -1,5 +1,4 @@
-import timer from "@/assets/svgs/timer.svg";
-import Image from "next/image";
+import * as Icons from "@/components/svgComponents";
 
 import { Chip, Chips } from "./chip";
 
@@ -17,11 +16,7 @@ export default function ArticleHeaderMobile(props) {
         </span>
         {" │ "}
         <span className="inline-flex flex-row items-baseline">
-          <Image
-            src={timer}
-            alt="Minutes to read"
-            className="my-0 mr-1 size-3.5 self-center"
-          ></Image>
+          <Icons.Clock className="my-0 mr-1 size-3.5 self-center" />
           {props.minutesToRead}m
         </span>
       </p>

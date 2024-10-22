@@ -1,5 +1,4 @@
-import timer from "@/assets/svgs/timer.svg";
-import Image from "next/image";
+import * as Icons from "@/components/svgComponents";
 
 import { Chip, Chips } from "./chip";
 
@@ -16,11 +15,7 @@ export default function ArticleHeaderDesktop(props) {
               : props.date}
           </span>
           <div className="flex flex-row items-center">
-            <Image
-              src={timer}
-              alt="Minutes to read"
-              className="my-0 mr-1 size-3.5"
-            ></Image>
+            <Icons.Clock className="my-0 mr-1 size-3.5" />
             <span>{props.minutesToRead}m</span>
           </div>
         </div>
