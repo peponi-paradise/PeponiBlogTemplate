@@ -30,6 +30,7 @@ function SvgLink({ children, href = "", ariaLabel = "", ...props }) {
       className="z-10 size-6"
       target="_blank"
       aria-label={ariaLabel}
+      title={ariaLabel}
       {...props}
     >
       {children}

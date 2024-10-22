@@ -34,11 +34,14 @@ export default async function Home() {
           lineClamp={true}
         >
           <section className="mt-4 flex flex-row items-center gap-4">
+            <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
+              <Icons.LinkedIn className="hover:fill-sky-400" />
+            </SvgLink>
             <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
               <Icons.GitHub className="hover:fill-sky-400" />
             </SvgLink>
-            <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
-              <Icons.LinkedIn className="hover:fill-sky-400" />
+            <SvgLink href={SocialInformation.nuget} ariaLabel="Nuget">
+              <Icons.Nuget className="hover:fill-sky-400" />
             </SvgLink>
           </section>
         </PersonalCard>
