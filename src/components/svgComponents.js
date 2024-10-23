@@ -65,7 +65,7 @@ export function Clipboard({ className = "", ...props }) {
     </svg>
   );
 }
-export function GreenCheck({ className = "", ...props }) {
+export function Check({ className = "", ...props }) {
   return (
     <svg
       className={defaultClassName + className}

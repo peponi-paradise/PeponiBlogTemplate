@@ -15,7 +15,7 @@ export default function PostList({ className = "", posts, ...props }) {
               <div className="flex flex-row justify-between pb-1 text-sm text-slate-400/50">
                 <span>{new Date(post.date).toLocaleDateString()}</span>
                 <div className="flex flex-row items-center">
-                  <Icons.Clock className="mr-1 size-3.5 fill-slate-400/50 hover:fill-slate-400/50" />
+                  <Icons.Clock className="mr-1 size-3.5 fill-slate-400/50" />
                   <span>{post.minutesToRead}m</span>
                 </div>
               </div>
