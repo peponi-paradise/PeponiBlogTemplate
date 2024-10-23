@@ -15,12 +15,10 @@ export function Icon({ className = "", ...props }) {
     */
 }
 
-const defaultClassName = "fill-slate-400 ";
-
 export function Search({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 70 70"
       fill="none"
@@ -37,7 +35,7 @@ export function Clock({ className = "", ...props }) {
   return (
     <svg
       viewBox="0 0 80 80"
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       {...props}
@@ -52,7 +50,7 @@ export function Clock({ className = "", ...props }) {
 export function Clipboard({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 55 64"
@@ -68,7 +66,7 @@ export function Clipboard({ className = "", ...props }) {
 export function Check({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 49"
       fill="none"
@@ -87,7 +85,7 @@ export function Check({ className = "", ...props }) {
 export function GitHub({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 40 39"
@@ -103,7 +101,7 @@ export function GitHub({ className = "", ...props }) {
 export function LinkedIn({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 36 36"
@@ -119,7 +117,7 @@ export function LinkedIn({ className = "", ...props }) {
 export function NuGet({ className = "", ...props }) {
   return (
     <svg
-      className={defaultClassName + className}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

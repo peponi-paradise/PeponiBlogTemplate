@@ -27,7 +27,7 @@ function SearchButton() {
       className="px-1 border-l border-slate-700"
       title="Search button"
     >
-      <Icons.Search className="inline-block size-4 hover:fill-sky-400" />
+      <Icons.Search className="inline-block size-4 fill-slate-400 hover:fill-sky-400" />
     </button>
   );
 }

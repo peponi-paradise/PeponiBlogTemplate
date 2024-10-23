@@ -35,13 +35,13 @@ export default async function Home() {
         >
           <section className="flex flex-row items-center gap-4 mt-4">
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
-              <Icons.LinkedIn className="hover:fill-sky-400" />
+              <Icons.LinkedIn className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
             <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
-              <Icons.GitHub className="hover:fill-sky-400" />
+              <Icons.GitHub className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
             <SvgLink href={SocialInformation.nuget} ariaLabel="NuGet">
-              <Icons.NuGet className="hover:fill-sky-400" />
+              <Icons.NuGet className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
           </section>
         </PersonalCard>

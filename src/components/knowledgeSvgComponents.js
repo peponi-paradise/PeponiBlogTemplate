@@ -19,7 +19,7 @@ export function Icon({ className = "", ...props }) {
     */
 }
 
-const defaultClassName = "size-5 fill-black ";
+const defaultClassName = "size-5 ";
 
 export function NextJs({ className = "", ...props }) {
   return (

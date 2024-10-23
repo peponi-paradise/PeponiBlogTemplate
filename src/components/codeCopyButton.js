@@ -19,9 +19,9 @@ export const CopyButton = ({ text }) => {
   return (
     <button disabled={isCopied} onClick={copy} title="Click to copy">
       {isCopied ? (
-        <Icons.Check className="fill-emerald-400/100" />
+        <Icons.Check className="fill-emerald-400" />
       ) : (
-        <Icons.Clipboard className="hover:fill-sky-400" />
+        <Icons.Clipboard className="fill-slate-400 hover:fill-sky-400" />
       )}
     </button>
   );

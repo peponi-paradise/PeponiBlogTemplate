@@ -54,13 +54,13 @@ export default async function About() {
         >
           <section className="flex flex-row items-center gap-4 mt-4">
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
-              <Icons.LinkedIn className="hover:fill-sky-400" />
+              <Icons.LinkedIn className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
             <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
-              <Icons.GitHub className="hover:fill-sky-400" />
+              <Icons.GitHub className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
             <SvgLink href={SocialInformation.nuget} ariaLabel="NuGet">
-              <Icons.NuGet className="hover:fill-sky-400" />
+              <Icons.NuGet className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
           </section>
         </PersonalCard>
@@ -167,15 +167,15 @@ export default async function About() {
         <p className="text-2xl font-bold">Top Skills</p>
         <div className="mt-4">
           <p>Skill 1</p>
-          <ProgressBar className="mt-2" progressPercent={95} />
+          <ProgressBar className="mt-2" barClassName="w-[95%]" />
         </div>
         <div className="mt-4">
           <p>Skill 2</p>
-          <ProgressBar className="mt-2" progressPercent={80} />
+          <ProgressBar className="mt-2" barClassName="w-[80%]" />
         </div>
         <div className="mt-4">
           <p>Skill 3</p>
-          <ProgressBar className="mt-2" progressPercent={50} />
+          <ProgressBar className="mt-2" barClassName="w-[50%]" />
         </div>
       </section>
       <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
@@ -185,19 +185,19 @@ export default async function About() {
             <KnowledgeIcons.NextJs className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#61dafb]" title="React">
-            <KnowledgeIcons.React />
+            <KnowledgeIcons.React className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f7df1e]" title="JavaScript">
-            <KnowledgeIcons.JavaScript />
+            <KnowledgeIcons.JavaScript className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#e34f26]" title="HTML5">
-            <KnowledgeIcons.Html5 />
+            <KnowledgeIcons.Html5 className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#1572b6]" title="CSS3">
-            <KnowledgeIcons.Css3 />
+            <KnowledgeIcons.Css3 className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#06b6d4]" title="TailwindCSS">
-            <KnowledgeIcons.TailwindCss />
+            <KnowledgeIcons.TailwindCss className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#4b32c3] text-white" title="ESLint">
             <KnowledgeIcons.EsLint className="fill-white" />
@@ -239,16 +239,16 @@ export default async function About() {
             <KnowledgeIcons.Pandas className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f7931e]" title="scikit-learn">
-            <KnowledgeIcons.ScikitLearn />
+            <KnowledgeIcons.ScikitLearn className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#005ced] text-white" title="ONNX">
             <KnowledgeIcons.Onnx className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#41cd52]" title="PyQt">
-            <KnowledgeIcons.PyQt />
+            <KnowledgeIcons.PyQt className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#1192cf]" title="Modbus">
-            <KnowledgeIcons.Modbus />
+            <KnowledgeIcons.Modbus className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="text-white bg-black" title="EtherCAT">
             <KnowledgeIcons.EtherCat className="fill-white" />
@@ -287,34 +287,34 @@ export default async function About() {
             <KnowledgeIcons.VisualStudio className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#00bcf2]" title="Visual Studio Code">
-            <KnowledgeIcons.VisualStudio />
+            <KnowledgeIcons.VisualStudio className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#ff9800]" title="Sublime Text">
-            <KnowledgeIcons.SublimeText />
+            <KnowledgeIcons.SublimeText className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#004880] text-white" title="NuGet">
             <KnowledgeIcons.NuGet className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#01b0f0]" title="NSIS">
-            <KnowledgeIcons.Nsis />
+            <KnowledgeIcons.Nsis className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f05032]" title="Git">
-            <KnowledgeIcons.Git />
+            <KnowledgeIcons.Git className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#181717] text-white" title="GitHub">
             <KnowledgeIcons.GitHub className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#179287]" title="GitKraken">
-            <KnowledgeIcons.GitKraken />
+            <KnowledgeIcons.GitKraken className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="text-white bg-black" title="Notion">
             <KnowledgeIcons.Notion className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f24e1e]" title="Figma">
-            <KnowledgeIcons.Figma />
+            <KnowledgeIcons.Figma className="fill-black" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f08705]" title="diagrams.net">
-            <KnowledgeIcons.DiagramsDotNet />
+            <KnowledgeIcons.DiagramsDotNet className="fill-black" />
           </KnowledgeBadge>
         </div>
       </section>
@@ -325,21 +325,21 @@ export default async function About() {
             <p className="text-slate-200/90">Skill 1</p>
             <p className="self-center text-xs">Description 1</p>
           </div>
-          <ProgressBar className="mt-2" progressPercent={95} />
+          <ProgressBar className="mt-2" barClassName="w-[100%]" />
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
             <p className="text-slate-200/90">Skill 2</p>
             <p className="self-center text-xs">Description 2</p>
           </div>
-          <ProgressBar className="mt-2" progressPercent={80} />
+          <ProgressBar className="mt-2" barClassName="w-[70%]" />
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
             <p className="text-slate-200/90">Skill 3</p>
             <p className="self-center text-xs">Description 3</p>
           </div>
-          <ProgressBar className="mt-2" progressPercent={50} />
+          <ProgressBar className="mt-2" barClassName="w-[30%]" />
         </div>
       </section>
     </Main>
