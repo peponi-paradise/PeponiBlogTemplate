@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           <></>
         )}
       </head>
-      <body className="container mx-auto flex min-h-screen flex-col justify-between bg-slate-900 text-slate-400">
+      <body className="container flex flex-col justify-between min-h-screen mx-auto bg-slate-900 text-slate-400">
         <Header />
         {children}
         <Footer />

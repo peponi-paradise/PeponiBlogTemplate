@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function Projects() {
   return (
-    <Main className="mx-auto my-8 max-w-screen-lg">
+    <Main className="max-w-screen-lg mx-auto my-8">
       <ProjectTimelineList
         timelines={ExperienceInformation}
         projects={totalProjects}

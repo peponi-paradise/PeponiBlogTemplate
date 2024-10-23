@@ -14,7 +14,7 @@ export default function ServiceCard({
     <div className={defaultClassName + className}>
       <div className="relative h-[auto] w-full">
         <Image
-          className="rounded-xl object-cover object-center"
+          className="object-cover object-center rounded-xl"
           src={thumbnail}
           alt={alt}
           fill
@@ -22,7 +22,7 @@ export default function ServiceCard({
       </div>
       <div className="flex flex-col gap-4">
         <p className="text-xl font-bold text-slate-200/90">{title}</p>
-        <p className="line-clamp-3 text-sm">{description}</p>
+        <p className="text-sm line-clamp-3">{description}</p>
       </div>
     </div>
   );

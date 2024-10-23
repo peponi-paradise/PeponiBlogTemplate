@@ -134,7 +134,7 @@ export default function Slug({ params, searchParams, ...props }) {
   let toc = getToc(page.content);
   return (
     <Main className="my-8" {...props}>
-      <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">
+      <section className="grid justify-between min-w-full grid-cols-1 gap-12 prose prose-invert lg:grid-cols-12">
         <ArticleHeaderMobile
           className="lg:hidden"
           category={page.company}
@@ -156,7 +156,7 @@ export default function Slug({ params, searchParams, ...props }) {
         <div className="lg:col-span-7">
           {page.thumbnail !== undefined && page.thumbnail != "" ? (
             <Image
-              className="mt-0 rounded-xl object-cover object-center"
+              className="object-cover object-center mt-0 rounded-xl"
               src={page.thumbnail}
               alt={page.alt}
               width={0}
@@ -176,7 +176,7 @@ export default function Slug({ params, searchParams, ...props }) {
         </div>
         {toc.length > 0 ? (
           <Toc
-            className="not-prose sticky top-28 hidden min-w-40 self-start lg:col-span-2 lg:block"
+            className="sticky self-start hidden not-prose top-28 min-w-40 lg:col-span-2 lg:block"
             toc={toc}
           ></Toc>
         ) : (

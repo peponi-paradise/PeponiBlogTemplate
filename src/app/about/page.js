@@ -40,8 +40,8 @@ export default async function About() {
   );
   let githubContributionData = await response.json();
   return (
-    <Main className="mx-auto my-8 max-w-screen-lg">
-      <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+    <Main className="max-w-screen-lg mx-auto my-8">
+      <section className="grid grid-cols-1 gap-8 px-4 py-4 mx-auto border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <PersonalCard
           className="my-auto"
           name={PersonalInformation.name}
@@ -52,7 +52,7 @@ export default async function About() {
           description={PersonalInformation.description}
           personalImage={PersonalInformation.personalImage}
         >
-          <section className="mt-4 flex flex-row items-center gap-4">
+          <section className="flex flex-row items-center gap-4 mt-4">
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
               <Icons.LinkedIn className="hover:fill-sky-400" />
             </SvgLink>
@@ -88,7 +88,7 @@ export default async function About() {
           </div>
         </section>
       </section>
-      <section className="mx-auto mt-16 grid gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8 lg:grid-cols-3">
+      <section className="grid gap-8 px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8 lg:grid-cols-3">
         <ServiceTitle
           className="m-auto"
           title={ServiceInformation.title}
@@ -121,7 +121,7 @@ export default async function About() {
           />
         </div>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="mb-4 text-2xl font-bold text-slate-200/90">Projects</p>
         <div className="grid grid-flow-row gap-4 min-[480px]:grid-cols-2">
           {projectsPreview.length > 0 ? (
@@ -143,7 +143,7 @@ export default async function About() {
           )}
         </div>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">
           {WorkStyleInformation.title}
         </p>
@@ -155,15 +155,15 @@ export default async function About() {
           {WorkStyleInformation.description}
         </p>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Experience</p>
-        <TimelineList className="ml-2 mt-4" timelines={ExperienceInformation} />
+        <TimelineList className="mt-4 ml-2" timelines={ExperienceInformation} />
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Education</p>
-        <TimelineList className="ml-2 mt-4" timelines={EducationInformation} />
+        <TimelineList className="mt-4 ml-2" timelines={EducationInformation} />
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 text-slate-200/90 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 text-slate-200/90 sm:px-8">
         <p className="text-2xl font-bold">Top Skills</p>
         <div className="mt-4">
           <p>Skill 1</p>
@@ -178,10 +178,10 @@ export default async function About() {
           <ProgressBar className="mt-2" progressPercent={50} />
         </div>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Knowledges</p>
-        <div className="mt-4 flex flex-wrap gap-4">
-          <KnowledgeBadge className="bg-black text-white" title="Next.js">
+        <div className="flex flex-wrap gap-4 mt-4">
+          <KnowledgeBadge className="text-white bg-black" title="Next.js">
             <KnowledgeIcons.NextJs className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#61dafb]" title="React">
@@ -250,16 +250,16 @@ export default async function About() {
           <KnowledgeBadge className="bg-[#1192cf]" title="Modbus">
             <KnowledgeIcons.Modbus />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="EtherCAT">
+          <KnowledgeBadge className="text-white bg-black" title="EtherCAT">
             <KnowledgeIcons.EtherCat className="fill-white" />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="RestAPI">
+          <KnowledgeBadge className="text-white bg-black" title="RestAPI">
             <KnowledgeIcons.RestApi className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#244b5a] text-white" title="gRPC">
             <KnowledgeIcons.gRpc className="fill-white" />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="JSON">
+          <KnowledgeBadge className="text-white bg-black" title="JSON">
             <KnowledgeIcons.Json className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#005fad] text-white" title="Xml">
@@ -268,16 +268,16 @@ export default async function About() {
           <KnowledgeBadge className="bg-[#cb171e] text-white" title="Yaml">
             <KnowledgeIcons.Yaml className="fill-white" />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="Markdown">
+          <KnowledgeBadge className="text-white bg-black" title="Markdown">
             <KnowledgeIcons.Markdown className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#1b1f24] text-white" title="MDX">
             <KnowledgeIcons.Mdx className="fill-white" />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="KaTeX">
+          <KnowledgeBadge className="text-white bg-black" title="KaTeX">
             <KnowledgeIcons.KaTeX className="fill-white" />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="PlantUml">
+          <KnowledgeBadge className="text-white bg-black" title="PlantUml">
             <KnowledgeIcons.PlantUml className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge
@@ -307,7 +307,7 @@ export default async function About() {
           <KnowledgeBadge className="bg-[#179287]" title="GitKraken">
             <KnowledgeIcons.GitKraken />
           </KnowledgeBadge>
-          <KnowledgeBadge className="bg-black text-white" title="Notion">
+          <KnowledgeBadge className="text-white bg-black" title="Notion">
             <KnowledgeIcons.Notion className="fill-white" />
           </KnowledgeBadge>
           <KnowledgeBadge className="bg-[#f24e1e]" title="Figma">
@@ -318,7 +318,7 @@ export default async function About() {
           </KnowledgeBadge>
         </div>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Language Skills</p>
         <div className="mt-4">
           <div className="flex justify-between">

@@ -29,12 +29,12 @@ export default function ArticleHeaderMobile({
         </span>
       </p>
       <Chip
-        className="mr-1 rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+        className="px-1 mr-1 text-xs border rounded-full border-fuchsia-800/60 bg-fuchsia-900/40 text-fuchsia-400/75"
         content={category}
       />
       {tags.length > 0 ? (
         <Chips
-          className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
+          className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
           contents={tags}
         ></Chips>
       ) : (

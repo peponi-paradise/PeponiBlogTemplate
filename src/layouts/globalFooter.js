@@ -7,10 +7,10 @@ import * as Icons from "@/components/svgComponents";
 export default function Footer() {
   return (
     <footer className="flex flex-row justify-between border-t border-slate-700">
-      <p className="px-8 py-4">
+      <p className="py-4 pl-8 pr-2">
         ⓒ 2024. {MetaInformation.author} All rights reserved
       </p>
-      <section className="flex flex-row items-center gap-4 px-8 py-4">
+      <section className="flex flex-row items-center gap-4 py-4 pl-2 pr-8">
         <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
           <Icons.LinkedIn className="hover:fill-sky-400" />
         </SvgLink>

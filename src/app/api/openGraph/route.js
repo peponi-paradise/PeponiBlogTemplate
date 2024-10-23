@@ -54,14 +54,14 @@ export function GET(request) {
         </p>
         <div tw="flex flex-row">
           <Chip
-            className="mr-1 rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+            className="px-1 mr-1 text-xs border rounded-full border-fuchsia-800/60 bg-fuchsia-900/40 text-fuchsia-400/75"
             content={category}
           />
           {tags !== undefined && tags.length > 0 ? (
             tags.map((tag) => (
               <Chip
                 key={tag}
-                className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75 last:mr-0"
+                className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75 last:mr-0"
                 content={tag}
               />
             ))

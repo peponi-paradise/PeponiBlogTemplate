@@ -7,7 +7,7 @@ import { Tooltip } from "react-tooltip";
 
 export default function GithubHeatMap({ githubData }) {
   return (
-    <div className="mx-auto grid grid-cols-1 overflow-x-auto overflow-y-hidden">
+    <div className="grid grid-cols-1 mx-auto overflow-x-auto overflow-y-hidden">
       <HeatMap
         width={720}
         style={{ color: "#94a3b8", fontSize: "12px" }}

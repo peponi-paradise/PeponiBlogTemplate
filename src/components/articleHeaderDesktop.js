@@ -16,7 +16,7 @@ export default function ArticleHeaderDesktop({
       <h1 className="mb-4">{title}</h1>
       <hr className="my-4" />
       <>
-        <div className="my-1 flex flex-row justify-between">
+        <div className="flex flex-row justify-between my-1">
           <span>
             {date.constructor == Date
               ? new Date(date).toLocaleDateString()
@@ -32,13 +32,13 @@ export default function ArticleHeaderDesktop({
       <hr className="my-4" />
       <div>
         <Chip
-          className="rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
+          className="px-1 text-xs border rounded-full border-fuchsia-800/60 bg-fuchsia-900/40 text-fuchsia-400/75"
           content={category}
         />
       </div>
       {tags.length > 0 ? (
         <Chips
-          className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
+          className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
           contents={tags}
         ></Chips>
       ) : (

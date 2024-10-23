@@ -9,7 +9,7 @@ export default function TimelineListItem({
 }) {
   return (
     <li className={className} {...props}>
-      <div className="absolute -start-1 mt-2 h-2 w-2 rounded-full bg-sky-400"></div>
+      <div className="absolute w-2 h-2 mt-2 rounded-full -start-1 bg-sky-400"></div>
       <p
         className={
           titleClass == ""

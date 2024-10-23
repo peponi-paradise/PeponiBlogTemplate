@@ -24,7 +24,7 @@ function SearchButton() {
     <button
       type="button"
       onClick={search}
-      className="border-l border-slate-700 px-1"
+      className="px-1 border-l border-slate-700"
       title="Search button"
     >
       <Icons.Search className="inline-block size-4 hover:fill-sky-400" />
@@ -39,14 +39,14 @@ export default function Header() {
         <Image
           src={favicon}
           alt="Favicon"
-          className="mx-auto my-auto inline-block size-6"
+          className="inline-block mx-auto my-auto size-6"
         ></Image>
-        <span className="titleSpan hidden text-center text-xl font-bold sm:inline-block">
+        <span className="hidden text-xl font-bold text-center titleSpan sm:inline-block">
           Peponi
         </span>
       </Link>
-      <section className="my-auto flex flex-row gap-4 px-8 py-4">
-        <div className="hidden rounded-md border border-slate-700 hover:border-sky-400 sm:inline-block">
+      <section className="flex flex-row gap-4 px-8 py-4 my-auto">
+        <div className="hidden border rounded-md border-slate-700 hover:border-sky-400 sm:inline-block">
           <input
             type="text"
             id="searchBar"
@@ -58,16 +58,16 @@ export default function Header() {
         </div>
         <nav className="flex flex-row">
           <TextLink
-            className="my-auto border-r border-slate-700 pr-2"
+            className="pr-2 my-auto border-r border-slate-700"
             href="/posts?category=all"
             text="Posts"
           />
           <TextLink
-            className="my-auto border-r border-slate-700 px-2"
+            className="px-2 my-auto border-r border-slate-700"
             href="/projects"
             text="Projects"
           />
-          <TextLink className="my-auto pl-2" href="/about" text="About" />
+          <TextLink className="pl-2 my-auto" href="/about" text="About" />
         </nav>
       </section>
     </header>

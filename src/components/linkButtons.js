@@ -5,7 +5,7 @@ import Link from "next/link";
 const textLinkClassName = "hover:text-sky-400 ";
 
 const buttonLinkClassName =
-  "z-10 block max-w-fit rounded-lg border border-sky-700 bg-sky-400/10 px-6 py-2 text-center text-slate-200/90 hover:border-sky-400 hover:bg-sky-400/20 ";
+  "z-10 block px-6 py-2 text-center border rounded-lg max-w-fit border-sky-700 bg-sky-400/10 text-slate-200/90 hover:border-sky-400 hover:bg-sky-400/20 ";
 
 function TextLink({ className = "", href = "", text = "" }) {
   return (

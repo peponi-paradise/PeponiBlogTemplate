@@ -52,7 +52,7 @@ export default function Posts({ searchParams, ...props }) {
   return (
     <Main className="my-8" {...props}>
       <section className="flex flex-row">
-        <div className="ml-auto hidden max-w-40 border-r border-slate-700 pr-8 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
+        <div className="hidden pr-8 ml-auto border-r max-w-40 border-slate-700 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>
             <li className="mb-2">
               <TextLink
@@ -82,7 +82,7 @@ export default function Posts({ searchParams, ...props }) {
             ))}
           </ul>
         </div>
-        <div className="mr-auto flex flex-col justify-between sm:basis-3/4 sm:pl-8">
+        <div className="flex flex-col justify-between mr-auto sm:basis-3/4 sm:pl-8">
           <p className="mb-5 text-2xl font-bold text-slate-200/90 sm:hidden">
             Posts
           </p>

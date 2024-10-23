@@ -1,4 +1,4 @@
-const defaultClassName = "grow px-8 py-4 ";
+const defaultClassName = "px-8 py-4 grow ";
 
 export default function Main({ children, className = "", ...props }) {
   return (

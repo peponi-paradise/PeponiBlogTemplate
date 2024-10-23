@@ -11,7 +11,7 @@ export default function Pagenation({ current = 0, start = 0, end = 0 }) {
 
   if (pages.length > 0) {
     return (
-      <div className="mt-8 flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center mt-8">
         {pages.map((page) => Page(page, current))}
       </div>
     );

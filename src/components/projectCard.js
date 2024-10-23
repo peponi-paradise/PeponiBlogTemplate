@@ -56,11 +56,11 @@ function TextCard(
   return (
     <Link className="my-auto" href={`/projects/${slug}`}>
       <div className={defaultClassName + withTextOption + className}>
-        <p className="titlePara text-xl font-bold text-slate-200/90">{title}</p>
-        <p className="line-clamp-6 text-sm">{description}</p>
+        <p className="text-xl font-bold titlePara text-slate-200/90">{title}</p>
+        <p className="text-sm line-clamp-6">{description}</p>
         <div className="grid grid-cols-2">
           <p className="text-xs">{company}</p>
-          <p className="text-right text-xs">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
+          <p className="text-xs text-right">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
         </div>
       </div>
     </Link>
@@ -83,20 +83,20 @@ function ImageCard(
       <div className={defaultClassName + withImageOption + className}>
         <div className="relative h-[auto] w-full">
           <Image
-            className="rounded-xl object-cover object-center"
+            className="object-cover object-center rounded-xl"
             src={thumbnail}
             alt={alt}
             fill
           />
         </div>
         <div className="flex flex-col gap-4">
-          <p className="titlePara text-xl font-bold text-slate-200/90">
+          <p className="text-xl font-bold titlePara text-slate-200/90">
             {title}
           </p>
-          <p className="line-clamp-3 text-sm">{description}</p>
+          <p className="text-sm line-clamp-3">{description}</p>
           <div className="grid grid-cols-2">
             <p className="text-xs">{company}</p>
-            <p className="text-right text-xs">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
+            <p className="text-xs text-right">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
           </div>
         </div>
       </div>

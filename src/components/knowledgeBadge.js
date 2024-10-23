@@ -6,7 +6,7 @@ export default function KnowledgeBadge({
 }) {
   return (
     <div
-      className={"flex gap-1 rounded px-2 py-1 text-sm text-black " + className}
+      className={"flex gap-1 px-2 py-1 text-sm text-black rounded " + className}
       title={title}
       {...props}
     >

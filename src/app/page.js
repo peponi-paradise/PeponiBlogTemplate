@@ -22,8 +22,8 @@ export default async function Home() {
   );
   let githubContributionData = await response.json();
   return (
-    <Main className="mx-auto my-8 max-w-screen-lg">
-      <section className="mx-auto grid grid-cols-1 gap-8 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+    <Main className="max-w-screen-lg mx-auto my-8">
+      <section className="grid grid-cols-1 gap-8 px-4 py-4 mx-auto border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <PersonalCard
           name={PersonalInformation.name}
           occupation={PersonalInformation.occupation}
@@ -33,7 +33,7 @@ export default async function Home() {
           personalImage={PersonalInformation.personalImage}
           descriptionLineClamp={true}
         >
-          <section className="mt-4 flex flex-row items-center gap-4">
+          <section className="flex flex-row items-center gap-4 mt-4">
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
               <Icons.LinkedIn className="hover:fill-sky-400" />
             </SvgLink>
@@ -68,7 +68,7 @@ export default async function Home() {
           <ButtonLink className="self-center" href="/about" text="Read More" />
         </section>
       </section>
-      <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
+      <section className="px-4 py-4 mx-auto mt-16 border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <span className="text-2xl font-bold text-slate-200/90">
           Recent Posts
         </span>
