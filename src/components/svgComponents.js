@@ -116,7 +116,7 @@ export function LinkedIn({ className = "", ...props }) {
     </svg>
   );
 }
-export function Nuget({ className = "", ...props }) {
+export function NuGet({ className = "", ...props }) {
   return (
     <svg
       className={defaultClassName + className}

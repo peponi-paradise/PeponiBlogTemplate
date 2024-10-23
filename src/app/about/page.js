@@ -11,6 +11,7 @@ import {
 import RadarCharts from "@/components/apexCharts";
 import GithubHeatMap from "@/components/githubHeatMap";
 import KnowledgeBadge from "@/components/knowledgeBadge";
+import * as KnowledgeIcons from "@/components/knowledgeSvgComponents";
 import { SvgLink } from "@/components/linkButtons";
 import PersonalCard from "@/components/personalCard";
 import ProgressBar from "@/components/progressBar";
@@ -58,8 +59,8 @@ export default async function About() {
             <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
               <Icons.GitHub className="hover:fill-sky-400" />
             </SvgLink>
-            <SvgLink href={SocialInformation.nuget} ariaLabel="Nuget">
-              <Icons.Nuget className="hover:fill-sky-400" />
+            <SvgLink href={SocialInformation.nuget} ariaLabel="NuGet">
+              <Icons.NuGet className="hover:fill-sky-400" />
             </SvgLink>
           </section>
         </PersonalCard>
@@ -180,48 +181,141 @@ export default async function About() {
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
         <p className="text-2xl font-bold text-slate-200/90">Knowledges</p>
         <div className="mt-4 flex flex-wrap gap-4">
-          <KnowledgeBadge name="Next.js" />
-          <KnowledgeBadge name="React" />
-          <KnowledgeBadge name="JavaScript" />
-          <KnowledgeBadge name="HTML5" />
-          <KnowledgeBadge name="CSS3" />
-          <KnowledgeBadge name="TailwindCSS" />
-          <KnowledgeBadge name="ESLint" />
-          <KnowledgeBadge name="C#" />
-          <KnowledgeBadge name=".NET" />
-          <KnowledgeBadge name=".NET framework" />
-          <KnowledgeBadge name="ASP.NET" />
-          <KnowledgeBadge name="WinForms" />
-          <KnowledgeBadge name="WPF" />
-          <KnowledgeBadge name="OpenCVSharp" />
-          <KnowledgeBadge name="Python" />
-          <KnowledgeBadge name="NumPy" />
-          <KnowledgeBadge name="pandas" />
-          <KnowledgeBadge name="scikit-learn" />
-          <KnowledgeBadge name="ONNX" />
-          <KnowledgeBadge name="PyQt" />
-          <KnowledgeBadge name="Modbus" />
-          <KnowledgeBadge name="EtherCAT" />
-          <KnowledgeBadge name="RestAPI" />
-          <KnowledgeBadge name="gRPC" />
-          <KnowledgeBadge name="JSON" />
-          <KnowledgeBadge name="Xml" />
-          <KnowledgeBadge name="Yaml" />
-          <KnowledgeBadge name="Markdown" />
-          <KnowledgeBadge name="MDX" />
-          <KnowledgeBadge name="KaTeX" />
-          <KnowledgeBadge name="PlantUml" />
-          <KnowledgeBadge name="Visual Studio" />
-          <KnowledgeBadge name="Visual Studio Code" />
-          <KnowledgeBadge name="Sublime Text" />
-          <KnowledgeBadge name="NuGet" />
-          <KnowledgeBadge name="NSIS" />
-          <KnowledgeBadge name="Git" />
-          <KnowledgeBadge name="GitHub" />
-          <KnowledgeBadge name="GitKraken" />
-          <KnowledgeBadge name="Notion" />
-          <KnowledgeBadge name="Figma" />
-          <KnowledgeBadge name="diagrams.net" />
+          <KnowledgeBadge className="bg-black text-white" title="Next.js">
+            <KnowledgeIcons.NextJs className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#61dafb]" title="React">
+            <KnowledgeIcons.React />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#f7df1e]" title="JavaScript">
+            <KnowledgeIcons.JavaScript />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#e34f26]" title="HTML5">
+            <KnowledgeIcons.Html5 />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#1572b6]" title="CSS3">
+            <KnowledgeIcons.Css3 />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#06b6d4]" title="TailwindCSS">
+            <KnowledgeIcons.TailwindCss />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#4b32c3] text-white" title="ESLint">
+            <KnowledgeIcons.EsLint className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#512bd4] text-white" title="C#">
+            <KnowledgeIcons.CSharp className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#512bd4] text-white" title=".NET">
+            <KnowledgeIcons.DotNet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge
+            className="bg-[#512bd4] text-white"
+            title=".NET framework"
+          >
+            <KnowledgeIcons.DotNet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#512bd4] text-white" title="ASP.NET">
+            <KnowledgeIcons.DotNet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#512bd4] text-white" title="WinForms">
+            <KnowledgeIcons.DotNet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#512bd4] text-white" title="WPF">
+            <KnowledgeIcons.DotNet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge
+            className="bg-[#5c3ee8] text-white"
+            title="OpenCVSharp"
+          >
+            <KnowledgeIcons.OpenCvSharp className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#3776ab] text-white" title="Python">
+            <KnowledgeIcons.Python className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#013243] text-white" title="NumPy">
+            <KnowledgeIcons.NumPy className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#150458] text-white" title="pandas">
+            <KnowledgeIcons.Pandas className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#f7931e]" title="scikit-learn">
+            <KnowledgeIcons.ScikitLearn />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#005ced] text-white" title="ONNX">
+            <KnowledgeIcons.Onnx className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#41cd52]" title="PyQt">
+            <KnowledgeIcons.PyQt />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#1192cf]" title="Modbus">
+            <KnowledgeIcons.Modbus />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="EtherCAT">
+            <KnowledgeIcons.EtherCat className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="RestAPI">
+            <KnowledgeIcons.RestApi className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#244b5a] text-white" title="gRPC">
+            <KnowledgeIcons.gRpc className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="JSON">
+            <KnowledgeIcons.Json className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#005fad] text-white" title="Xml">
+            <KnowledgeIcons.Xml className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#cb171e] text-white" title="Yaml">
+            <KnowledgeIcons.Yaml className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="Markdown">
+            <KnowledgeIcons.Markdown className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#1b1f24] text-white" title="MDX">
+            <KnowledgeIcons.Mdx className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="KaTeX">
+            <KnowledgeIcons.KaTeX className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="PlantUml">
+            <KnowledgeIcons.PlantUml className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge
+            className="bg-[#68217a] text-white"
+            title="Visual Studio"
+          >
+            <KnowledgeIcons.VisualStudio className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#00bcf2]" title="Visual Studio Code">
+            <KnowledgeIcons.VisualStudio />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#ff9800]" title="Sublime Text">
+            <KnowledgeIcons.SublimeText />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#004880] text-white" title="NuGet">
+            <KnowledgeIcons.NuGet className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#01b0f0]" title="NSIS">
+            <KnowledgeIcons.Nsis />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#f05032]" title="Git">
+            <KnowledgeIcons.Git />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#181717] text-white" title="GitHub">
+            <KnowledgeIcons.GitHub className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#179287]" title="GitKraken">
+            <KnowledgeIcons.GitKraken />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-black text-white" title="Notion">
+            <KnowledgeIcons.Notion className="fill-white" />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#f24e1e]" title="Figma">
+            <KnowledgeIcons.Figma />
+          </KnowledgeBadge>
+          <KnowledgeBadge className="bg-[#f08705]" title="diagrams.net">
+            <KnowledgeIcons.DiagramsDotNet />
+          </KnowledgeBadge>
         </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">

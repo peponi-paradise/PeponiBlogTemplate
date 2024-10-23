@@ -17,8 +17,8 @@ export default function Footer() {
         <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
           <Icons.GitHub className="hover:fill-sky-400" />
         </SvgLink>
-        <SvgLink href={SocialInformation.nuget} ariaLabel="Nuget">
-          <Icons.Nuget className="hover:fill-sky-400" />
+        <SvgLink href={SocialInformation.nuget} ariaLabel="NuGet">
+          <Icons.NuGet className="hover:fill-sky-400" />
         </SvgLink>
       </section>
     </footer>
