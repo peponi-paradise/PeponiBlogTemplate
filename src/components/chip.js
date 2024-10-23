@@ -1,10 +1,10 @@
-function Chip(props) {
-  return <span className={props.className}>{props.content}</span>;
+function Chip({ className = "", content = "" }) {
+  return <span className={className}>{content}</span>;
 }
 
-function Chips(props) {
-  return props.contents.map((content) => (
-    <Chip key={content} className={props.className} content={content} />
+function Chips({ className = "", contents = [] }) {
+  return contents.map((content) => (
+    <Chip key={content} className={className} content={content} />
   ));
 }
 

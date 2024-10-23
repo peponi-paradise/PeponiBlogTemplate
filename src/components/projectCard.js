@@ -8,42 +8,98 @@ const defaultClassName =
 const withTextOption = "items-center ";
 const withImageOption = "auto-rows-fr ";
 
-export default function ProjectCard(props) {
-  if (props.thumbnail == undefined) {
-    return (
-      <div className={defaultClassName + withTextOption + props.className}>
-        <p className="text-xl font-bold text-slate-200/90">{props.title}</p>
-        <p className="line-clamp-6 text-sm">{props.description}</p>
-        <div className="grid grid-cols-2">
-          <p className="text-xs">{props.company}</p>
-          <p className="text-right text-xs">{`${new Date(props.dateFrom).getFullYear()}.${new Date(props.dateFrom).getMonth() + 1} - ${props.dateTo !== undefined && props.dateTo.constructor == Date ? `${new Date(props.dateTo).getFullYear()}.${new Date(props.dateTo).getMonth() + 1}` : props.dateTo}`}</p>
-        </div>
-      </div>
+export default function ProjectCard({
+  className = "",
+  slug = "",
+  thumbnail,
+  alt = "",
+  title = "",
+  description = "",
+  company = "",
+  dateFrom,
+  dateTo,
+}) {
+  if (thumbnail == undefined) {
+    return TextCard(
+      className,
+      slug,
+      title,
+      description,
+      company,
+      dateFrom,
+      dateTo,
     );
   } else {
-    return (
-      <Link href={`/projects/${props.slug}`}>
-        <div className={defaultClassName + withImageOption + props.className}>
-          <div className="relative h-[auto] w-full">
-            <Image
-              className="rounded-xl object-cover object-center"
-              src={props.thumbnail}
-              alt={props.alt}
-              fill
-            />
-          </div>
-          <div className="flex flex-col gap-4">
-            <p className="titlePara text-xl font-bold text-slate-200/90">
-              {props.title}
-            </p>
-            <p className="line-clamp-3 text-sm">{props.description}</p>
-            <div className="grid grid-cols-2">
-              <p className="text-xs">{props.company}</p>
-              <p className="text-right text-xs">{`${new Date(props.dateFrom).getFullYear()}.${new Date(props.dateFrom).getMonth() + 1} - ${props.dateTo !== undefined && props.dateTo.constructor == Date ? `${new Date(props.dateTo).getFullYear()}.${new Date(props.dateTo).getMonth() + 1}` : props.dateTo}`}</p>
-            </div>
-          </div>
-        </div>
-      </Link>
+    return ImageCard(
+      className,
+      slug,
+      thumbnail,
+      alt,
+      title,
+      description,
+      company,
+      dateFrom,
+      dateTo,
     );
   }
+}
+
+function TextCard(
+  className,
+  slug,
+  title,
+  description,
+  company,
+  dateFrom,
+  dateTo,
+) {
+  return (
+    <Link className="my-auto" href={`/projects/${slug}`}>
+      <div className={defaultClassName + withTextOption + className}>
+        <p className="titlePara text-xl font-bold text-slate-200/90">{title}</p>
+        <p className="line-clamp-6 text-sm">{description}</p>
+        <div className="grid grid-cols-2">
+          <p className="text-xs">{company}</p>
+          <p className="text-right text-xs">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function ImageCard(
+  className,
+  slug,
+  thumbnail,
+  alt,
+  title,
+  description,
+  company,
+  dateFrom,
+  dateTo,
+) {
+  return (
+    <Link href={`/projects/${slug}`}>
+      <div className={defaultClassName + withImageOption + className}>
+        <div className="relative h-[auto] w-full">
+          <Image
+            className="rounded-xl object-cover object-center"
+            src={thumbnail}
+            alt={alt}
+            fill
+          />
+        </div>
+        <div className="flex flex-col gap-4">
+          <p className="titlePara text-xl font-bold text-slate-200/90">
+            {title}
+          </p>
+          <p className="line-clamp-3 text-sm">{description}</p>
+          <div className="grid grid-cols-2">
+            <p className="text-xs">{company}</p>
+            <p className="text-right text-xs">{`${new Date(dateFrom).getFullYear()}.${new Date(dateFrom).getMonth() + 1} - ${dateTo !== undefined && dateTo.constructor == Date ? `${new Date(dateTo).getFullYear()}.${new Date(dateTo).getMonth() + 1}` : dateTo}`}</p>
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
 }

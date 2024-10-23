@@ -5,10 +5,10 @@ import path from "path";
 import "./_postList.css";
 import { Chip, Chips } from "./chip";
 
-export default function PostList(props) {
+export default function PostList({ className = "", posts, ...props }) {
   return (
-    <ul className={props.className}>
-      {props.posts.map((post) => (
+    <ul className={className} {...props}>
+      {posts.map((post) => (
         <li key={post.title} className="mb-7 last:mb-0">
           <article className="rounded-lg border border-slate-700 bg-slate-800/60 px-4 py-2 hover:border-sky-400 hover:bg-gradient-to-br hover:from-slate-800 hover:from-30% hover:to-slate-700">
             <Link href={path.join(post.folderPath, post.slug)}>

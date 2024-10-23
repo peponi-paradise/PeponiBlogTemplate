@@ -1,10 +1,7 @@
 "use client";
 
-export default function Pagenation(props) {
+export default function Pagenation({ current = 0, start = 0, end = 0 }) {
   let pages = [];
-  let current = Number(props.current);
-  let start = Number(props.start);
-  let end = Number(props.end);
   for (let i = start; i <= end; i++) {
     if (i < 0) {
       continue;

@@ -31,7 +31,7 @@ export default async function Home() {
           company={PersonalInformation.company}
           description={PersonalInformation.description}
           personalImage={PersonalInformation.personalImage}
-          lineClamp={true}
+          descriptionLineClamp={true}
         >
           <section className="mt-4 flex flex-row items-center gap-4">
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
@@ -50,7 +50,7 @@ export default async function Home() {
             <StatCard value="10+" title="Projects" />
             <StatCard value="5+" title="Nuget Packages" />
           </div>
-          <GithubHeatMap data={githubContributionData} />
+          <GithubHeatMap githubData={githubContributionData} />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <img
               loading="lazy"

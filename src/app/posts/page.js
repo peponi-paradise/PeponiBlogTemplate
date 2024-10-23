@@ -31,17 +31,14 @@ const selectedCategoryClass =
 const otherCategoryClass =
   "ml-1.5 pl-4 border-l border-slate-700 truncate pb-1 pt-1 last:pb-0";
 
-export default function Posts(props) {
-  let currentPosts = applyPostFilter(
-    props.searchParams.category,
-    props.searchParams.title,
-  );
+export default function Posts({ searchParams, ...props }) {
+  let currentPosts = applyPostFilter(searchParams.category, searchParams.title);
   let posts = pagenation(
     currentPosts,
     PostInformation.viewCount,
-    props.searchParams.page,
+    searchParams.page,
   );
-  let currentPage = Number(props.searchParams.page);
+  let currentPage = Number(searchParams.page);
   if (isNaN(currentPage)) {
     currentPage = 0;
   }
@@ -53,14 +50,14 @@ export default function Posts(props) {
       ? totalPages
       : currentPage + PostInformation.pagenationRange;
   return (
-    <Main className="my-8">
+    <Main className="my-8" {...props}>
       <section className="flex flex-row">
         <div className="ml-auto hidden max-w-40 border-r border-slate-700 pr-8 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>
             <li className="mb-2">
               <TextLink
                 className={
-                  props.searchParams.category == "all"
+                  searchParams.category == "all"
                     ? "text-xl text-sky-400"
                     : "text-xl text-slate-200/90"
                 }
@@ -72,7 +69,7 @@ export default function Posts(props) {
               <li
                 key={category}
                 className={
-                  category == props.searchParams.category
+                  category == searchParams.category
                     ? selectedCategoryClass
                     : otherCategoryClass
                 }

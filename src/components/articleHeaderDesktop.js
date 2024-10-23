@@ -2,36 +2,44 @@ import * as Icons from "@/components/svgComponents";
 
 import { Chip, Chips } from "./chip";
 
-export default function ArticleHeaderDesktop(props) {
+export default function ArticleHeaderDesktop({
+  className = "",
+  title = "",
+  date,
+  minutesToRead = 1,
+  author = "",
+  category = "",
+  tags = [],
+}) {
   return (
-    <section className={`${props.className}`}>
-      <h1 className="mb-4">{props.title}</h1>
+    <section className={`${className}`}>
+      <h1 className="mb-4">{title}</h1>
       <hr className="my-4" />
       <>
         <div className="my-1 flex flex-row justify-between">
           <span>
-            {props.date.constructor == Date
-              ? new Date(props.date).toLocaleDateString()
-              : props.date}
+            {date.constructor == Date
+              ? new Date(date).toLocaleDateString()
+              : date}
           </span>
           <div className="flex flex-row items-center">
             <Icons.Clock className="my-0 mr-1 size-3.5" />
-            <span>{props.minutesToRead}m</span>
+            <span>{minutesToRead}m</span>
           </div>
         </div>
-        <p className="my-1">{props.author}</p>
+        <p className="my-1">{author}</p>
       </>
       <hr className="my-4" />
       <div>
         <Chip
           className="rounded-full border border-fuchsia-800/60 bg-fuchsia-900/40 px-1 text-xs text-fuchsia-400/75"
-          content={props.category}
+          content={category}
         />
       </div>
-      {props.tags !== undefined && props.tags.length > 0 ? (
+      {tags.length > 0 ? (
         <Chips
           className="mr-1 rounded-full border border-blue-800/60 bg-blue-900/40 px-1 text-xs text-blue-400/75"
-          contents={props.tags}
+          contents={tags}
         ></Chips>
       ) : (
         <></>

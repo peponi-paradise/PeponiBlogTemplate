@@ -5,17 +5,17 @@
 import HeatMap from "@uiw/react-heat-map";
 import { Tooltip } from "react-tooltip";
 
-export default function GithubHeatMap(props) {
+export default function GithubHeatMap({ githubData }) {
   return (
     <div className="mx-auto grid grid-cols-1 overflow-x-auto overflow-y-hidden">
       <HeatMap
         width={720}
         style={{ color: "#94a3b8", fontSize: "12px" }}
-        startDate={new Date(props.data["contributions"][0].date)}
+        startDate={new Date(githubData["contributions"][0].date)}
         endDate={
           new Date(
-            props.data["contributions"][
-              props.data["contributions"].length - 1
+            githubData["contributions"][
+              githubData["contributions"].length - 1
             ].date,
           )
         }
@@ -26,7 +26,7 @@ export default function GithubHeatMap(props) {
           12: "#239A3B",
           32: "#196127",
         }}
-        value={props.data["contributions"].map((item) => ({
+        value={githubData["contributions"].map((item) => ({
           date: item.date.replaceAll("-", "/"),
           count: item.count,
         }))}

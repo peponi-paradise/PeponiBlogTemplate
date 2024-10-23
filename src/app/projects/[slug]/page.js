@@ -129,10 +129,11 @@ export function generateMetadata(props) {
   };
 }
 
-export default function Slug(props) {
-  let page = getProject(props.params.slug);
+export default function Slug({ params, searchParams, ...props }) {
+  let page = getProject(params.slug);
+  let toc = getToc(page.content);
   return (
-    <Main className="my-8">
+    <Main className="my-8" {...props}>
       <section className="prose prose-invert grid min-w-full grid-cols-1 justify-between gap-12 lg:grid-cols-12">
         <ArticleHeaderMobile
           className="lg:hidden"
@@ -173,10 +174,14 @@ export default function Slug(props) {
           />
           <GiscusComments />
         </div>
-        <Toc
-          className="not-prose sticky top-28 hidden min-w-40 self-start lg:col-span-2 lg:block"
-          Toc={getToc(page.content)}
-        ></Toc>
+        {toc.length > 0 ? (
+          <Toc
+            className="not-prose sticky top-28 hidden min-w-40 self-start lg:col-span-2 lg:block"
+            toc={toc}
+          ></Toc>
+        ) : (
+          <></>
+        )}
       </section>
     </Main>
   );

@@ -71,7 +71,7 @@ export default async function About() {
             <StatCard value="5+" title="Nuget Packages" />
             <StatCard value="5+" title="Clients" />
           </div>
-          <GithubHeatMap data={githubContributionData} />
+          <GithubHeatMap githubData={githubContributionData} />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <img
               loading="lazy"
@@ -167,15 +167,15 @@ export default async function About() {
         <p className="text-2xl font-bold">Top Skills</p>
         <div className="mt-4">
           <p>Skill 1</p>
-          <ProgressBar className="mt-2" progress="w-[95%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={95} />
         </div>
         <div className="mt-4">
           <p>Skill 2</p>
-          <ProgressBar className="mt-2" progress="w-[80%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={80} />
         </div>
         <div className="mt-4">
           <p>Skill 3</p>
-          <ProgressBar className="mt-2" progress="w-[50%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={50} />
         </div>
       </section>
       <section className="mx-auto mt-16 rounded-xl border border-slate-700 bg-slate-700/10 px-4 py-4 sm:px-8">
@@ -325,21 +325,21 @@ export default async function About() {
             <p className="text-slate-200/90">Skill 1</p>
             <p className="self-center text-xs">Description 1</p>
           </div>
-          <ProgressBar className="mt-2" progress="w-[95%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={95} />
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
             <p className="text-slate-200/90">Skill 2</p>
             <p className="self-center text-xs">Description 2</p>
           </div>
-          <ProgressBar className="mt-2" progress="w-[80%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={80} />
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
             <p className="text-slate-200/90">Skill 3</p>
             <p className="self-center text-xs">Description 3</p>
           </div>
-          <ProgressBar className="mt-2" progress="w-[50%]"></ProgressBar>
+          <ProgressBar className="mt-2" progressPercent={50} />
         </div>
       </section>
     </Main>

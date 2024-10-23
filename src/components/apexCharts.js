@@ -6,12 +6,6 @@ const ReactApexCharts = dynamic(() => import("react-apexcharts"), {
   ssr: false,
 });
 
-export default function RadarCharts(props) {
-  return (
-    <ReactApexCharts
-      options={props.options}
-      series={props.series}
-      type="radar"
-    />
-  );
+export default function RadarCharts({ series, options }) {
+  return <ReactApexCharts options={options} series={series} type="radar" />;
 }
