@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/),[Tailwind CSS](https://tailwindcss.com/) starter template bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Features
+
+- Next.js with [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router)
+- Tailwind CSS
+- Supports 3 layout - mobile, tablet, desktop
+- File based contents management
+    ```text
+    root/
+    |
+    |- posts/
+    |  |- categoryA/
+    |  |  |- post1.mdx
+    |
+    |- projects\
+    |  |- project1.mdx
+    ```
+- Support for `gray matter`, `GFM`, `table of contents`, `comments (giscus)` in mdx
+- Support for `Syntax Highlighting`, `KaTeX`, and `PlantUML` in mdx
+- Supports sitemaps, robots, open graph, ...
+
+## Demo
+
+You can checkout this template via [Demo page](https://peponi-blog-template.vercel.app)
 
 ## Getting Started
 
@@ -18,16 +42,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project uses [Pretendard](https://github.com/orioncactus/pretendard) font which is optimized for english and korean.
 
 ## Deploy on Vercel
 

@@ -10,15 +10,6 @@ export const metadata = {
     title: "Projects",
     description: "Projects of " + MetaInformation.author,
     url: MetaInformation.baseUrl + "/projects",
-    images: [
-      {
-        url: "./opengraph-image.png",
-        width: 256,
-        height: 256,
-        type: "image/png",
-        alt: "Favicon",
-      },
-    ],
   },
 };
 

@@ -14,15 +14,6 @@ export const metadata = {
     title: "Posts",
     description: "Blog posts",
     url: MetaInformation.baseUrl + "/posts?category=all",
-    images: [
-      {
-        url: "./opengraph-image.png",
-        width: 256,
-        height: 256,
-        type: "image/png",
-        alt: "Favicon",
-      },
-    ],
   },
 };
 

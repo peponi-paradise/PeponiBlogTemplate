@@ -16,7 +16,7 @@ export const MetaInformation = {
     { rel: "icon", url: Favicon.src },
     { rel: "apple-touch-icon", url: AppleFavicon.src },
   ],
-  baseUrl: "https://peponi-paradise.vercel.app",
+  baseUrl: "https://peponi-blog-template.vercel.app",
 };
 
 export const SocialInformation = {
@@ -39,7 +39,7 @@ export const PersonalInformation = {
   responsibility: "Team leader",
   company: "My company",
   additionalInformation: `Lorem@ipsum.com
-82+10-1234-5678`,
++82 10-1234-5678`,
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 };
