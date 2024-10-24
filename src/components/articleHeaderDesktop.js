@@ -23,7 +23,7 @@ export default function ArticleHeaderDesktop({
               : date}
           </span>
           <div className="flex flex-row items-center">
-            <Icons.Clock className="my-0 mr-1 size-3.5" />
+            <Icons.Clock className="my-0 mr-1 size-3.5 fill-slate-400" />
             <span>{minutesToRead}m</span>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function ArticleHeaderMobile({
         </span>
         {" │ "}
         <span className="inline-flex flex-row items-baseline">
-          <Icons.Clock className="my-0 mr-1 size-3.5 self-center" />
+          <Icons.Clock className="my-0 mr-1 size-3.5 fill-slate-400 self-center" />
           {minutesToRead}m
         </span>
       </p>
