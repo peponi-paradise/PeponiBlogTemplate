@@ -37,6 +37,9 @@ export default async function Home() {
             <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
               <Icons.LinkedIn className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>
+            <SvgLink href={SocialInformation.instagram} ariaLabel="Instagram">
+              <Icons.Instagram className="fill-slate-400 hover:fill-sky-400" />
+            </SvgLink>
             <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
               <Icons.GitHub className="fill-slate-400 hover:fill-sky-400" />
             </SvgLink>

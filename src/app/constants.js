@@ -23,6 +23,7 @@ export const SocialInformation = {
   githubUserName: "peponi-paradise",
   github: "https://github.com/peponi-paradise",
   linkedIn: "https://www.linkedin.com/in/peponi-paradise",
+  instagram: "https://www.instagram.com/",
   nuget: "https://www.nuget.org/profiles/Peponi",
 };
 
