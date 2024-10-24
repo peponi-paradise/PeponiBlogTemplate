@@ -36,7 +36,7 @@ export const metadata = {
 
 export default async function About() {
   let response = await fetch(
-    `https://github-contributions-api.jogruber.de/v4/${SocialInformation.githubUserName}?y=last`,
+    `https://github-contributions-api.jogruber.de/v4/${process.env.GITHUB_USERNAME}?y=last`,
   );
   let githubContributionData = await response.json();
   return (
@@ -80,13 +80,13 @@ export default async function About() {
               loading="lazy"
               alt="Github stats"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api?username=${SocialInformation.githubUserName}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api?username=${process.env.GITHUB_USERNAME}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
             />
             <img
               loading="lazy"
               alt="Github used languages"
               className="m-auto"
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${SocialInformation.githubUserName}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
+              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${process.env.GITHUB_USERNAME}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
             />
           </div>
         </section>

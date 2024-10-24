@@ -35,11 +35,11 @@ export default function Posts({ searchParams, ...props }) {
   }
   let totalPages =
     Math.ceil(currentPosts.length / PostInformation.viewCount) - 1;
-  let start = currentPage - PostInformation.pagenationRange;
+  let start = currentPage - PostInformation.paginationRange;
   let end =
-    currentPage + PostInformation.pagenationRange > totalPages
+    currentPage + PostInformation.paginationRange > totalPages
       ? totalPages
-      : currentPage + PostInformation.pagenationRange;
+      : currentPage + PostInformation.paginationRange;
   return (
     <Main className="my-8" {...props}>
       <section className="flex flex-row">

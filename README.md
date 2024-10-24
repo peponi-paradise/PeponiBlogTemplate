@@ -13,10 +13,10 @@ This is a [Next.js](https://nextjs.org/),[Tailwind CSS](https://tailwindcss.com/
     |  |- categoryA/
     |  |  |- post1.mdx
     |
-    |- projects\
+    |- projects/
     |  |- project1.mdx
     ```
-- Support for `gray matter`, `GFM`, `table of contents`, `comments (giscus)` in mdx
+- Support for `Frontmatter`, `GFM`, `table of contents`, `comments (giscus)` in mdx
 - Support for `Syntax Highlighting`, `KaTeX`, and `PlantUML` in mdx
 - Supports sitemaps, robots, open graph, ...
 
