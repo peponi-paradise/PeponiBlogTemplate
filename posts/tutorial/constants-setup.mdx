@@ -1,5 +1,5 @@
 ---
-title: Project Setup
+title: Constants Setup
 category: Tutorial
 description: This project comes with constants.js and .env.local predefined.
 date: 2024-10-24T12:37:00+09:00
@@ -42,17 +42,17 @@ export const MetaInformation = {
 
 상기 설정을 이용해 출력되는 html은 아래와 같다.
 
-- `charset`
+- charset
     `<meta charset="utf-8">{:html}`
-- `language`
-    `<html lang="ko" />{:html}`
-- `title`
+- language
+    `<html lang="ko">{:html}`
+- title
     `<title>Peponi</title>{:html}`
-- `description`
+- description
     `<meta name="description" content="Peponi's blog">{:html}`
-- `author`
+- author
     `<meta name="author" content="Peponi">{:html}`
-- `icons`
+- icons
     `<link rel="icon" href="/_next/static/media/favicon.~~~.ico">{:html}`
     `<link rel="apple-touch-icon" href="/_next/static/media/favicon-apple.~~~.png">{:html}`
 
@@ -108,8 +108,10 @@ export const PostInformation = {
 };
 ```
 
-- viewCount : post list의 post 수
-- paginationRange : page navigator의 ± range
+- `viewCount`
+    post list의 post 수
+- `paginationRange`
+    page navigator의 ± range
 
 ![PostInformation](/posts/tutorial/PostInformation.png)
 
@@ -232,9 +234,11 @@ NEXT_PUBLIC_GISCUS_CATEGORY=ISSUE_CATEGORY
 NEXT_PUBLIC_GISCUS_CATEGORY_ID=CATEGORY_ID
 ```
 
-- `GOOGLE_SITE_VERIFICATION` : 설정 시 다음 meta tag가 생성된다.
+- `GOOGLE_SITE_VERIFICATION`
+    설정 시 다음 meta tag가 생성된다.
     `<meta name="google-site-verification" content=SECRET_KEY />{:html}`
-- `GITHUB_USERNAME` : `home`, `about` 페이지의 github 정보를 표현하는 데 사용된다.
+- `GITHUB_USERNAME`
+    `home`, `about` 페이지의 github 정보를 표현하는 데 사용된다.
     ![GITHUB_USERNAME](/posts/tutorial/GITHUB_USERNAME.png)
-- `NEXT_PUBLIC_GISCUS_REPO` ~ `NEXT_PUBLIC_GISCUS_CATEGORY_ID` : `posts`, `projects`의 article의 댓글을 표현하는 데 사용된다.
-    자세한 설정 방법은 https://giscus.app/ko 를 참조한다.
+- `NEXT_PUBLIC_GISCUS_REPO` ~ `NEXT_PUBLIC_GISCUS_CATEGORY_ID`
+    `posts`, `projects`의 article의 댓글을 표현하는 데 사용된다. 자세한 설정 방법은 https://giscus.app/ko 를 참조한다.

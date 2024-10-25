@@ -41,7 +41,7 @@ export default function Posts({ searchParams, ...props }) {
       ? totalPages
       : currentPage + PostInformation.paginationRange;
   return (
-    <Main className="my-8" {...props}>
+    <Main {...props}>
       <section className="flex flex-row">
         <div className="hidden pr-8 ml-auto border-r max-w-40 border-slate-700 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
           <ul>

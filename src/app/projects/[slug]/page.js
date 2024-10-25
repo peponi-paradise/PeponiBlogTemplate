@@ -25,7 +25,7 @@ import "remark-github-blockquote-alert/alert.css";
 import remarkMath from "remark-math";
 import { visit } from "unist-util-visit";
 
-import "./_postViewCss.css";
+import "./_articleViewCss.css";
 
 const autolinkHeadingsOptions = {
   behavior: "append",
@@ -133,7 +133,7 @@ export default function Slug({ params, searchParams, ...props }) {
   let page = getProject(params.slug);
   let toc = getToc(page.content);
   return (
-    <Main className="my-8" {...props}>
+    <Main {...props}>
       <section className="grid justify-between min-w-full grid-cols-1 gap-12 prose prose-invert lg:grid-cols-12">
         <ArticleHeaderMobile
           className="lg:hidden"

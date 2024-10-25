@@ -78,32 +78,32 @@ published: 2024-10-14
 
 ## 4. Writing
 
-- 글의 본문을 작성하는 방법은 `Post`, `Project` 모두 기본적으로 [GitHub Flavored Markdown](https://docs.github.com/ko/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)을 사용한다.
+글의 본문을 작성하는 방법은 `Post`, `Project` 모두 기본적으로 [GitHub Flavored Markdown](https://docs.github.com/ko/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)을 사용한다.
 
     ```md title="*.mdx" showLineNumbers
     ## title
-
+    
     description
-
+    
     - Lorem ipsum dolor sit amet
         sed do eiusmod tempor incididunt
-
+    
     ...
     ```
 
-    > [!TIP]
-    > 이 프로젝트에서는 `<h2>{:html}`, `<h3>{:html}`를 파싱하여 `toc`를 자동 생성합니다.
+> [!TIP]
+> 이 프로젝트에서는 `<h2>{:html}`, `<h3>{:html}`를 파싱하여 `toc`를 자동 생성합니다.
 
-- 글 작성 시 이미지를 불러오는 경우에는 조금 다른데, `root/public/`이 기본 경로로 설정되어 있다.
+글 작성 시 이미지를 불러오는 경우에는 조금 다른데, `root/public/`이 기본 경로로 설정되어 있다.
 
-    ```md
-    ![alt](/jeje.jpg)
-    ```
+```md
+![alt](/jeje.jpg)
+```
 
-    위와 같이 이미지를 불러오는 경우, 실제로 참조하는 경로는 `root/public/jeje.jpg`가 된다.
+위와 같이 이미지를 불러오는 경우, 실제로 참조하는 경로는 `root/public/jeje.jpg`가 된다.
 
-- `Code`의 경우 [rehype-pretty-code](https://rehype-pretty.pages.dev/)를 사용하여 `title`, `line number` 등이 지원된다.
-- Markdown 외 추가로 `KaTeX`, `PlantUML`이 지원된다. 해당 내용은 아래 섹션을 참조한다.
+`Code`의 경우 [rehype-pretty-code](https://rehype-pretty.pages.dev/)를 사용하여 `title`, `line number` 등이 지원된다.
+또한, Markdown 외 추가로 `KaTeX`, `PlantUML`이 지원된다. 해당 내용은 아래 섹션을 참조한다.
 
 ### 4.1. KaTeX
 
@@ -164,3 +164,10 @@ queue Q
 
 @enduml
 ```
+
+## 5. 참조 자료
+
+- [GitHub Flavored Markdown](https://docs.github.com/ko/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [rehype-pretty-code](https://rehype-pretty.pages.dev/)
+- [KaTeX](https://katex.org/)
+- [PlantUML](https://plantuml.com/)

@@ -1,5 +1,6 @@
 .prose {
   @apply text-slate-400;
+  word-spacing: 0.05rem;
 }
 
 .prose h1,
@@ -20,6 +21,15 @@
 .prose h4,
 .prose h5 {
   @apply scroll-mt-28;
+}
+
+.prose ul {
+  @apply list-[revert];
+}
+
+.prose ul p,
+.prose ol p{
+  @apply my-2;
 }
 
 .prose .markdown-alert > :first-child{
@@ -63,22 +73,24 @@
   @apply block;
 }
 
-.prose pre > button > img {
+.prose pre > button > svg {
   @apply m-2 h-8 w-8 p-1;
 }
 
 .prose code {
-  @apply rounded-md bg-slate-800 px-1.5 py-0.5 text-slate-300;
+  @apply text-base text-indigo-400 font-medium;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-.prose code::before {
+
+.prose code[data-language]::before {
   @apply content-[];
 }
 
-.prose code::after {
+.prose code[data-language]::after {
   @apply content-[];
 }
+
 
 .prose code[data-line-numbers] {
   counter-reset: line;
@@ -109,7 +121,7 @@
 }
 
 .prose pre > code {
-  @apply border-none p-0;
+  @apply text-sm text-slate-300;
 }
 
 .prose pre > code span[data-line] {
@@ -136,13 +148,13 @@
   @apply invisible ml-4;
 }
 
-.prose .innerlink:after {
-  content: url("../../../assets/svgs/link.svg");
-}
-
 .innerlink:hover,
 .prose *:hover > .innerlink {
   @apply visible;
+}
+
+.prose .innerlink:after {
+  content: url("../../../assets/svgs/link.svg");
 }
 
 .prose .innerlink:hover::after {

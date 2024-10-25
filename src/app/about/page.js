@@ -40,7 +40,7 @@ export default async function About() {
   );
   let githubContributionData = await response.json();
   return (
-    <Main className="max-w-screen-lg mx-auto my-8">
+    <Main className="max-w-screen-lg mx-auto">
       <section className="grid grid-cols-1 gap-8 px-4 py-4 mx-auto border rounded-xl border-slate-700 bg-slate-700/10 sm:px-8">
         <PersonalCard
           className="my-auto"
@@ -78,13 +78,13 @@ export default async function About() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <img
               loading="lazy"
-              alt="Github stats"
+              alt="GitHub stats"
               className="m-auto"
               src={`https://github-readme-stats.vercel.app/api?username=${process.env.GITHUB_USERNAME}&show_icons=true&theme=transparent&hide_border=true&hide_rank=true&title_color=38bdf8&text_color=94a3b8`}
             />
             <img
               loading="lazy"
-              alt="Github used languages"
+              alt="GitHub used languages"
               className="m-auto"
               src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${process.env.GITHUB_USERNAME}&layout=compact&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8`}
             />

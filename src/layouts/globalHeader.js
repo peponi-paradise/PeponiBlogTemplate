@@ -1,5 +1,6 @@
 "use client";
 
+import { MetaInformation } from "@/app/constants";
 import favicon from "@/assets/icons/favicon-apple.png";
 import { TextLink } from "@/components/linkButtons";
 import * as Icons from "@/components/svgComponents";
@@ -42,7 +43,7 @@ export default function Header() {
           className="inline-block mx-auto my-auto size-6"
         ></Image>
         <span className="hidden text-xl font-bold text-center titleSpan sm:inline-block">
-          Peponi
+          {MetaInformation.author}
         </span>
       </Link>
       <section className="flex flex-row gap-4 px-8 py-4 my-auto">

@@ -1,0 +1,182 @@
+---
+title: Introduce Template
+category: Tutorial
+description: This document describes template and how to customize
+date: 2024-10-25T10:46:00+09:00
+tags: ["Layout", "Home", "About"]
+---
+
+## 1. Introduction
+
+이 문서에서는 템플릿에 대한 소개와 함께 간단한 커스텀 방법을 소개한다.
+
+## 2. Layout
+
+### 2.1. Root layout
+
+이 프로젝트의 root layout은 `root/src/app/layout.js` 파일에 정의되어 있다. 이 파일은 `<html>{:html}` 태그와 함께 `<head>{:html}`, `<body>{:html}` 태그를 정의한다.
+
+이 중 `<body>{:html}` 태그에서 layout을 정의하며, 배경 및 기본 텍스트 색상을 쉽게 수정할 수 있다.
+1. 배경 색상
+    배경 색상의 기본값은 `bg-slate-900`이다. 다른 색상을 입력하면 html의 `전체 배경 색상`이 달라진다.
+2. 기본 텍스트 색상
+    기본 텍스트 색상은 Posts, Projects의 `article page를 제외한 전 영역`에 대해 적용된다. 기본값은 `text-slate-400`이다.
+
+`<body>{:html}` 태그에는 다음 컴포넌트가 포함되며, 다음 섹션에서 서술한다.
+- Header
+- Main
+- Footer
+
+### 2.2. Header
+
+![header](/posts/tutorial/Header.png)
+
+Header 컴포넌트는 `navigation`과 함께 `post search` 기능을 제공한다.
+
+좌측의 `favicon`과 함께 `MetaInformation.author`가 설정되어 있는 링크는 기본적으로 `Home` 페이지에 연결되어 있다. 해당 부분에 대한 수정은 아래 코드를 참조한다.
+```js title="root/src/layouts/globalHeader.js" {2,7,15}
+import { MetaInformation } from "@/app/constants";
+import favicon from "@/assets/icons/favicon-apple.png";  // from 이후 경로 수정하여 favicon 변경
+
+export default function Header() {
+  return (
+      {/* href="/" 수정하여 링크 경로 변경 */}
+      <Link href="/" className="flex flex-row gap-4 px-8 py-4">  
+        <Image
+          src={favicon}
+          alt="Favicon"
+          className="inline-block mx-auto my-auto size-6"
+        ></Image>
+        <span className="hidden text-xl font-bold text-center titleSpan sm:inline-block">
+          {/* 표기 텍스트 수정 */}
+          {MetaInformation.author}
+        </span>
+      </Link>
+      ⋮
+```
+
+우측의 navigation 링크 영역은 `TextLink` 컴포넌트로 만들어져 있다. 해당 부분에 대한 수정은 아래 코드를 참조한다.
+```js title="root/src/layouts/globalHeader.js" {10-11,15-16,18}
+import { TextLink } from "@/components/linkButtons";
+
+// href="링크 주소", text="표기 텍스트"
+export default function Header() {
+  return (
+      ⋮
+      <nav className="flex flex-row">
+          <TextLink
+            className="pr-2 my-auto border-r border-slate-700"
+            href="/posts?category=all"
+            text="Posts"
+          />
+          <TextLink
+            className="px-2 my-auto border-r border-slate-700"
+            href="/projects"
+            text="Projects"
+          />
+          <TextLink className="pl-2 my-auto" href="/about" text="About" />
+        </nav>
+      </section>
+    </header>
+  );
+}
+```
+
+### 2.3. Main
+
+Main 컴포넌트는 Header, Footer 사이의 영역이다. `root/src/layouts/globalMain.js` 파일에 정의되어 있으며 `<main>{:html}` 태그를 반환한다. 해당 컴포넌트는 레이아웃 영역을 최대화하는 컨테이너 역할만을 수행한다.
+
+### 2.4. Footer
+
+![footer](/posts/tutorial/Footer.png)
+
+Footer 컴포넌트는 ⓒ 문구와 함께 social link를 표시한다. ⓒ 문구는 `MetaInformation.author`가 지정되어 있다. Social link를 위한 아이콘으로 GitHub, LinkedIn, Instagram, NuGet을 제공한다. (작성자는 .NET 개발자이다)
+
+Social link를 수정하는 경우 `SocialInformation` const를 활용하거나 직접 `href`를 삽입할 수 있다.
+```js title="root/src/app/constants.js"
+export const SocialInformation = {
+  github: "https://github.com/peponi-paradise",
+  linkedIn: "https://www.linkedin.com/in/peponi-paradise",
+  instagram: "https://www.instagram.com/",
+  nuget: "https://www.nuget.org/profiles/Peponi",
+};
+```
+```js title="root/src/layouts/globalFooter.js"
+"use client";
+
+import { MetaInformation, SocialInformation } from "@/app/constants";
+import { SvgLink } from "@/components/linkButtons";
+import * as Icons from "@/components/svgComponents";
+
+// href="링크 주소", icon component를 children으로 추가
+export default function Footer() {
+  return (
+    <footer className="flex flex-row justify-between border-t border-slate-700">
+      <p className="py-4 pl-8 pr-2">
+        ⓒ 2024. {MetaInformation.author} All rights reserved
+      </p>
+      <section className="flex flex-row items-center gap-4 py-4 pl-2 pr-8">
+        <SvgLink href={SocialInformation.linkedIn} ariaLabel="LinkedIn">
+          <Icons.LinkedIn className="fill-slate-400 hover:fill-sky-400" />
+        </SvgLink>
+        <SvgLink href={SocialInformation.instagram} ariaLabel="Instagram">
+          <Icons.Instagram className="fill-slate-400 hover:fill-sky-400" />
+        </SvgLink>
+        <SvgLink href={SocialInformation.github} ariaLabel="GitHub">
+          <Icons.GitHub className="fill-slate-400 hover:fill-sky-400" />
+        </SvgLink>
+        <SvgLink href={SocialInformation.nuget} ariaLabel="NuGet">
+          <Icons.NuGet className="fill-slate-400 hover:fill-sky-400" />
+        </SvgLink>
+      </section>
+    </footer>
+  );
+}
+```
+
+## 3. Font
+
+Font는 cdn import 방식을 사용하며, [Pretendard](https://github.com/orioncactus/pretendard) 폰트가 글로벌 적용된다. Import 경로 및 font-family 정보는 아래 코드를 참조한다.
+```css title="root/src/app/globals.css"
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+}
+```
+
+`Posts`, `Projects`의 article 구성요소 중 `code`의 경우 다음 코드를 통해 폰트를 지정한다.
+```css title="root/src/app/posts/[...slug]/_articleViewCss.css"
+.prose code {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+```
+```css title="root/src/app/projects/[slug]/_articleViewCss.css"
+.prose code {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+```
+
+## 4. Pages
+
+이 프로젝트는 [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router)를 사용하며, 각 폴더에 있는 `page.js` 파일을 통해 `<Main>{:html}` 요소를 출력한다. 각 페이지의 요소는 대부분 `root/src/app/constants.js` 파일을 통해 내용을 수정할 수 있다.
+
+- root/src/app/page.js
+    이 프로젝트의 home으로, author 정보와 함께 최근 post를 표시한다.
+- root/src/app/about/page.js
+    Author의 각종 정보를 표시하는 페이지이다. 할 수 있는 일, 프로젝트, 업무 스타일, 사회 경험 등이 표시된다.
+- root/src/app/posts/page.js
+    Post list 페이지이다. 데스크톱 환경을 기준으로 좌측 영역에 카테고리, 중앙 영역에 글의 목록이 표시된다.
+    - root/src/app/posts/[...slug]/page.js
+        Article view 페이지이다. 데스크톱 환경을 기준으로 좌측에 타이틀, 중앙에 본문, 우측에 TOC가 표시된다. 본문의 css요소로 `_articleViewCss.css` 파일을 사용한다.
+- root/src/app/projects/page.js
+    Project list 페이지이다. `ExperienceInformation`을 기준으로 timeline을 그리고, `Projects`에 작성된 article을 card 형태로 표시한다. Timeline은 `ExperienceInformation`의 인덱스 순서에 따라 위에서부터 배치된다.
+    - root/src/app/projects/[slug]/page.js
+        Article view 페이지이다. 데스크톱 환경을 기준으로 좌측에 타이틀, 중앙에 본문, 우측에 TOC가 표시된다. 본문의 css요소로 `_articleViewCss.css` 파일을 사용한다.
+
+## 5. 참조 자료
+
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Pretendard](https://github.com/orioncactus/pretendard)
+- [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router)
