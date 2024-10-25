@@ -26,7 +26,6 @@ import remarkMath from "remark-math";
 import { visit } from "unist-util-visit";
 
 import "./_articleViewCss.css";
-import ArticleImage from "@/components/articleImage";
 
 const autolinkHeadingsOptions = {
   behavior: "append",
@@ -69,7 +68,6 @@ const afterRehypePretty = () => (tree) => {
 
 const customComponents = {
   pre: Pre,
-  img:ArticleImage,
 };
 
 const options = {
