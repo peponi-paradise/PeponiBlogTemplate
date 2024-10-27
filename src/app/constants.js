@@ -32,7 +32,7 @@ export const PersonalInformation = {
 };
 
 export const SocialInformation = {
-  github: "https://github.com/peponi-paradise",
+  github: "https://github.com/peponi-paradise/PeponiBlogTemplate",
   linkedIn: "https://www.linkedin.com/in/peponi-paradise",
   instagram: "https://www.instagram.com/",
   nuget: "https://www.nuget.org/profiles/Peponi",
