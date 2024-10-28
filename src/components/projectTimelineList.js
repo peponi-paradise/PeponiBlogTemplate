@@ -51,7 +51,7 @@ export default function ProjectTimelineList({
           )}
         </TimelineListItem>
       ))}
-      {addedContents.length > 0 && addedContents.length != projects.length ? (
+      {addedContents.length != projects.length ? (
         <TimelineListItem
           className="mt-8 ml-4"
           titleClass="text-xl mb-2"
