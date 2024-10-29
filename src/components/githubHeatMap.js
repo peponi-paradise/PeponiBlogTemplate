@@ -20,7 +20,7 @@ export default function GithubHeatMap({ githubData }) {
           )
         }
         panelColors={{
-          1: "#EBEDF0",
+          1: "#253044",
           4: "#C6E48B",
           8: "#7BC96F",
           12: "#239A3B",
