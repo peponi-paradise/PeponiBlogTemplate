@@ -87,6 +87,7 @@ const options = {
       [rehypePrettyCode, rehypePrettyCodeOptions],
       afterRehypePretty,
     ],
+    useDynamicImport: true,
   },
 };
 
