@@ -28,15 +28,19 @@ export default function ArticleHeaderMobile({
           {minutesToRead}m
         </span>
       </p>
-      <Chip
-        className="px-1 mr-1 text-xs border rounded-full border-fuchsia-800/60 bg-fuchsia-900/40 text-fuchsia-400/75"
-        content={category}
-      />
+      <div>
+        <Chip
+          className="px-1 text-xs border rounded-full border-fuchsia-800/60 bg-fuchsia-900/40 text-fuchsia-400/75"
+          content={category}
+        />
+      </div>
       {tags.length > 0 ? (
-        <Chips
-          className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
-          contents={tags}
-        ></Chips>
+        <div className="flex flex-wrap justify-center gap-1 mt-1">
+          <Chips
+            className="px-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
+            contents={tags}
+          ></Chips>
+        </div>
       ) : (
         <></>
       )}

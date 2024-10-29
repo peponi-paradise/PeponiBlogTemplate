@@ -37,10 +37,12 @@ export default function ArticleHeaderDesktop({
         />
       </div>
       {tags.length > 0 ? (
-        <Chips
-          className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
-          contents={tags}
-        ></Chips>
+        <div className="flex flex-wrap gap-1 mt-1">
+          <Chips
+            className="px-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
+            contents={tags}
+          ></Chips>
+        </div>
       ) : (
         <></>
       )}
