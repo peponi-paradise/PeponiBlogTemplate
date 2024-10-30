@@ -27,10 +27,16 @@ export default function PostList({ className = "", posts, ...props }) {
                   content={post.category}
                 />
               </div>
-              <Chips
-                className="px-1 mr-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
-                contents={post.tags}
-              ></Chips>
+              {post.tags.length > 0 ? (
+                <div className="flex flex-wrap gap-1 mt-1">
+                  <Chips
+                    className="px-1 text-xs border rounded-full border-blue-800/60 bg-blue-900/40 text-blue-400/75"
+                    contents={post.tags}
+                  ></Chips>
+                </div>
+              ) : (
+                <></>
+              )}
             </Link>
           </article>
         </li>
