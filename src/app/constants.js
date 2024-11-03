@@ -57,7 +57,7 @@ export const WorkStyleInformation = {
   chartSeries: [
     {
       name: "Work Style",
-      data: [90, 80, 60, 40],
+      data: [50, 50, 50, 50],
     },
   ],
   chartOption: {
@@ -70,7 +70,7 @@ export const WorkStyleInformation = {
       show: false,
     },
     xaxis: {
-      categories: ["Documentation", "Design", "Communication", "Development"],
+      categories: ["Architecture", "Design", "Problem-solving", "Test"],
     },
   },
 };
