@@ -37,6 +37,7 @@ export const metadata = {
 export default async function About() {
   let response = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${process.env.GITHUB_USERNAME}?y=last`,
+    { next: { revalidate: 86400 } },
   );
   let githubContributionData = await response.json();
   return (
