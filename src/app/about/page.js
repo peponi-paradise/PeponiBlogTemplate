@@ -34,10 +34,12 @@ export const metadata = {
   },
 };
 
+export const dynamic = "force-dynamic";
+
 export default async function About() {
   let response = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${process.env.GITHUB_USERNAME}?y=last`,
-    { next: { revalidate: 86400 } },
+    { cache: "no-store" },
   );
   let githubContributionData = await response.json();
   return (
