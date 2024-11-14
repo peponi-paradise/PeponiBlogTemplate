@@ -1,6 +1,11 @@
 "use client";
 
-export default function Pagenation({ current = 0, start = 0, end = 0 }) {
+export default function Pagination({
+  current = 0,
+  start = 0,
+  end = 0,
+  total = 0,
+}) {
   let pages = [];
   for (let i = start; i <= end; i++) {
     if (i < 0) {
@@ -12,15 +17,38 @@ export default function Pagenation({ current = 0, start = 0, end = 0 }) {
   if (pages.length > 0) {
     return (
       <div className="flex flex-row items-center justify-center mt-8">
+        {current > 0 ? (
+          <button
+            type="button"
+            key="<<"
+            className="px-2 py-2 hover:text-sky-400 hover:underline"
+            onClick={(e) => navigate(0)}
+          >
+            {"<<"}
+          </button>
+        ) : (
+          <></>
+        )}
         {pages.map((page) => Page(page, current))}
+        {current < total ? (
+          <button
+            type="button"
+            key=">>"
+            className="px-2 py-2 hover:text-sky-400 hover:underline"
+            onClick={(e) => navigate(total)}
+          >
+            {">>"}
+          </button>
+        ) : (
+          <></>
+        )}
       </div>
     );
   }
 }
 
 function Page(pageNumber, current) {
-  let classData =
-    "px-2 py-2 cursor-pointer hover:text-sky-400 hover:underline ";
+  let classData = "px-2 py-2 hover:text-sky-400 hover:underline ";
   if (pageNumber === current) {
     classData += "text-sky-400";
   }

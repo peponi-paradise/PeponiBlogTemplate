@@ -25,7 +25,7 @@ export function applyPostFilter(category, title) {
   return currentPosts;
 }
 
-export function pagenation(posts, count, page) {
+export function pagination(posts, count, page) {
   let sliced = [];
   if (count != undefined || count != null) {
     let startIndex = 0;

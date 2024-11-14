@@ -1,10 +1,10 @@
 import { MetaInformation, PostInformation } from "@/app/constants";
 import { TextLink } from "@/components/linkButtons";
-import Pagenation from "@/components/pagination";
+import Pagination from "@/components/pagination";
 import PostList from "@/components/postList";
 import Main from "@/layouts/globalMain";
 import { totalCategories } from "@/lib/postsParser";
-import { applyPostFilter, pagenation } from "@/lib/postsParser";
+import { applyPostFilter, pagination } from "@/lib/postsParser";
 
 export const metadata = {
   title: `Posts`,
@@ -24,7 +24,7 @@ const otherCategoryClass =
 
 export default function Posts({ searchParams, ...props }) {
   let currentPosts = applyPostFilter(searchParams.category, searchParams.title);
-  let posts = pagenation(
+  let posts = pagination(
     currentPosts,
     PostInformation.viewCount,
     searchParams.page,
@@ -43,44 +43,88 @@ export default function Posts({ searchParams, ...props }) {
   return (
     <Main {...props}>
       <section className="flex flex-row">
-        <div className="hidden pr-8 ml-auto border-r max-w-40 border-slate-700 sm:block sm:basis-1/4 lg:max-w-56 xl:max-w-64">
-          <ul>
-            <li className="mb-2">
-              <TextLink
-                className={
-                  searchParams.category == "all"
-                    ? "text-xl text-sky-400"
-                    : "text-xl text-slate-200/90"
-                }
-                href="/posts?category=all"
-                text="Categories"
-              />
-            </li>
-            {totalCategories.map((category) => (
-              <li
-                key={category}
-                className={
-                  category == searchParams.category
-                    ? selectedCategoryClass
-                    : otherCategoryClass
-                }
-              >
-                <TextLink
-                  href={`/posts?category=${category}`}
-                  text={category}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
+        <SmCategories searchParams={searchParams} />
+        <LgCategories searchParams={searchParams} />
         <div className="flex flex-col justify-between mr-auto sm:basis-3/4 sm:pl-8">
           <p className="mb-5 text-2xl font-bold text-slate-200/90 sm:hidden">
             Posts
           </p>
           <PostList posts={posts}></PostList>
-          <Pagenation current={currentPage} start={start} end={end} />
+          <Pagination
+            current={currentPage}
+            start={start}
+            end={end}
+            total={totalPages}
+          />
         </div>
       </section>
     </Main>
+  );
+}
+
+function SmCategories({ searchParams }) {
+  return (
+    <div className="hidden pr-8 ml-auto border-r max-w-40 border-slate-700 sm:block sm:basis-1/4 lg:hidden">
+      <ul>
+        <li className="mb-2">
+          <TextLink
+            className={
+              searchParams.category == "all"
+                ? "text-xl text-sky-400"
+                : "text-xl text-slate-200/90"
+            }
+            href="/posts?category=all"
+            text="Categories"
+          />
+        </li>
+        {totalCategories.map((category) => (
+          <li
+            key={category}
+            className={
+              category == searchParams.category
+                ? selectedCategoryClass
+                : otherCategoryClass
+            }
+          >
+            <TextLink href={`/posts?category=${category}`} text={category} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function LgCategories({ searchParams }) {
+  return (
+    <div className="hidden pr-8 ml-auto border-r max-w-40 border-slate-700 lg:block lg:basis-1/4 lg:max-w-56 xl:max-w-64">
+      <ul>
+        <li className="mb-2">
+          <TextLink
+            className={
+              searchParams.category == "all"
+                ? "text-xl text-sky-400"
+                : "text-xl text-slate-200/90"
+            }
+            href="/posts?category=all"
+            text={`Categories (${applyPostFilter("all", "").length})`}
+          />
+        </li>
+        {totalCategories.map((category) => (
+          <li
+            key={category}
+            className={
+              category == searchParams.category
+                ? selectedCategoryClass
+                : otherCategoryClass
+            }
+          >
+            <TextLink
+              href={`/posts?category=${category}`}
+              text={`${category} (${applyPostFilter(category).length})`}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
