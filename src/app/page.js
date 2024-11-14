@@ -6,7 +6,7 @@ import PostList from "@/components/postList";
 import StatCard from "@/components/statCard";
 import * as Icons from "@/components/svgComponents";
 import Main from "@/layouts/globalMain";
-import { applyPostFilter, pagenation } from "@/lib/postsParser";
+import { applyPostFilter, pagination } from "@/lib/postsParser";
 
 import {
   PersonalInformation,
@@ -18,7 +18,7 @@ export const dynamic = "force-dynamic";
 
 export default async function Home() {
   let totalPosts = applyPostFilter();
-  let posts = pagenation(totalPosts, PostInformation.viewCount);
+  let posts = pagination(totalPosts, PostInformation.viewCount);
   let response = await fetch(
     `https://github-contributions-api.jogruber.de/v4/${process.env.GITHUB_USERNAME}?y=last`,
     { cache: "no-store" },
