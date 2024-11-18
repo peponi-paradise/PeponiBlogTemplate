@@ -17,7 +17,7 @@ function handleKeyPress(event) {
 
 function search() {
   let title = document.getElementById("searchBar").value;
-  location.href = `/posts?title=${title}`;
+  location.href = `/posts?title=${encodeURIComponent(title)}`;
 }
 
 function SearchButton() {

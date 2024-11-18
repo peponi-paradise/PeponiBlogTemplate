@@ -25,6 +25,14 @@ export function applyPostFilter(category, title) {
   return currentPosts;
 }
 
+export function getCategoryCount(category) {
+  if (category == "all") {
+    return totalPosts.length;
+  } else if (category != undefined) {
+    return totalPosts.filter((post) => post.category == category).length;
+  }
+}
+
 export function pagination(posts, count, page) {
   let sliced = [];
   if (count != undefined || count != null) {

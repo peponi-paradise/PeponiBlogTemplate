@@ -3,8 +3,12 @@ import { TextLink } from "@/components/linkButtons";
 import Pagination from "@/components/pagination";
 import PostList from "@/components/postList";
 import Main from "@/layouts/globalMain";
-import { totalCategories } from "@/lib/postsParser";
-import { applyPostFilter, pagination } from "@/lib/postsParser";
+import {
+  applyPostFilter,
+  getCategoryCount,
+  pagination,
+  totalCategories,
+} from "@/lib/postsParser";
 
 export const metadata = {
   title: `Posts`,
@@ -86,7 +90,10 @@ function SmCategories({ searchParams }) {
                 : otherCategoryClass
             }
           >
-            <TextLink href={`/posts?category=${category}`} text={category} />
+            <TextLink
+              href={`/posts?category=${encodeURIComponent(category)}`}
+              text={category}
+            />
           </li>
         ))}
       </ul>
@@ -106,7 +113,7 @@ function LgCategories({ searchParams }) {
                 : "text-xl text-slate-200/90"
             }
             href="/posts?category=all"
-            text={`Categories (${applyPostFilter("all", "").length})`}
+            text={`Categories (${getCategoryCount("all")})`}
           />
         </li>
         {totalCategories.map((category) => (
@@ -119,8 +126,8 @@ function LgCategories({ searchParams }) {
             }
           >
             <TextLink
-              href={`/posts?category=${category}`}
-              text={`${category} (${applyPostFilter(category).length})`}
+              href={`/posts?category=${encodeURIComponent(category)}`}
+              text={`${category} (${getCategoryCount(category)})`}
             />
           </li>
         ))}
