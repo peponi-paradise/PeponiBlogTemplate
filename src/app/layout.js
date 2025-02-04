@@ -16,6 +16,9 @@ export const metadata = {
     description: MetaInformation.description,
     url: MetaInformation.baseUrl,
   },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export const viewport = {
@@ -26,18 +29,7 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang={MetaInformation.language} className="scroll-smooth">
-      <head>
-        {/* Add custom scripts, metadata like google search console */}
-        {process.env.GOOGLE_SITE_VERIFICATION !== undefined &&
-        process.env.GOOGLE_SITE_VERIFICATION != "" ? (
-          <meta
-            name="google-site-verification"
-            content={process.env.GOOGLE_SITE_VERIFICATION}
-          />
-        ) : (
-          <></>
-        )}
-      </head>
+      <head>{/* Add custom scripts, metadata */}</head>
       <body className="container flex flex-col justify-between min-h-screen mx-auto bg-slate-900 text-slate-400">
         <Header />
         {children}
